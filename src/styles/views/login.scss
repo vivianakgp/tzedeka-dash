@@ -1,0 +1,134 @@
+
+/* variables */
+$black:#000000;
+$white:#ffffff;
+$grey:hsla(23, 47%, 93%, 0.500);
+$btn__ingresar:#C9BCAC;
+/* Herencias */
+@mixin formLogin__inputs($width) {
+    width: $width;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding-left: 20px;
+    border-style: none;
+}
+.login {
+    width: 100%;
+    display: flex;
+    max-width: 1450px;
+}
+.formLogin {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15%;
+    background-color: $black;
+}
+.imgLogin__img{
+    display: none;
+}
+.formLogin__div--grey {
+    width: 100%;
+    height: 18%;
+    background-color: $grey;
+    margin-bottom: 30%;
+}
+.formLogin__h1 {
+    color:$white;
+    font-size: 8vw;
+    font-weight: lighter;
+    margin-bottom: 15%;
+}
+.formLogin__input--id, .formLogin__input--pass  {
+    @include formLogin__inputs(80%);
+    height: 70px;
+}
+.formLogin__btn {
+    width: 50%;
+    height: 50px;
+    background-color: #C9BCAC;
+    color: #000000;
+    border-style: none;
+    border-radius: 5px;
+    margin: 10% 0 8% 0;    
+}
+.formLogin__paragraph {
+    color:$white;
+    font-size: 4vw;
+}
+.formLogin__anchor{
+    color:$white;
+}
+////////////////////////////////////////////////////////////////////
+@media only screen and (min-width:600px){
+    .formLogin__input--id, .formLogin__input--pass  {
+        @include formLogin__inputs(70%);
+    }
+    .formLogin__h1 {
+        font-size: 6vw;
+    }
+    .formLogin__btn{
+        width: 35%;
+    }
+    .formLogin__div--grey {
+        height: 14%;
+    }
+}
+@media only screen and (min-width:750px){
+    .formLogin__input--id, .formLogin__input--pass  {
+        @include formLogin__inputs(400px);
+        height: 75px;
+    }
+    .formLogin__btn{
+        width: 230px;
+        height: 60px;
+    }
+    .formLogin__h1 {
+        font-size: 40px;
+    }
+    .formLogin__paragraph{
+        font-size: 22px;
+    }
+}
+@media only screen and (min-width:1023px){
+    .formLogin__div--grey{
+        margin-bottom: 20%;
+    }
+    .formLogin__h1{
+        margin-bottom: 10%;
+    }
+}
+
+@media only screen and (min-width:1200px){
+    .formLogin, .imgLogin {
+        width:50%; 
+    }
+    .formLogin__div--grey{
+        height: 7%;
+        margin-bottom: 30%;
+
+    }   
+    .imgLogin {
+        position: relative;
+        overflow: hidden;
+        height: 100vh;
+    }
+    .imgLogin__img{
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .formLogin__input--id, .formLogin__input--pass  {
+        @include formLogin__inputs(530px);
+        height: 65px;
+        min-height: 65px;
+    }
+    .formLogin__btn{
+        width: 280px;
+        height: 50px;
+        min-height: 50px;
+        margin-bottom: 12%;
+    }
+}
