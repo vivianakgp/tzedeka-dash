@@ -16,15 +16,38 @@ export const controller = {
                 break;
             case '#/register':
                 mainSection.appendChild(views.registry());
+            case '#/dashboard':
+                mainSection.appendChild(views.dash());
             default:
         }
     },
     logInAuth:(userData)=>{
         return model.logInAuth(userData)
         .then(()=>{
-            // location.hash='#/register'; 
-            controller.templateChange('#/register');
+            // location.hash='#/register';
+            console.log('obten el id del usuario')
+            controller.getCurrentUser()
+            // controller.templateChange('#/register');
+        })
+        .catch((error)=>{
+            var errorCode = error.errorCode;
+            var errorMessage = error.message;
+            if(errorCode === 'auth/wrong-password'){
+                alert('Wrong password.')
+            } else {
+                alert(errorMessage);
+            }
+            console.log(error);
         });
+    },
+    getCurrentUser: () => {
+        model.getCurrentUser((user) => {
+            if(user){
+                console.log('El usuario ha iniciado la sesión.' + ' ' + user)
+            } else {
+                console.log('Ningún usuario está registrado')
+            }
+        })
     },
 
 };

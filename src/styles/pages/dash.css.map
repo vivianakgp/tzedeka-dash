@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACCA,AAAA,OAAO,CAAA;EACH,gBAAgB,EAAE,OAAe;EACjC,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;CACf;;AACD,AAAA,kBAAkB,CAAA;EACd,gBAAgB,EAAE,KAAK;EACvB,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KACR;CACH;;ADTD,AAAA,UAAU,CAAC;EACP,gBAAgB,EAAC,KAAK;EACtB,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;CACZ",
+    "sources": [
+        "dash.scss",
+        "../menu.scss"
+    ],
+    "names": [],
+    "file": "dash.css"
+}

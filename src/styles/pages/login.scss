@@ -1,9 +1,10 @@
 
-/* variables */
+/* colors */
 $black:#000000;
 $white:#ffffff;
 $grey:hsla(23, 47%, 93%, 0.500);
-$btn__ingresar:#C9BCAC;
+$btn__login:#C9BCAC;
+$width__share:100%;
 /* Herencias */
 @mixin formLogin__inputs($width) {
     width: $width;
@@ -13,12 +14,12 @@ $btn__ingresar:#C9BCAC;
     border-style: none;
 }
 .login {
-    width: 100%;
+    width: $width__share;
     display: flex;
     max-width: 1450px;
 }
 .formLogin {
-    width: 100%;
+    width: $width__share;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,7 +30,7 @@ $btn__ingresar:#C9BCAC;
     display: none;
 }
 .formLogin__div--grey {
-    width: 100%;
+    width: $width__share;
     height: 18%;
     background-color: $grey;
     margin-bottom: 30%;
@@ -47,8 +48,8 @@ $btn__ingresar:#C9BCAC;
 .formLogin__btn {
     width: 50%;
     height: 50px;
-    background-color: #C9BCAC;
-    color: #000000;
+    background-color: $btn__login;
+    color:$black;
     border-style: none;
     border-radius: 5px;
     margin: 10% 0 8% 0;    
@@ -117,7 +118,7 @@ $btn__ingresar:#C9BCAC;
     .imgLogin__img{
         display: block;
         position: absolute;
-        width: 100%;
+        width: $width__share;
         height: 100%;
     }
     .formLogin__input--id, .formLogin__input--pass  {

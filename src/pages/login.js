@@ -42,7 +42,7 @@ export default ()=> {
                 imgLogin.setAttribute('class','imgLogin');
                 // childs
                 const img = document.createElement('img');
-                    img.setAttribute('src','../styles/assets/img-dashboard-login.png');
+                    img.setAttribute('src','../assets/img-dashboard-login.png');
                     img.setAttribute('class','imgLogin__img');
     //iniciamos a anidar los elementos 
     login.appendChild(formLogin);
