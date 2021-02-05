@@ -1,5 +1,6 @@
 @import './pages/login.scss';
 @import './pages/dash.scss';
+@import './menu.scss';
 
 *{
     padding: 0;
@@ -9,4 +10,10 @@
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: black;
+}
+.is__active {
+    // left: -250px;
+    width: 600px;
+    height: 300px;
+    background-color: darkmagenta;
 }

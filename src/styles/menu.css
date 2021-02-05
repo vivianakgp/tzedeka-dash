@@ -1,3 +1,141 @@
+.header {
+  background-color: #231f20;
+  width: 100%;
+  min-width: 222px;
+  height: 100px;
+  position: relative;
+  position: fixed;
+  top: 83vh;
+  z-index: 100;
+}
 
+.menu {
+  height: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
 
+.menu .menu__containerLogoTz {
+  display: none;
+}
+
+.menu .menu__containerLogo {
+  max-width: 140px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.menu .menu__containerLogo .menu__logo {
+  width: 100%;
+  height: 100%;
+}
+
+.menu .menu__nav {
+  width: 100%;
+  height: 50px;
+  padding-top: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.menu .menu__nav .nav__group1 > a, .menu .menu__nav .nav__group2 > a, .menu .menu__nav .nav__group3 > a, .menu .menu__nav .nav__group4 > a {
+  display: none;
+}
+
+@media screen and (min-width: 667px) {
+  .is__active {
+    left: -250px;
+  }
+  .header {
+    width: 250px;
+    height: 100vh;
+    padding-top: 2%;
+    top: 0;
+    left: 0;
+  }
+  .menu {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .menu .menu__containerLogoTz {
+    display: block;
+    height: 17%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .menu .menu__containerLogoTz .menu__logoTz {
+    width: auto;
+    height: 100%;
+  }
+  .menu .menu__nav {
+    height: 45%;
+    padding-top: 4%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+  .menu .menu__nav .nav__group1, .menu .menu__nav .nav__group2, .menu .menu__nav .nav__group3, .menu .menu__nav .nav__group4 {
+    height: 20%;
+    width: inherit;
+    padding-left: 7%;
+    margin-bottom: 1px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .menu .menu__nav .nav__group1 > a, .menu .menu__nav .nav__group2 > a, .menu .menu__nav .nav__group3 > a, .menu .menu__nav .nav__group4 > a {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.653);
+    font-family: sans-serif;
+    font-weight: lighter;
+  }
+  .menu .menu__nav .menu__icon {
+    margin-right: 12px;
+  }
+  .menu .menu__containerLogo {
+    height: 15%;
+    max-width: 180px;
+    margin: 20% 0;
+  }
+}
 /*# sourceMappingURL=menu.css.map */

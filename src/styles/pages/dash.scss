@@ -1,7 +1,31 @@
-// @import '../menu.scss';
 
 .dashboard {
     background-color:white;
     width: 100vw;
-    height: 100vh;
-    }
+    height: auto;
+}
+
+.divTest{
+    width: 200px;
+    height: 580px;
+    margin-bottom: 15px;
+    background-color: violet;
+}
+.menu__btn{
+    width: 50px;
+    height: 50px;
+    background-color: rgba(139, 0, 139, 0.201);
+    right: 0;
+    position: absolute;
+    
+    top: 0;
+}
+.menu__btn22{
+    width: 150px;
+    height: 150px;
+    background-color: rgba(2, 2, 2, 0.749);
+    right: 50px;
+    position: absolute;
+    
+    top: 0;
+}
