@@ -43,38 +43,53 @@ $share-heigth: 50%;
             display: none;
         }
     }
-
 }
-// *** medias ***
+// *** media tablet ***
 @media screen and(min-width:667px) {
-
     .header{
         width: 250px;
         height: 100vh;
         padding-top: 2%;
         top: 0;
         left: 0;
-        
+        transition-duration:  1s;
     }
     .menu {
-        
         height: 100%;
         display: flex;
         flex-direction: column;
-    
+        .menu__btn{
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            border-style: none;
+            right: 0;
+            position: absolute;
+            top: 15px;
+            z-index: 100;
+        }
+        .menu__btn-icon {
+            display: none;
+        }
+        .menu__btn:hover {
+            .menu__btn-icon{
+                display: block;
+                background-color: rgba(255, 255, 255, 0.201);
+                width: 30px;
+                transition:1s ease-in-out ;
+            }
+        }
         .menu__containerLogoTz {
             display: block;
             height: 17%;
             display: flex;
             justify-content: center;
             // background-color: rgba(245, 241, 35, 0.407);
-            
             .menu__logoTz {
                 width:auto;
                 height:100%;
             }
         }
-        
         .menu__nav {
             height: 45%;
             padding-top: 4%;
@@ -82,7 +97,6 @@ $share-heigth: 50%;
             align-items: flex-start;
             justify-content: start;
             // background-color: rgba(173, 216, 230, 0.448);
-            
             .nav__group1 , .nav__group2 , .nav__group3  , .nav__group4 {
                 // height: 78px;
                 height: 20%;
@@ -91,44 +105,24 @@ $share-heigth: 50%;
                 margin-bottom: 1px;
                 display: flex;
                 align-items: center;
-
                 // background-color: rgba(182, 53, 53, 0.461);
-
-                
             }
-
             .nav__group1 > a , .nav__group2 > a , .nav__group3 > a , .nav__group4 > a { 
                 display: inline-block;
                 color: rgba(255, 255, 255, 0.653);
                 font-family: sans-serif;
                 font-weight: lighter;
-                
             }
             .menu__icon {
                 margin-right: 12px;
-                
             }
-            
         }
         .menu__containerLogo {
             height: 15%;
             max-width: 180px;
             margin: 20% 0;
             // background-color: blue;
-
         }
-    
-    }   
-
-    
-
-};
-@media screen and(min-width:900px) {
-   
-
-};
-@media screen and(min-width:1023px){
-  
-
+    }
 };
 

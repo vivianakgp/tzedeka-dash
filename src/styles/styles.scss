@@ -12,8 +12,6 @@ body {
     background-color: black;
 }
 .is__active {
-    // left: -250px;
-    width: 600px;
-    height: 300px;
-    background-color: darkmagenta;
+    left: -250px;
+    transition-duration:  1s;
 }
