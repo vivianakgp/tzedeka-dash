@@ -1,9 +1,11 @@
 /* eslint-disable prefer-const */
 import Menu from './menu.js';
+import preparationView from './views-dash/preparacion.js';
 
 const name = ' name';
 const link = 'http://localhost:5000/#/dashboard';
 const menu = Menu();// ojo con este no se si sea correcto ponerlo fuera de mi funcion
+// const preparationView1 = preparationView();
 export default () => {
   const dash = document.createElement('div');
   const container = document.createElement('div');
@@ -51,9 +53,18 @@ export default () => {
   const block4Title = document.createElement('span');
   const Block4Div = document.createElement('div');
   block4Title.innerHTML = 'Escritura';
+  // events
   btnOpenMenu.addEventListener('click', () => {
     menu.classList.remove('is__active');
   });
+  block1.addEventListener('click', oppenView);
+
+    // functions
+    function oppenView (){
+      divBoard.appendChild(preparationView());
+      block1.removeEventListener('click', oppenView);
+    };
+ 
   dash.appendChild(menu);
   //  dash first child container
   dash.appendChild(container);
@@ -85,5 +96,7 @@ export default () => {
   block3.appendChild(Block3Div);
   block4.appendChild(block4Title);
   block4.appendChild(Block4Div);
+  // divBoard elements
+  
   return dash;
 };
