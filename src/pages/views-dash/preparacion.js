@@ -1,5 +1,5 @@
 export default () => {
   const preparationView = document.createElement('div');
-  preparationView.setAttribute('class', 'container')
+  preparationView.setAttribute('class', 'PreparationContainer');
   return preparationView;
 };

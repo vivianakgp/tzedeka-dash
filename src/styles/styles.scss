@@ -1,7 +1,12 @@
-@import './pages/views-dash/preparacion.scss';
-@import './pages/dash.scss';
 @import './pages/login.scss';
 @import './menu.scss';
+@import './pages/dash.scss';
+@import './pages/views-dash/preparacion.scss';
+@import './pages/views-dash/promocion.scss';
+@import './pages/views-dash/tramite.scss';
+
+
+
 
 
 *{
@@ -16,4 +21,4 @@ body {
 .is__active {
     left: -250px;
     transition-duration:  1s;
-}
+};
