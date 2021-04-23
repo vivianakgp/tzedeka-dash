@@ -1,0 +1,65 @@
+.dashboard {
+  background-color: #F7F8FC;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.btnOpenMenu {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.dash__container {
+  background-color: rgba(137, 43, 226, 0.174);
+  width: 100vw;
+  height: 100vh;
+  margin-left: 270px;
+  margin-top: 50px;
+}
+
+.container__div {
+  width: 100vw;
+  margin-bottom: 5px;
+}
+
+.divUserInf {
+  display: flex;
+}
+
+.divUserInf > h1 {
+  width: 30%;
+}
+
+.divUserInf > div {
+  width: 70%;
+  background-color: rgba(0, 0, 0, 0.315);
+}
+
+.divProgressBar {
+  background-color: rgba(140, 10, 101, 0.329);
+}
+
+.divProgressBar > div {
+  display: inline-block;
+  margin-right: 2px;
+  background-color: rgba(140, 10, 101, 0.719);
+  width: 20%;
+}
+
+.divProgressBar > div > span {
+  color: darkblue;
+}
+
+.divProgressBar > div > div {
+  height: 30px;
+  border-radius: 3px;
+  background-color: #d5e4e4;
+}
+
+.divBoard {
+  background-color: floralwhite;
+}

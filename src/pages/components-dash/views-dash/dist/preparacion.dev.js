@@ -1,0 +1,33 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _default = function _default() {
+  var Title = 'Preparación';
+  var preparationMsg = "- Verificamos documentos/ para evitar contratiempos\n  - Resolver tus dudas\n  -Asesoria en tr\xE1mites y costos fiscales\n  - An\xE1lisis de mercado y opini\xF3n de valor/ determinar con precisi\xF3n precio \xF3ptimo Resolver tus dudas\n  -Asesoria en tr\xE1mites y costos fiscales\n  - An\xE1lisis de mercado y opini\xF3n de valor/ determinar con precisi\xF3n precio \xF3ptimo";
+  var preparationView = document.createElement('div');
+  preparationView.setAttribute('class', 'preparation__container'); // preparationView elements
+
+  var description = document.createElement('div');
+  var image = document.createElement('div'); // children
+
+  var title = document.createElement('h2');
+  var paragraph = document.createElement('p');
+  var imgCasaEnVenta = document.createElement('img');
+  title.innerText = Title;
+  paragraph.innerText = preparationMsg;
+  imgCasaEnVenta.setAttribute('src', '../assets/images/Casa en venta.png'); // preparationView elements
+
+  preparationView.appendChild(description);
+  preparationView.appendChild(image); // children
+
+  description.appendChild(title);
+  description.appendChild(paragraph);
+  image.appendChild(imgCasaEnVenta);
+  return preparationView;
+};
+
+exports["default"] = _default;

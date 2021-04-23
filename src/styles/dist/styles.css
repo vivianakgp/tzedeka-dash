@@ -334,6 +334,25 @@
 
 .divBoard {
   background-color: floralwhite;
+  height: 200px;
+}
+
+.PreparationContainer {
+  background-color: black;
+  height: 300px;
+  width: 200px;
+}
+
+.promoContainer {
+  background-color: pink;
+  height: 100px;
+  width: 200px;
+}
+
+.tramiteContainer {
+  background-color: black;
+  height: 100px;
+  width: 200px;
 }
 
 * {
@@ -351,5 +370,3 @@ body {
   left: -250px;
   transition-duration: 1s;
 }
-
-/*# sourceMappingURL=styles.css.map */

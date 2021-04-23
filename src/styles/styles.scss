@@ -1,13 +1,9 @@
 @import './pages/login.scss';
 @import './menu.scss';
 @import './pages/dash.scss';
-@import './pages/views-dash/preparacion.scss';
-@import './pages/views-dash/promocion.scss';
-@import './pages/views-dash/tramite.scss';
-
-
-
-
+@import './pages/components-dash/views-dash/preparacion.scss';
+@import './pages/components-dash/views-dash/promocion.scss';
+@import './pages/components-dash/views-dash/tramite.scss';
 
 *{
     padding: 0;

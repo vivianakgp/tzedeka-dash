@@ -1,0 +1,16 @@
+.bars > div {
+  display: inline-block;
+  margin-right: 2px;
+  background-color: rgba(140, 10, 101, 0.719);
+  width: 20%;
+}
+
+.bars > div > span {
+  color: darkblue;
+}
+
+.bars > div > div {
+  height: 30px;
+  border-radius: 3px;
+  background-color: #d5e4e4;
+}
