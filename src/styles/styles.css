@@ -154,127 +154,160 @@
     margin-bottom: 12%;
   }
 }
-.header {
-  background-color: #231f20;
-  width: 100%;
-  min-width: 222px;
-  height: 100px;
+.menu {
   position: relative;
   position: fixed;
-  top: 83vh;
   z-index: 100;
+  height: 109px;
+  width: 100%;
+  min-width: 320px;
+  max-width: 400px;
+  top: calc(100vh - 109px);
+  background-color: #231f20;
 }
 
-.menu {
+.container {
+  flex-direction: column-reverse;
   height: inherit;
   display: flex;
-  flex-direction: column-reverse;
 }
-.menu .menu__containerLogoTz {
+.container .logoTz {
   display: none;
 }
-.menu .menu__containerLogo {
-  max-width: 140px;
-  height: 50px;
+.container .letterLogo {
   display: flex;
   flex-direction: row;
   align-self: center;
+  max-width: 110px;
+  height: 70%;
 }
-.menu .menu__containerLogo .menu__logo {
+.container .letterLogo .letterLogo__img {
   width: 100%;
   height: 100%;
 }
-.menu .menu__nav {
-  width: 100%;
-  height: 50px;
-  padding-top: 12px;
+.container .nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  width: 100%;
+  height: 30%;
+  margin-bottom: 10px;
 }
-.menu .menu__nav .nav__group1 > a, .menu .menu__nav .nav__group2 > a, .menu .menu__nav .nav__group3 > a, .menu .menu__nav .nav__group4 > a {
+.container .nav li {
+  display: flex;
+  width: 20%;
+  background-color: lightcyan;
+  font-size: 1rem;
+}
+.container .nav li img {
+  width: 10px;
+}
+.container .nav li a {
   display: none;
 }
+.container .nav .nav__li1 {
+  width: 38%;
+  background-color: yellowgreen;
+}
+.container .nav .nav__li1 a {
+  display: block;
+}
 
-@media screen and (min-width: 667px) {
-  .header {
+/*
+*a partir de los 400px el menu debe de ser vertical
+*/
+@media screen and (min-width: 400px) {
+  .menu {
+    top: 0;
+    left: 0;
     width: 250px;
     height: 100vh;
     padding-top: 2%;
-    top: 0;
-    left: 0;
     transition-duration: 1s;
   }
 
-  .menu {
-    height: 100%;
+  .container {
     display: flex;
     flex-direction: column;
+    height: 100%;
   }
-  .menu .menu__btn {
-    width: 50px;
-    height: 50px;
-    background: transparent;
-    border-style: none;
+
+  .menu__btn {
     right: 0;
     position: absolute;
     top: 15px;
     z-index: 100;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-style: none;
   }
-  .menu .menu__btn-icon {
+
+  .menu__btn-icon {
     display: none;
   }
-  .menu .menu__btn:hover .menu__btn-icon {
+
+  .menu__btn:hover .menu__btn-icon {
     display: block;
     background-color: rgba(255, 255, 255, 0.201);
     width: 30px;
     transition: 1s ease-in-out;
   }
-  .menu .menu__containerLogoTz {
+
+  .logoTz {
     display: block;
-    height: 17%;
     display: flex;
     justify-content: center;
+    height: 17%;
   }
-  .menu .menu__containerLogoTz .menu__logoTz {
+  .logoTz logoTz__img {
     width: auto;
     height: 100%;
   }
-  .menu .menu__nav {
-    height: 45%;
-    padding-top: 4%;
+
+  .nav {
     flex-direction: column;
     align-items: flex-start;
     justify-content: start;
+    height: 45%;
+    padding-top: 4%;
+    background-color: rgba(173, 216, 230, 0.448);
   }
-  .menu .menu__nav .nav__group1, .menu .menu__nav .nav__group2, .menu .menu__nav .nav__group3, .menu .menu__nav .nav__group4 {
+  .nav .nav__li {
+    display: flex;
+    align-items: center;
     height: 20%;
     width: inherit;
     padding-left: 7%;
     margin-bottom: 1px;
-    display: flex;
-    align-items: center;
   }
-  .menu .menu__nav .nav__group1 > a, .menu .menu__nav .nav__group2 > a, .menu .menu__nav .nav__group3 > a, .menu .menu__nav .nav__group4 > a {
+  .nav .nav__li > a {
     display: inline-block;
     color: rgba(255, 255, 255, 0.653);
     font-family: sans-serif;
     font-weight: lighter;
   }
-  .menu .menu__nav .menu__icon {
+  .nav .nav_icon {
     margin-right: 12px;
   }
-  .menu .menu__containerLogo {
+
+  .letterLogo {
     height: 15%;
     max-width: 180px;
     margin: 20% 0;
   }
 }
-.dashboard {
-  background-color: #F7F8FC;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+/*
+* .userInfo > div(share link)only desktop
+*/
+.userInfo > div {
+  display: none;
+}
+
+/*
+* .progressStatusBar since tablet 
+*/
+.progressStatusBar {
+  display: none;
 }
 
 .btnOpenMenu {
@@ -283,67 +316,326 @@
   position: absolute;
   top: 0;
   right: 0;
+  display: none;
+}
+
+.dashboard {
+  width: 100vw;
+  min-width: 290px;
+  padding-bottom: 100px;
+  background-color: #E5E5E5;
 }
 
 .dash__container {
-  background-color: rgba(137, 43, 226, 0.174);
   width: 100vw;
-  height: 100vh;
-  margin-left: 270px;
-  margin-top: 50px;
+  min-width: 290px;
+  padding-top: 50px;
+  height: auto;
 }
 
-.container__div {
-  width: 100vw;
-  margin-bottom: 5px;
-}
-
-.divUserInf {
+.userInfo {
   display: flex;
 }
 
-.divUserInf > h1 {
-  width: 30%;
+.userInfo h1 {
+  width: 80%;
+  margin: 0 auto;
+  font-family: "Mulish", sans-serif;
+  font-size: 2.4rem;
+  font-weight: bold;
+  line-height: 2.6rem;
+  color: #252733;
 }
 
-.divUserInf > div {
+.blackboard {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  border: 1px solid #d0d0d3;
+  border-radius: 0.5rem;
+  overflow-x: scroll;
+  scroll-behavior: contain;
+  scroll-snap-type: x proximity;
+  background-color: #FFFFFF;
+}
+
+.progressStatusBarCell {
+  width: 90%;
+  max-width: 450px;
+  height: 23px;
+  margin: 40px auto;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  border: 1px solid #d0d0d3;
+}
+
+.progressStatusBarCell__status {
+  height: 21px;
   width: 70%;
-  background-color: rgba(0, 0, 0, 0.315);
+  margin: 0 15%;
+  border-left: 1px solid #d0d0d3;
+  border-right: 1px solid #d0d0d3;
+  border-radius: 8px;
+  color: #9f9376;
+  text-align: center;
+  font-family: "Mulish", sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  background-color: #f3ceca;
 }
 
-.divProgressBar {
-  background-color: rgba(140, 10, 101, 0.329);
+.btnsChangeViewsToCell {
+  position: relative;
+  top: -3px;
+  display: flex;
+  justify-content: space-between;
+  background: #FFFFFF;
+  border-bottom: 1px solid #d0d0d3;
 }
 
-.divProgressBar > div {
-  display: inline-block;
-  margin-right: 2px;
-  background-color: rgba(140, 10, 101, 0.719);
-  width: 20%;
+.btnsChangeViewsToCell button {
+  height: 28px;
+  width: 115px;
+  padding: 20px;
+  border: none;
+  border-radius: 1px;
+  background-color: #CAB98E;
 }
 
-.divProgressBar > div > span {
-  color: darkblue;
+@media screen and (min-width: 499px) {
+  .dash__container {
+    background-color: salmon;
+  }
+
+  .dashboard {
+    padding-bottom: 50px;
+  }
+}
+@media screen and (min-width: 767px) {
+  .dash__container {
+    background-color: rgba(231, 216, 227, 0.87);
+  }
+
+  .blackboard {
+    width: 95%;
+  }
+
+  .userInfo h1 {
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  .progressStatusBarCell {
+    display: none;
+  }
+
+  .progressStatusBar {
+    display: block;
+    display: flex;
+    flex-direction: row;
+    width: 98%;
+    max-width: 900px;
+    margin: 40px auto 30px auto;
+    text-align: center;
+  }
+
+  .progressStatusBar > div {
+    width: 38%;
+    position: relative;
+    z-index: 100;
+  }
+
+  .progressStatusBar div:nth-child(4) {
+    width: 15%;
+    left: -13px;
+  }
+
+  .progressStatusBar div:nth-child(2) {
+    right: -10px;
+    z-index: 2;
+  }
+
+  .progressStatusBar div:nth-child(1) {
+    right: -18px;
+    z-index: 1;
+  }
+
+  .progressStatusBar > div > span {
+    color: #9FA2B4;
+    font-size: 1.8rem;
+  }
+
+  .progressStatusBar > div > div {
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid #d0d0d3;
+    background-color: #d5e4e4;
+  }
+
+  .btnsChangeViewsToCell {
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .dash__container {
+    background-color: pink;
+  }
+}
+.preparation__container {
+  padding: 40px 5%;
+  height: auto;
+  margin-bottom: 100px;
+  font-size: 1.8rem;
+  line-height: 4rem;
+  text-align: justify;
+  position: relative;
+  min-width: 300px;
+  background-color: #cae25c;
+  scroll-snap-align: center;
 }
 
-.divProgressBar > div > div {
-  height: 30px;
-  border-radius: 3px;
-  background-color: #d5e4e4;
+.preparation__image img {
+  height: 100%;
+  width: 100%;
 }
 
-.divBoard {
-  background-color: floralwhite;
+.preparation__description h2 {
+  text-align: center;
+  margin: 30px 0;
+  font-weight: bold;
+}
+
+.preparation__description {
+  display: flex;
+  flex-direction: column;
+  padding: 0 18px;
+}
+
+.promoContainer {
+  position: relative;
+  padding: 60px 5rem;
+  height: auto;
+  min-width: 300px;
+  font-size: 1.8rem;
+  line-height: 4.4rem;
+  scroll-snap-align: center;
+}
+
+.promoDescription {
+  display: flex;
+  flex-direction: column;
+}
+
+.promoImage {
+  max-width: 500px;
+  margin: auto;
+}
+
+.promoImage img {
+  width: 100%;
+  height: auto;
+}
+
+.promoDescription h2 {
+  margin: 30px 0;
+  font-size: 3.8rem;
+  font-weight: bold;
+  color: black;
+}
+
+li {
+  font-weight: bold;
+}
+
+li span {
+  font-weight: 400;
+}
+
+@media screen and (min-width: 499px) {
+  .promoContainer {
+    padding: 80px 4rem;
+  }
+}
+@media screen and (min-width: 767px) {
+  .promoContainer {
+    padding: 80px 9rem;
+  }
+}
+.tramite__container {
+  padding: 40px 1rem;
+  height: auto;
+  margin-bottom: 100px;
+  font-size: 1.8rem;
+  line-height: 4rem;
+  text-align: justify;
+  position: relative;
+  min-width: 300px;
+  background-color: #5cb8e2;
+  scroll-snap-align: center;
+}
+
+.tramite__image img {
+  width: 100%;
+  height: 100%;
+}
+
+.tramite__description h2 {
+  text-align: center;
+  margin: 30px 0;
+  font-weight: bold;
+}
+
+.tramite__description {
+  display: flex;
+  flex-direction: column;
+  padding: 0 18px;
+}
+
+.escritura__container {
+  padding: 40px 1rem;
+  height: auto;
+  margin-bottom: 100px;
+  font-size: 1.8rem;
+  line-height: 4rem;
+  text-align: justify;
+  position: relative;
+  min-width: 300px;
+  background-color: #e25ccc;
+  scroll-snap-align: center;
+}
+
+.escritura__image img {
+  width: 100%;
+  height: 100%;
+}
+
+.escritura__description h2 {
+  text-align: center;
+  margin: 30px 0;
+  font-weight: bold;
+}
+
+.escritura__description {
+  display: flex;
+  flex-direction: column;
+  padding: 0 18px;
 }
 
 * {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Lato", sans-serif;
 }
 
 body {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   background-color: black;
 }
 

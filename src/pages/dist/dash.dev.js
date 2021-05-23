@@ -18,44 +18,81 @@ var _escritura = _interopRequireDefault(require("./components-dash/views-dash/es
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /* eslint-disable prefer-const */
-var name = ' name';
-var link = 'http://localhost:5000/#/dashboard';
+
+/*
+* Import all the views
+*/
+var currentProgress = 'En Promoción';
+var userName = ' name';
+var linkPropertyPublication = 'http://localhost:5000/#/dashboard';
 var menu = (0, _menu["default"])(); // ojo con este no se si sea correcto ponerlo fuera de mi funcion
 
+/*
+ * create an array of progress views
+ */
+
+var preparacion = (0, _preparacion["default"])();
+var promocion = (0, _promocion["default"])();
+var tramite = (0, _tramite["default"])();
+var escritura = (0, _escritura["default"])();
+var progressViews = [preparacion, promocion, tramite, escritura];
+var Counter = 0;
+
 var _default = function _default() {
+  /*
+  * creating elements html *
+  */
   var dash = document.createElement('div');
   var container = document.createElement('div');
   dash.setAttribute('class', 'dashboard');
-  container.setAttribute('class', 'dash__container'); // // //
+  container.setAttribute('class', 'dash__container'); // button oppen/close menu
 
   var btnOpenMenu = document.createElement('button');
-  btnOpenMenu.setAttribute('class', 'btnOpenMenu'); // main divs
+  btnOpenMenu.setAttribute('class', 'btnOpenMenu');
+  /*
+  * main divisors *
+  - progressStatusBar and btnsChangeViewsToCell elements only in cell
+  */
 
-  var divUserInf = document.createElement('div');
-  var divProgressBar = document.createElement('div');
-  var divBoard = document.createElement('div');
-  divUserInf.setAttribute('class', 'container__div divUserInf');
-  divProgressBar.setAttribute('class', 'container__div divProgressBar');
-  divBoard.setAttribute('class', 'container__div divBoard'); // divUserInf elements
+  var userInfo = document.createElement('div');
+  var progressStatusBar = document.createElement('div');
+  var blackboard = document.createElement('div');
+  var progressStatusBarCell = document.createElement('div');
+  var btnsChangeViewsToCell = document.createElement('div'); // add classes
 
-  var welcomeName = document.createElement('h1');
-  var divShareLink = document.createElement('div'); // children
+  userInfo.setAttribute('class', 'userInfo');
+  progressStatusBar.setAttribute('class', 'progressStatusBar');
+  blackboard.setAttribute('class', 'blackboard');
+  progressStatusBarCell.setAttribute('class', 'progressStatusBarCell');
+  btnsChangeViewsToCell.setAttribute('class', 'btnsChangeViewsToCell');
+  /*
+  * userInfo children *
+  - share link only in desktop
+  */
+  // welcome name
 
-  welcomeName.innerText = 'Welcome';
+  var welcome = document.createElement('h1');
   var span = document.createElement('span');
-  span.innerText = "  ".concat(name);
-  divShareLink.innerHTML = "Link de mi Propiedad: ".concat(link);
+  welcome.innerText = 'Bienvenido';
+  span.innerText = "".concat(userName); // share link
+
+  var propertyLink = document.createElement('div');
+  propertyLink.innerHTML = "Link de mi Propiedad: ".concat(linkPropertyPublication);
   var iconWhats = document.createElement('img');
-  iconWhats.setAttribute('src', '../assets/social-icons/icon_whatsapp.png');
   var iconFace = document.createElement('img');
-  iconFace.setAttribute('src', '../assets/social-icons/icon_facebook.png');
   var iconShare = document.createElement('img');
-  iconShare.setAttribute('src', '../assets/social-icons/Vector.png'); // divProgressBar elements
+  iconWhats.setAttribute('src', '../assets/social-icons/icon_whatsApp.svg');
+  iconFace.setAttribute('src', '../assets/social-icons/icon_facebook.svg');
+  iconShare.setAttribute('src', '../assets/social-icons/icon_copy.svg');
+  /*
+  * progressStatusBar children *
+  - blocks to tablet and desktop
+  */
 
   var block1 = document.createElement('div');
   var block2 = document.createElement('div');
   var block3 = document.createElement('div');
-  var block4 = document.createElement('div'); // children
+  var block4 = document.createElement('div'); //  blocks's children
 
   var block1Title = document.createElement('span');
   var block1Div = document.createElement('div');
@@ -72,63 +109,51 @@ var _default = function _default() {
   block3Title.innerHTML = 'Tramite y Avalúo';
   block3Div.setAttribute('data-progress', '3');
   block4Title.innerHTML = 'Escritura';
-  block4Div.setAttribute('data-progress', '4'); // events
+  block4Div.setAttribute('data-progress', '4');
+  /*
+  * progressStatusBarCell children *
+  - only in cell
+  */
 
-  btnOpenMenu.addEventListener('click', function () {
-    menu.classList.remove('is__active');
-  });
+  var progressStatusCell = document.createElement('div');
+  progressStatusCell.setAttribute('class', 'progressStatusBarCell__status');
+  progressStatusCell.innerText = "".concat(currentProgress);
+  /*
+  * btnsChangeViewsToCell children *
+  - only in cell
+  */
 
-  function openView(e) {
-    var progress = e.target.dataset.progress;
-    console.log(progress);
-    divBoard.innerHTML = '';
+  var btnPreviousProgressView = document.createElement('button');
+  var btnNextProgressView = document.createElement('button'); // btnNextProgressView.setAttribute('class', 'btnNextProgressView');
+  // btnPreviousProgressView.setAttribute('class', 'btnPreviousProgressView');
 
-    switch (progress) {
-      case '1':
-        divBoard.appendChild((0, _preparacion["default"])());
-        break;
+  /*
+  * nesting *
+  */
 
-      case '2':
-        divBoard.appendChild((0, _promocion["default"])());
-        break;
+  dash.appendChild(container);
+  dash.appendChild(menu); // button
 
-      case '3':
-        divBoard.appendChild((0, _tramite["default"])());
-        break;
+  container.appendChild(btnOpenMenu); //  main div
 
-      case '4':
-        divBoard.appendChild((0, _escritura["default"])());
+  container.appendChild(userInfo);
+  container.appendChild(progressStatusBarCell);
+  container.appendChild(progressStatusBar);
+  container.appendChild(blackboard);
+  container.appendChild(btnsChangeViewsToCell); // userInfo children
 
-      default:
-    }
-  }
+  userInfo.appendChild(welcome);
+  userInfo.appendChild(propertyLink); //  userInfo welcome name / share link children
 
-  block1Div.addEventListener('click', openView);
-  block2Div.addEventListener('click', openView);
-  block3Div.addEventListener('click', openView);
-  block4Div.addEventListener('click', openView);
-  dash.appendChild(menu); //  dash first child container
+  welcome.appendChild(span);
+  propertyLink.appendChild(iconWhats);
+  propertyLink.appendChild(iconFace);
+  propertyLink.appendChild(iconShare); // progressStatusBar children
 
-  dash.appendChild(container); // btn open menu
-
-  container.appendChild(btnOpenMenu); //  main divs
-
-  container.appendChild(divUserInf);
-  container.appendChild(divProgressBar);
-  container.appendChild(divBoard); // divUserInf  elements
-
-  divUserInf.appendChild(welcomeName);
-  divUserInf.appendChild(divShareLink); // children
-
-  welcomeName.appendChild(span);
-  divShareLink.appendChild(iconWhats);
-  divShareLink.appendChild(iconFace);
-  divShareLink.appendChild(iconShare); // divProgressBar elements
-
-  divProgressBar.appendChild(block1);
-  divProgressBar.appendChild(block2);
-  divProgressBar.appendChild(block3);
-  divProgressBar.appendChild(block4); // children
+  progressStatusBar.appendChild(block1);
+  progressStatusBar.appendChild(block2);
+  progressStatusBar.appendChild(block3);
+  progressStatusBar.appendChild(block4); // progressStatusBar blocks's children
 
   block1.appendChild(block1Title);
   block1.appendChild(block1Div);
@@ -137,8 +162,123 @@ var _default = function _default() {
   block3.appendChild(block3Title);
   block3.appendChild(block3Div);
   block4.appendChild(block4Title);
-  block4.appendChild(block4Div);
+  block4.appendChild(block4Div); // progressStatusBarCell children
+
+  progressStatusBarCell.appendChild(progressStatusCell); // btnsChangeViewsToCell children
+
+  btnsChangeViewsToCell.appendChild(btnPreviousProgressView);
+  btnsChangeViewsToCell.appendChild(btnNextProgressView);
+  /*
+   * functions to change blackboard's views
+  */
+
+  if (currentProgress === 'Preparación') {
+    btnPreviousProgressView.classList.add('disabled');
+  }
+
+  function showCurrentProgressView() {
+    switch (currentProgress) {
+      case 'Preparación':
+        blackboard.appendChild((0, _preparacion["default"])());
+        break;
+
+      case 'En Promoción':
+        blackboard.appendChild((0, _promocion["default"])());
+        break;
+
+      case 'Tramite y Avalúo':
+        blackboard.appendChild((0, _tramite["default"])());
+        break;
+
+      case 'Escritura':
+        blackboard.appendChild((0, _escritura["default"])());
+        break;
+
+      default:
+        blackboard.appendChild((0, _preparacion["default"])());
+    }
+  }
+
+  showCurrentProgressView();
+
+  function traversesProgressArrayBackwards() {
+    if (Counter === 0) {
+      // eslint-disable-next-line no-plusplus
+      Counter++;
+    } else if (Counter > 0) {
+      blackboard.innerHTML = '';
+      blackboard.appendChild(progressViews[Counter - 1]); // eslint-disable-next-line no-plusplus
+
+      Counter--;
+    }
+  }
+
+  function traversesProgressArrayForward() {
+    blackboard.innerHTML = '';
+
+    if (Counter < progressViews.length - 1) {
+      blackboard.appendChild(progressViews[Counter + 1]); // eslint-disable-next-line no-plusplus
+
+      Counter++;
+    } else {
+      blackboard.appendChild(progressViews[0]);
+      Counter = 0;
+    }
+  }
+
+  btnNextProgressView.addEventListener('click', traversesProgressArrayForward);
+  btnPreviousProgressView.addEventListener('click', traversesProgressArrayBackwards);
+  btnOpenMenu.addEventListener('click', function () {
+    return menu.classList.remove('is__active');
+  });
   return dash;
-};
+}; // function openView(e) {
+//   const progress = e.target.dataset.progress;
+//   console.log(progress);
+//   blackboard.innerHTML = '';
+//   switch (progress) {
+//     case '1':
+//       blackboard.appendChild(preparacionView());
+//       break;
+//     case '2':
+//       blackboard.appendChild(promoView());
+//       break;
+//     case '3':
+//       blackboard.appendChild(tramiteView());
+//       break;
+//     case '4':
+//       blackboard.appendChild(escrituraView());
+//       break;
+//     default:
+//       blackboard.appendChild(preparacionView());
+//   }
+// }
+// block1Div.addEventListener('click', openView);
+// block2Div.addEventListener('click', openView);
+// block3Div.addEventListener('click', openView);
+// block4Div.addEventListener('click', openView);
+// btnNextProgressView.addEventListener('click', () => {
+//   blackboard.innerHTML = '';
+//   if (Counter > 0) {
+//     blackboard.appendChild(progressViews[Counter - 1]);
+//     // eslint-disable-next-line no-plusplus
+//     Counter--;
+//   } else {
+//     blackboard.appendChild(progressViews[progressViews.length - 1]);
+//     Counter = progressViews.length - 1;
+//   }
+// });
+// btnPreviousProgressView.addEventListener('click', () => {
+//   blackboard.innerHTML = '';
+//   if (Counter < progressViews.length - 1) {
+//     blackboard.appendChild(progressViews[Counter + 1]);
+//     // eslint-disable-next-line no-plusplus
+//     Counter++;
+//   } else {
+//     blackboard.appendChild(progressViews[0]);
+//     Counter = 0;
+//   }
+// });
+
 
 exports["default"] = _default;

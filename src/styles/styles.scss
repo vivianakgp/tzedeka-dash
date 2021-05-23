@@ -4,15 +4,22 @@
 @import './pages/components-dash/views-dash/preparacion.scss';
 @import './pages/components-dash/views-dash/promocion.scss';
 @import './pages/components-dash/views-dash/tramite.scss';
+@import './pages/components-dash/views-dash/escritura.scss';
+
 
 *{
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
 }
+html{
+    font-size: 62.5%;
+    font-family: 'Lato', sans-serif;
+}
+
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: black;
+
 }
 .is__active {
     left: -250px;

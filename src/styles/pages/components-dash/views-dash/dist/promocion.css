@@ -1,0 +1,50 @@
+.promoContainer {
+  position: relative;
+  padding: 60px 5rem;
+  height: auto;
+  min-width: 300px;
+  font-size: 1.8rem;
+  line-height: 4.4rem;
+  scroll-snap-align: center;
+}
+
+.promoDescription {
+  display: flex;
+  flex-direction: column;
+}
+
+.promoImage {
+  max-width: 500px;
+  margin: auto;
+}
+
+.promoImage img {
+  width: 100%;
+  height: auto;
+}
+
+.promoDescription h2 {
+  margin: 30px 0;
+  font-size: 3.8rem;
+  font-weight: bold;
+  color: black;
+}
+
+li {
+  font-weight: bold;
+}
+
+li span {
+  font-weight: 400;
+}
+
+@media screen and (min-width: 499px) {
+  .promoContainer {
+    padding: 80px 4rem;
+  }
+}
+@media screen and (min-width: 767px) {
+  .promoContainer {
+    padding: 80px 9rem;
+  }
+}
