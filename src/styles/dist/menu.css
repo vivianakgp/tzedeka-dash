@@ -4,139 +4,149 @@
   z-index: 100;
   height: 109px;
   width: 100%;
-  min-width: 320px;
-  max-width: 400px;
   top: calc(100vh - 109px);
   background-color: #231f20;
 }
-
-.container {
+.menu .menu__container {
+  display: flex;
   flex-direction: column-reverse;
   height: inherit;
-  display: flex;
 }
-.container .logoTz {
+.menu .menu__container .btnCloseMenu {
   display: none;
 }
-.container .letterLogo {
+.menu .menu__container .logoTz {
+  display: none;
+}
+.menu .menu__container .letterLogo {
   display: flex;
-  flex-direction: row;
   align-self: center;
-  max-width: 110px;
-  height: 70%;
+  position: relative;
+  overflow: hidden;
+  width: 137px;
+  height: 50%;
 }
-.container .letterLogo .letterLogo__img {
+.menu .menu__container .letterLogo .letterLogo__img {
+  position: absolute;
+  bottom: -20px;
   width: 100%;
-  height: 100%;
+  height: 150%;
 }
-.container .nav {
+.menu .menu__container .nav {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 30%;
-  margin-bottom: 10px;
+  height: 50%;
 }
-.container .nav li {
+.menu .menu__container .nav li {
   display: flex;
-  width: 20%;
-  background-color: lightcyan;
-  font-size: 1rem;
+  justify-content: center;
+  width: 30%;
+  font-family: "Mulish", sans-serif;
+  font-size: 1.6rem;
+  font-weight: lighter;
+  letter-spacing: 0.2px;
+  color: #DDE2FF;
+  padding-bottom: 3%;
 }
-.container .nav li img {
-  width: 10px;
+.menu .menu__container .nav li img {
+  width: 16px;
 }
-.container .nav li a {
+.menu .menu__container .nav li a {
   display: none;
 }
-.container .nav .nav__li1 {
-  width: 38%;
-  background-color: yellowgreen;
+.menu .menu__container .nav .nav__li1 {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  background: rgba(221, 226, 255, 0.205);
 }
-.container .nav .nav__li1 a {
+.menu .menu__container .nav .nav__li1 a {
   display: block;
+}
+.menu .menu__container .nav .nav__li1 img {
+  margin-right: 4%;
 }
 
 /*
-*a partir de los 400px el menu debe de ser vertical
+* since 499px the menu must be vertical
 */
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 499px) {
   .menu {
     top: 0;
-    left: 0;
-    width: 250px;
+    left: -275px;
+    width: 275px;
     height: 100vh;
     padding-top: 2%;
     transition-duration: 1s;
   }
-
-  .container {
+  .menu .menu__container {
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding: 42px 0;
   }
-
-  .menu__btn {
-    right: 0;
+  .menu .menu__container .btnCloseMenu {
+    display: block;
     position: absolute;
-    top: 15px;
-    z-index: 100;
-    width: 50px;
-    height: 50px;
-    background: transparent;
-    border-style: none;
+    top: 4%;
+    right: 8%;
+    width: 15px;
   }
-
-  .menu__btn-icon {
-    display: none;
-  }
-
-  .menu__btn:hover .menu__btn-icon {
+  .menu .menu__container .logoTz {
     display: block;
-    background-color: rgba(255, 255, 255, 0.201);
-    width: 30px;
-    transition: 1s ease-in-out;
+    height: 120px;
+    width: 120px;
+    align-self: center;
+    margin-bottom: 14px;
   }
-
-  .logoTz {
-    display: block;
-    display: flex;
-    justify-content: center;
-    height: 17%;
-  }
-  .logoTz logoTz__img {
-    width: auto;
+  .menu .menu__container .logoTz .logoTz__img {
+    width: 100%;
     height: 100%;
   }
-
-  .nav {
+  .menu .menu__container .nav {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: start;
-    height: 45%;
-    padding-top: 4%;
-    background-color: rgba(173, 216, 230, 0.448);
+    justify-content: space-between;
+    width: 100%;
+    height: 270px;
+    margin-bottom: 85px;
   }
-  .nav .nav__li {
+  .menu .menu__container .nav li:hover {
+    background: rgba(221, 226, 255, 0.205);
+  }
+  .menu .menu__container .nav li {
+    width: inherit;
+    height: 59px;
+    justify-content: start;
+    align-items: center;
+    padding-left: 35px;
+  }
+  .menu .menu__container .nav li img {
+    margin-right: 6%;
+  }
+  .menu .menu__container .nav li .nav__li1 img {
+    margin-right: 6%;
+  }
+  .menu .menu__container .nav li a {
+    display: block;
+  }
+  .menu .menu__container .nav .nav__li1 {
+    width: 100%;
     display: flex;
     align-items: center;
-    height: 20%;
-    width: inherit;
-    padding-left: 7%;
-    margin-bottom: 1px;
+    background: rgba(221, 226, 255, 0.205);
   }
-  .nav .nav__li > a {
-    display: inline-block;
-    color: rgba(255, 255, 255, 0.653);
-    font-family: sans-serif;
-    font-weight: lighter;
+  .menu .menu__container .letterLogo {
+    width: 163px;
+    height: 87px;
   }
-  .nav .nav_icon {
-    margin-right: 12px;
+}
+@media screen and (min-width: 1024px) {
+  .menu {
+    left: 0;
   }
-
-  .letterLogo {
-    height: 15%;
-    max-width: 180px;
-    margin: 20% 0;
+  .menu .menu__container .btnCloseMenu {
+    display: none;
   }
 }

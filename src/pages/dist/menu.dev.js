@@ -11,10 +11,12 @@ var _default = function _default() {
   /* main container */
 
   var container = document.createElement('div');
-  container.setAttribute('class', 'container');
+  container.setAttribute('class', 'menu__container');
   /* button close/open menu */
 
-  var btnCloseMenu = document.createElement('button');
+  var btnCloseMenu = document.createElement('img');
+  btnCloseMenu.setAttribute('src', '../assets/menu-icons/left-arrow-white.svg');
+  btnCloseMenu.setAttribute('class', 'btnCloseMenu');
   /*
     * main divisors
     - containerLogoTz only in vertical menu
@@ -37,8 +39,8 @@ var _default = function _default() {
   var navLi4 = document.createElement('li');
   logoTz.setAttribute('src', '../assets/logos/LogoTz.png');
   logoTz.setAttribute('class', 'logoTz__img');
-  letterLogo.setAttribute('class', 'letterLogo__img');
   letterLogo.setAttribute('src', '../assets/logos/Letters no background.png');
+  letterLogo.setAttribute('class', 'letterLogo__img');
   navLi1.setAttribute('class', 'nav__li1'); // navLi2.setAttribute('class', 'nav__li');
   // navLi3.setAttribute('class', 'nav__li');
   // navLi4.setAttribute('class', 'nav__li');
@@ -68,8 +70,9 @@ var _default = function _default() {
   /* Events */
 
   btnCloseMenu.addEventListener('click', function () {
-    menu.classList.add('is__active');
-  });
+    menu.classList.remove('is__active');
+  }); // class inside styles.scss
+
   /*
     * Nesting
   */
@@ -77,7 +80,7 @@ var _default = function _default() {
 
   menu.appendChild(container); // button close/open menu
 
-  containerLogoTz.appendChild(btnCloseMenu); // main divisors
+  container.appendChild(btnCloseMenu); // main divisors
 
   container.appendChild(containerLogoTz);
   container.appendChild(nav);

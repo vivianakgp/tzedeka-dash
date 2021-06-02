@@ -1,30 +1,15 @@
 
+
 /*
-* .userInfo > div(share link)only desktop
-*/
-.userInfo > div {
-    display: none;
-    //para crecer
-    // width: 70%;
-    // background-color: rgba(0, 0, 0, 0.315);;
-}
-/*
-* .progressStatusBar since tablet 
+* .progressStatusBar since tablet
 */
 .progressStatusBar {
-    display:none;  
+    display:none;
 }
-
-
-.disabled {
-    //display: none;
-}
-.btnOpenMenu {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top:0;
-    right: 0;
+/*
+* .userInfo > div  share link only desktop
+*/
+.userInfo__propertyLink{
     display: none;
 }
 //   //    //
@@ -33,12 +18,16 @@
     min-width: 290px;
     padding-bottom: 100px;
     background-color:#E5E5E5;
-    //height: 100vh;
+    height: 100vh;
     //overflow: hidden;
+}
+.btnOpenMenu { // only in vertical menu
+    display: none;
 }
 .dash__container {
     width: 100vw;
     min-width: 290px;
+    max-width: 1500px;
     padding-top: 50px;
     height: auto;
 }
@@ -55,19 +44,13 @@
     color: #252733;
 }
 .blackboard {
-    display: flex;
-    flex-direction:column-reverse;
     width: 100%;
-    max-width: 900px;
-    margin: auto;
     border: 1px solid #d0d0d3;
     border-radius: .5rem ;
-    overflow-x: scroll;
-    scroll-behavior: contain;
-    scroll-snap-type: x proximity;
+    //overflow-x: scroll;
+    //scroll-behavior: contain;
+    //scroll-snap-type: x proximity;
     background-color: #FFFFFF;
-    //margin: 0 3%;
-    //position: absolute; // quite esta medida para que me agarre el valor height:auto en su padre container
 }
 .progressStatusBarCell {
     width: 90%;
@@ -92,7 +75,6 @@
     font-weight: bold;
     letter-spacing: .5px;
     background-color: rgb(243, 206, 202);
-    // background-color: rgba(140, 10, 101, 0.329);
 }
 .btnsChangeViewsToCell {
     position: relative;
@@ -112,36 +94,32 @@
     background-color:#CAB98E;
 
 }
-// .btnsChangeViewsToCell :nth-child(1){
-//     background:salmon;
-
-// }
-// .btnsChangeViewsToCell :nth-child(2){
-//     background:blue;
-
-// }
 
 @media screen and (min-width:499px) {
+    .btnOpenMenu {
+        display: block;
+        position: absolute;
+        top: 33px;
+        left: 20px;
+        width: 50px;
+
+    }
     .dash__container {
         background-color:salmon;
+        padding-bottom: 70px;
     }
-    .dashboard {
-        padding-bottom: 50px;
+    .userInfo  h1 {
+        text-align:center;
+
     }
 }
 @media screen and (min-width:767px) {
     .dash__container {
         background-color:rgba(231, 216, 227, 0.87);
-        // background-color:rgba(140, 10, 101, 0.329);
-
     }
     .blackboard {
-        width: 95%;
-    }
-    .userInfo  h1 {
-        text-align:center;
-        font-size: 3rem;
-
+        width: 93%;
+        margin: 0 auto;
     }
     .progressStatusBarCell {
         display: none;
@@ -150,11 +128,10 @@
         display:block;
         display:flex;
         flex-direction: row;
-        width: 98%;
-        max-width: 900px;
-        margin: 40px  auto 30px auto;
+        width: 96%;
+        margin: 15px auto;
         text-align: center;
-        // background-color: rgba(140, 10, 101, 0.329);
+        //background-color: rgba(140, 10, 101, 0.329);
 }
     .progressStatusBar > div {
         width:38%;
@@ -175,11 +152,11 @@
     }
     .progressStatusBar > div > span {
         color:#9FA2B4;
-        font-size:1.8rem;
+        font-size:1.9rem;
 
     }
     .progressStatusBar > div > div {
-        height: 30px;
+        height: 25px;
         border-radius: 8px;
         border: 1px solid #d0d0d3;
         background-color: rgb(213, 228, 228);
@@ -189,9 +166,70 @@
     }
 }
 @media screen and (min-width:1024px) {
+    .btnOpenMenu {
+        display: none;
+    }
     .dash__container {
         background-color:pink;
-        // margin-left: 270px;
-        // margin-top: 50px;
+        padding-left: 275px;
+        //height: 100vh;
+
+    }
+    .blackboard {
+        width: 98%;
+        margin: 0 auto;
+        //flex-direction:column;
+        //overflow-x: scroll;
+        overflow-x: hidden;
+        // scroll-behavior: contain;
+        // scroll-snap-type: x proximity;
+    }
+    .userInfo {
+        margin: 0 13px;
+        display: flex;
+        flex-direction: column;
+    }
+    .userInfo  h1 {
+        //background-color: lightblue;
+        text-align: initial;
+        width: 100%;
+        margin-bottom: 12px;
+        //padding-right: 10px;
+
+    }
+    .userInfo__propertyLink {
+        display: block;
+        display: flex;
+        //flex-direction: column;
+        justify-content: flex-end;
+        //align-items: flex-end;
+        //width: 60%;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: rgba(108, 109, 112, 1);
+        //background-color: rgba(0, 0, 0, 0.315);;
+    }
+    .userInfo__propertyLink p {
+        //display: inline-block;
+        //margin-right: 5%;
+        //background-color: magenta;
+
+
+    }
+    .userInfo__propertyLink div {
+        //background-color: khaki;
+        width: 72px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 6px;
+    }
+    .userInfo__propertyLink div img{
+        width: 13.7px;
+        height: 15.44px;
+    }
+    .progressStatusBar {
+        width: 100%;
+        //background-color: mediumblue;
     }
 }

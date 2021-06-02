@@ -23,8 +23,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 * Import all the views
 */
 var currentProgress = 'En Promoción';
-var userName = ' name';
-var linkPropertyPublication = 'http://localhost:5000/#/dashboard';
+var userName = ' martin ricardo';
+var linkPropertyPublication = 'http://localhost:5000/#/dashboard//localhost:5000/#/dashboard';
 var menu = (0, _menu["default"])(); // ojo con este no se si sea correcto ponerlo fuera de mi funcion
 
 /*
@@ -45,13 +45,14 @@ var _default = function _default() {
   var dash = document.createElement('div');
   var container = document.createElement('div');
   dash.setAttribute('class', 'dashboard');
-  container.setAttribute('class', 'dash__container'); // button oppen/close menu
+  container.setAttribute('class', 'dash__container'); // button open menu
 
-  var btnOpenMenu = document.createElement('button');
+  var btnOpenMenu = document.createElement('img');
   btnOpenMenu.setAttribute('class', 'btnOpenMenu');
+  btnOpenMenu.setAttribute('src', '../assets/menu-icons/burger_menu.svg');
   /*
   * main divisors *
-  - progressStatusBar and btnsChangeViewsToCell elements only in cell
+  - progressStatusBarCell and btnsChangeViewsToCell elements only in cell
   */
 
   var userInfo = document.createElement('div');
@@ -67,17 +68,22 @@ var _default = function _default() {
   btnsChangeViewsToCell.setAttribute('class', 'btnsChangeViewsToCell');
   /*
   * userInfo children *
-  - share link only in desktop
+  - propertyLink share link only in desktop
   */
-  // welcome name
 
   var welcome = document.createElement('h1');
+  var propertyLink = document.createElement('div');
+  propertyLink.setAttribute('class', 'userInfo__propertyLink'); // welcome name child
+
   var span = document.createElement('span');
   welcome.innerText = 'Bienvenido';
-  span.innerText = "".concat(userName); // share link
+  span.innerText = "".concat(userName); // propertyLink share link children
 
-  var propertyLink = document.createElement('div');
-  propertyLink.innerHTML = "Link de mi Propiedad: ".concat(linkPropertyPublication);
+  var link = document.createElement('p');
+  link.innerHTML = "Link de mi Propiedad: ".concat(linkPropertyPublication);
+  var networkIcons = document.createElement('div'); // networkIcons children
+
+  link.innerHTML = "Link de mi Propiedad: ".concat(linkPropertyPublication);
   var iconWhats = document.createElement('img');
   var iconFace = document.createElement('img');
   var iconShare = document.createElement('img');
@@ -132,7 +138,7 @@ var _default = function _default() {
   */
 
   dash.appendChild(container);
-  dash.appendChild(menu); // button
+  dash.appendChild(menu); // button open menu
 
   container.appendChild(btnOpenMenu); //  main div
 
@@ -146,9 +152,12 @@ var _default = function _default() {
   userInfo.appendChild(propertyLink); //  userInfo welcome name / share link children
 
   welcome.appendChild(span);
-  propertyLink.appendChild(iconWhats);
-  propertyLink.appendChild(iconFace);
-  propertyLink.appendChild(iconShare); // progressStatusBar children
+  propertyLink.appendChild(link);
+  propertyLink.appendChild(networkIcons); // networkIcons children
+
+  networkIcons.appendChild(iconWhats);
+  networkIcons.appendChild(iconFace);
+  networkIcons.appendChild(iconShare); // progressStatusBar children
 
   progressStatusBar.appendChild(block1);
   progressStatusBar.appendChild(block2);
@@ -229,8 +238,9 @@ var _default = function _default() {
   btnNextProgressView.addEventListener('click', traversesProgressArrayForward);
   btnPreviousProgressView.addEventListener('click', traversesProgressArrayBackwards);
   btnOpenMenu.addEventListener('click', function () {
-    return menu.classList.remove('is__active');
-  });
+    menu.classList.add('is__active');
+  }); // class inside styles.scss
+
   return dash;
 }; // function openView(e) {
 //   const progress = e.target.dataset.progress;

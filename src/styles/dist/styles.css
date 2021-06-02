@@ -157,148 +157,169 @@
 .menu {
   position: relative;
   position: fixed;
-  top: calc(100vh - 80px);
   z-index: 100;
+  height: 109px;
   width: 100%;
-  min-width: 320px;
-  max-width: 400px;
-  height: 80px;
+  top: calc(100vh - 109px);
   background-color: #231f20;
 }
-
-.menu__container {
+.menu .menu__container {
+  display: flex;
   flex-direction: column-reverse;
   height: inherit;
-  display: flex;
 }
-.menu__container .logoTz__container {
+.menu .menu__container .btnCloseMenu {
   display: none;
 }
-.menu__container .letterLogo__container {
+.menu .menu__container .logoTz {
+  display: none;
+}
+.menu .menu__container .letterLogo {
   display: flex;
-  flex-direction: row;
   align-self: center;
-  max-width: 110px;
-  height: 70%;
+  position: relative;
+  overflow: hidden;
+  width: 137px;
+  height: 50%;
 }
-.menu__container .letterLogo__container .letterLogo__logo {
+.menu .menu__container .letterLogo .letterLogo__img {
+  position: absolute;
+  bottom: -20px;
   width: 100%;
-  height: 100%;
+  height: 150%;
 }
-.menu__container .nav__container {
+.menu .menu__container .nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   width: 100%;
-  height: 30%;
-  margin-bottom: 10px;
+  height: 50%;
 }
-.menu__container .nav__container .nav__group1 > a, .menu__container .nav__container .nav__group2 > a, .menu__container .nav__container .nav__group3 > a, .menu__container .nav__container .nav__group4 > a {
+.menu .menu__container .nav li {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  font-family: "Mulish", sans-serif;
+  font-size: 1.6rem;
+  font-weight: lighter;
+  letter-spacing: 0.2px;
+  color: #DDE2FF;
+  padding-bottom: 3%;
+}
+.menu .menu__container .nav li img {
+  width: 16px;
+}
+.menu .menu__container .nav li a {
   display: none;
+}
+.menu .menu__container .nav .nav__li1 {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  background: rgba(221, 226, 255, 0.205);
+}
+.menu .menu__container .nav .nav__li1 a {
+  display: block;
+}
+.menu .menu__container .nav .nav__li1 img {
+  margin-right: 4%;
 }
 
-@media screen and (min-width: 400px) {
+/*
+* since 499px the menu must be vertical
+*/
+@media screen and (min-width: 499px) {
   .menu {
     top: 0;
-    left: 0;
-    width: 250px;
+    left: -275px;
+    width: 275px;
     height: 100vh;
     padding-top: 2%;
     transition-duration: 1s;
   }
-
-  .menu__container {
+  .menu .menu__container {
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding: 42px 0;
   }
-  .menu__container .menu__btn {
-    right: 0;
+  .menu .menu__container .btnCloseMenu {
+    display: block;
     position: absolute;
-    top: 15px;
-    z-index: 100;
-    width: 50px;
-    height: 50px;
-    background: transparent;
-    border-style: none;
+    top: 4%;
+    right: 8%;
+    width: 15px;
   }
-  .menu__container .menu__btn-icon {
-    display: none;
-  }
-  .menu__container .menu__btn:hover .menu__btn-icon {
+  .menu .menu__container .logoTz {
     display: block;
-    background-color: rgba(255, 255, 255, 0.201);
-    width: 30px;
-    transition: 1s ease-in-out;
+    height: 120px;
+    width: 120px;
+    align-self: center;
+    margin-bottom: 14px;
   }
-  .menu__container .logoTz__container {
-    display: block;
-    display: flex;
-    justify-content: center;
-    height: 17%;
-  }
-  .menu__container .logoTz__container .logoTz__logo {
-    width: auto;
+  .menu .menu__container .logoTz .logoTz__img {
+    width: 100%;
     height: 100%;
   }
-  .menu__container .nav__container {
+  .menu .menu__container .nav {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: start;
-    height: 45%;
-    padding-top: 4%;
+    justify-content: space-between;
+    width: 100%;
+    height: 270px;
+    margin-bottom: 85px;
   }
-  .menu__container .nav__container .nav__group1, .menu__container .nav__container .nav__group2, .menu__container .nav__container .nav__group3, .menu__container .nav__container .nav__group4 {
+  .menu .menu__container .nav li:hover {
+    background: rgba(221, 226, 255, 0.205);
+  }
+  .menu .menu__container .nav li {
+    width: inherit;
+    height: 59px;
+    justify-content: start;
+    align-items: center;
+    padding-left: 35px;
+  }
+  .menu .menu__container .nav li img {
+    margin-right: 6%;
+  }
+  .menu .menu__container .nav li .nav__li1 img {
+    margin-right: 6%;
+  }
+  .menu .menu__container .nav li a {
+    display: block;
+  }
+  .menu .menu__container .nav .nav__li1 {
+    width: 100%;
     display: flex;
     align-items: center;
-    height: 20%;
-    width: inherit;
-    padding-left: 7%;
-    margin-bottom: 1px;
+    background: rgba(221, 226, 255, 0.205);
   }
-  .menu__container .nav__container .nav__group1 > a, .menu__container .nav__container .nav__group2 > a, .menu__container .nav__container .nav__group3 > a, .menu__container .nav__container .nav__group4 > a {
-    display: inline-block;
-    color: rgba(255, 255, 255, 0.653);
-    font-family: sans-serif;
-    font-weight: lighter;
-  }
-  .menu__container .nav__container .nav_icon {
-    margin-right: 12px;
-  }
-  .menu__container .letterLogo__container {
-    height: 15%;
-    max-width: 180px;
-    margin: 20% 0;
+  .menu .menu__container .letterLogo {
+    width: 163px;
+    height: 87px;
   }
 }
+/*
+* .userInfo > div(share link)only desktop
+*/
+.userInfo > div {
+  display: none;
+}
+
+/*
+* .progressStatusBar since tablet 
+*/
+.progressStatusBar {
+  display: none;
+}
+
 .dashboard {
-  background-color: #E5E5E5;
   width: 100vw;
   min-width: 290px;
-}
-
-.btnNext, .btnPrevious {
-  position: absolute;
-  top: 300px;
-  background-color: darksalmon;
-  height: 30px;
-  width: 30px;
-}
-
-.btnNext {
-  left: 30px;
-}
-
-.btnPrevious {
-  right: 30px;
+  padding-bottom: 100px;
+  background-color: #E5E5E5;
 }
 
 .btnOpenMenu {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  top: 0;
-  right: 0;
   display: none;
 }
 
@@ -306,14 +327,14 @@
   width: 100vw;
   min-width: 290px;
   padding-top: 50px;
-  height: 100vh;
+  height: auto;
 }
 
-.welcome {
+.userInfo {
   display: flex;
 }
 
-.welcome h1 {
+.userInfo h1 {
   width: 80%;
   margin: 0 auto;
   font-family: "Mulish", sans-serif;
@@ -323,11 +344,21 @@
   color: #252733;
 }
 
-.welcome > div {
-  display: none;
+.blackboard {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  border: 1px solid #d0d0d3;
+  border-radius: 0.5rem;
+  overflow-x: scroll;
+  scroll-behavior: contain;
+  scroll-snap-type: x proximity;
+  background-color: #FFFFFF;
 }
 
-.statusbar {
+.progressStatusBarCell {
   width: 90%;
   max-width: 450px;
   height: 23px;
@@ -337,7 +368,7 @@
   border: 1px solid #d0d0d3;
 }
 
-.statusbar__blockPhone {
+.progressStatusBarCell__status {
   height: 21px;
   width: 70%;
   margin: 0 15%;
@@ -353,22 +384,111 @@
   background-color: #f3ceca;
 }
 
-.statusbar > div {
-  display: none;
-}
-
-.blackboard {
-  margin: 0 3%;
-  border-radius: 0.5rem;
-  background-color: #FFFFFF;
-  border: 1px solid #d0d0d3;
-  width: 95%;
+.btnsChangeViewsToCell {
+  position: relative;
+  top: -3px;
   display: flex;
-  flex-direction: row;
-  overflow: hidden;
-  overflow-x: scroll;
+  justify-content: space-between;
+  background: #FFFFFF;
+  border-bottom: 1px solid #d0d0d3;
 }
 
+.btnsChangeViewsToCell button {
+  height: 28px;
+  width: 115px;
+  padding: 20px;
+  border: none;
+  border-radius: 1px;
+  background-color: #CAB98E;
+}
+
+@media screen and (min-width: 499px) {
+  .btnOpenMenu {
+    display: block;
+    position: absolute;
+    top: 33px;
+    left: 20px;
+    width: 50px;
+  }
+
+  .dash__container {
+    background-color: salmon;
+  }
+
+  .dashboard {
+    padding-bottom: 50px;
+  }
+}
+@media screen and (min-width: 767px) {
+  .dash__container {
+    background-color: rgba(231, 216, 227, 0.87);
+  }
+
+  .blackboard {
+    width: 95%;
+  }
+
+  .userInfo h1 {
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  .progressStatusBarCell {
+    display: none;
+  }
+
+  .progressStatusBar {
+    display: block;
+    display: flex;
+    flex-direction: row;
+    width: 98%;
+    max-width: 900px;
+    margin: 40px auto 30px auto;
+    text-align: center;
+  }
+
+  .progressStatusBar > div {
+    width: 38%;
+    position: relative;
+    z-index: 100;
+  }
+
+  .progressStatusBar div:nth-child(4) {
+    width: 15%;
+    left: -13px;
+  }
+
+  .progressStatusBar div:nth-child(2) {
+    right: -10px;
+    z-index: 2;
+  }
+
+  .progressStatusBar div:nth-child(1) {
+    right: -18px;
+    z-index: 1;
+  }
+
+  .progressStatusBar > div > span {
+    color: #9FA2B4;
+    font-size: 1.8rem;
+  }
+
+  .progressStatusBar > div > div {
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid #d0d0d3;
+    background-color: #d5e4e4;
+  }
+
+  .btnsChangeViewsToCell {
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .dash__container {
+    background-color: pink;
+  }
+}
 .preparation__container {
   padding: 40px 5%;
   height: auto;
@@ -376,7 +496,10 @@
   font-size: 1.8rem;
   line-height: 4rem;
   text-align: justify;
-  width: 90%;
+  position: relative;
+  min-width: 300px;
+  background-color: #cae25c;
+  scroll-snap-align: center;
 }
 
 .preparation__image img {
@@ -396,33 +519,56 @@
   padding: 0 18px;
 }
 
-.promo__container {
-  padding: 40px 1rem;
+.promoContainer {
+  position: relative;
+  padding: 60px 5rem;
   height: auto;
-  margin-bottom: 100px;
+  min-width: 300px;
   font-size: 1.8rem;
-  line-height: 4rem;
-  text-align: justify;
-  width: 90%;
+  line-height: 4.4rem;
+  scroll-snap-align: center;
 }
 
-.promo__image img {
+.promoDescription {
+  display: flex;
+  flex-direction: column;
+}
+
+.promoImage {
+  max-width: 500px;
+  margin: auto;
+}
+
+.promoImage img {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
-.promo__description h2 {
-  text-align: center;
+.promoDescription h2 {
   margin: 30px 0;
+  font-size: 3.8rem;
+  font-weight: bold;
+  color: black;
+}
+
+li {
   font-weight: bold;
 }
 
-.promo__description {
-  display: flex;
-  flex-direction: column;
-  padding: 0 18px;
+li span {
+  font-weight: 400;
 }
 
+@media screen and (min-width: 499px) {
+  .promoContainer {
+    padding: 80px 4rem;
+  }
+}
+@media screen and (min-width: 767px) {
+  .promoContainer {
+    padding: 80px 9rem;
+  }
+}
 .tramite__container {
   padding: 40px 1rem;
   height: auto;
@@ -430,7 +576,10 @@
   font-size: 1.8rem;
   line-height: 4rem;
   text-align: justify;
-  width: 90%;
+  position: relative;
+  min-width: 300px;
+  background-color: #5cb8e2;
+  scroll-snap-align: center;
 }
 
 .tramite__image img {
@@ -457,8 +606,10 @@
   font-size: 1.8rem;
   line-height: 4rem;
   text-align: justify;
-  width: 90%;
-  margin: 0 auto;
+  position: relative;
+  min-width: 300px;
+  background-color: #e25ccc;
+  scroll-snap-align: center;
 }
 
 .escritura__image img {
@@ -494,6 +645,6 @@ body {
 }
 
 .is__active {
-  left: -250px;
+  left: 0;
   transition-duration: 1s;
 }

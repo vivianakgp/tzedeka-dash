@@ -26,8 +26,8 @@ var _default = function _default() {
   var promoView = document.createElement('section');
   promoView.setAttribute('class', 'promoContainer'); // main elements
 
-  var descriptionDiv = document.createElement('div');
   var imageDiv = document.createElement('div');
+  var descriptionDiv = document.createElement('div');
   descriptionDiv.setAttribute('class', 'promoDescription');
   imageDiv.setAttribute('class', 'promoImage'); // main elements children
 

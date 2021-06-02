@@ -9,8 +9,8 @@ import tramiteView from './components-dash/views-dash/tramite.js';
 import escrituraView from './components-dash/views-dash/escritura.js';
 
 const currentProgress = 'En Promoción';
-const userName = ' name';
-const linkPropertyPublication = 'http://localhost:5000/#/dashboard';
+const userName = ' martin ricardo';
+const linkPropertyPublication = 'http://localhost:5000/#/dashboard//localhost:5000/#/dashboard';
 const menu = Menu();// ojo con este no se si sea correcto ponerlo fuera de mi funcion
 /*
  * create an array of progress views
@@ -21,7 +21,6 @@ const tramite = tramiteView();
 const escritura = escrituraView();
 const progressViews = [preparacion, promocion, tramite, escritura];
 let Counter = 0;
-
 export default () => {
   /*
   * creating elements html *
@@ -30,12 +29,13 @@ export default () => {
   const container = document.createElement('div');
   dash.setAttribute('class', 'dashboard');
   container.setAttribute('class', 'dash__container');
-  // button oppen/close menu
-  const btnOpenMenu = document.createElement('button');
+  // button open menu
+  const btnOpenMenu = document.createElement('img');
   btnOpenMenu.setAttribute('class', 'btnOpenMenu');
+  btnOpenMenu.setAttribute('src', '../assets/menu-icons/burger_menu.svg');
   /*
   * main divisors *
-  - progressStatusBar and btnsChangeViewsToCell elements only in cell
+  - progressStatusBarCell and btnsChangeViewsToCell elements only in cell
   */
   const userInfo = document.createElement('div');
   const progressStatusBar = document.createElement('div');
@@ -50,16 +50,21 @@ export default () => {
   btnsChangeViewsToCell.setAttribute('class', 'btnsChangeViewsToCell');
   /*
   * userInfo children *
-  - share link only in desktop
+  - propertyLink share link only in desktop
   */
-  // welcome name
   const welcome = document.createElement('h1');
+  const propertyLink = document.createElement('div');
+  propertyLink.setAttribute('class', 'userInfo__propertyLink');
+  // welcome name child
   const span = document.createElement('span');
   welcome.innerText = 'Bienvenido';
   span.innerText = `${userName}`;
-  // share link
-  const propertyLink = document.createElement('div');
-  propertyLink.innerHTML = `Link de mi Propiedad: ${linkPropertyPublication}`;
+  // propertyLink share link children
+  const link = document.createElement('p');
+  link.innerHTML = `Link de mi Propiedad: ${linkPropertyPublication}`;
+  const networkIcons = document.createElement('div');
+  // networkIcons children
+  link.innerHTML = `Link de mi Propiedad: ${linkPropertyPublication}`;
   const iconWhats = document.createElement('img');
   const iconFace = document.createElement('img');
   const iconShare = document.createElement('img');
@@ -112,7 +117,7 @@ export default () => {
   */
   dash.appendChild(container);
   dash.appendChild(menu);
-  // button
+  // button open menu
   container.appendChild(btnOpenMenu);
   //  main div
   container.appendChild(userInfo);
@@ -125,9 +130,12 @@ export default () => {
   userInfo.appendChild(propertyLink);
   //  userInfo welcome name / share link children
   welcome.appendChild(span);
-  propertyLink.appendChild(iconWhats);
-  propertyLink.appendChild(iconFace);
-  propertyLink.appendChild(iconShare);
+  propertyLink.appendChild(link);
+  propertyLink.appendChild(networkIcons);
+  // networkIcons children
+  networkIcons.appendChild(iconWhats);
+  networkIcons.appendChild(iconFace);
+  networkIcons.appendChild(iconShare);
   // progressStatusBar children
   progressStatusBar.appendChild(block1);
   progressStatusBar.appendChild(block2);
@@ -199,7 +207,9 @@ export default () => {
 
   btnNextProgressView.addEventListener('click', traversesProgressArrayForward);
   btnPreviousProgressView.addEventListener('click', traversesProgressArrayBackwards);
-  btnOpenMenu.addEventListener('click', () => menu.classList.remove('is__active'));
+  btnOpenMenu.addEventListener('click', () => {
+    menu.classList.add('is__active');
+  }); // class inside styles.scss
 
   return dash;
 };

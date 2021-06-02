@@ -17,8 +17,8 @@ export default () => {
   const promoView = document.createElement('section');
   promoView.setAttribute('class', 'promoContainer');
   // main elements
-  const descriptionDiv = document.createElement('div');
   const imageDiv = document.createElement('div');
+  const descriptionDiv = document.createElement('div');
   descriptionDiv.setAttribute('class', 'promoDescription');
   imageDiv.setAttribute('class', 'promoImage');
   // main elements children

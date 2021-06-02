@@ -160,162 +160,163 @@
   z-index: 100;
   height: 109px;
   width: 100%;
-  min-width: 320px;
-  max-width: 400px;
   top: calc(100vh - 109px);
   background-color: #231f20;
 }
-
-.container {
+.menu .menu__container {
+  display: flex;
   flex-direction: column-reverse;
   height: inherit;
-  display: flex;
 }
-.container .logoTz {
+.menu .menu__container .btnCloseMenu {
   display: none;
 }
-.container .letterLogo {
+.menu .menu__container .logoTz {
+  display: none;
+}
+.menu .menu__container .letterLogo {
   display: flex;
-  flex-direction: row;
   align-self: center;
-  max-width: 110px;
-  height: 70%;
+  position: relative;
+  overflow: hidden;
+  width: 137px;
+  height: 50%;
 }
-.container .letterLogo .letterLogo__img {
+.menu .menu__container .letterLogo .letterLogo__img {
+  position: absolute;
+  bottom: -20px;
   width: 100%;
-  height: 100%;
+  height: 150%;
 }
-.container .nav {
+.menu .menu__container .nav {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 30%;
-  margin-bottom: 10px;
+  height: 50%;
 }
-.container .nav li {
+.menu .menu__container .nav li {
   display: flex;
-  width: 20%;
-  background-color: lightcyan;
-  font-size: 1rem;
+  justify-content: center;
+  width: 30%;
+  font-family: "Mulish", sans-serif;
+  font-size: 1.6rem;
+  font-weight: lighter;
+  letter-spacing: 0.2px;
+  color: #DDE2FF;
+  padding-bottom: 3%;
 }
-.container .nav li img {
-  width: 10px;
+.menu .menu__container .nav li img {
+  width: 16px;
 }
-.container .nav li a {
+.menu .menu__container .nav li a {
   display: none;
 }
-.container .nav .nav__li1 {
-  width: 38%;
-  background-color: yellowgreen;
+.menu .menu__container .nav .nav__li1 {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  background: rgba(221, 226, 255, 0.205);
 }
-.container .nav .nav__li1 a {
+.menu .menu__container .nav .nav__li1 a {
   display: block;
+}
+.menu .menu__container .nav .nav__li1 img {
+  margin-right: 4%;
 }
 
 /*
-*a partir de los 400px el menu debe de ser vertical
+* since 499px the menu must be vertical
 */
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 499px) {
   .menu {
     top: 0;
-    left: 0;
-    width: 250px;
+    left: -275px;
+    width: 275px;
     height: 100vh;
     padding-top: 2%;
     transition-duration: 1s;
   }
-
-  .container {
+  .menu .menu__container {
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding: 42px 0;
   }
-
-  .menu__btn {
-    right: 0;
+  .menu .menu__container .btnCloseMenu {
+    display: block;
     position: absolute;
-    top: 15px;
-    z-index: 100;
-    width: 50px;
-    height: 50px;
-    background: transparent;
-    border-style: none;
+    top: 4%;
+    right: 8%;
+    width: 15px;
   }
-
-  .menu__btn-icon {
-    display: none;
-  }
-
-  .menu__btn:hover .menu__btn-icon {
+  .menu .menu__container .logoTz {
     display: block;
-    background-color: rgba(255, 255, 255, 0.201);
-    width: 30px;
-    transition: 1s ease-in-out;
+    height: 120px;
+    width: 120px;
+    align-self: center;
+    margin-bottom: 14px;
   }
-
-  .logoTz {
-    display: block;
-    display: flex;
-    justify-content: center;
-    height: 17%;
-  }
-  .logoTz logoTz__img {
-    width: auto;
+  .menu .menu__container .logoTz .logoTz__img {
+    width: 100%;
     height: 100%;
   }
-
-  .nav {
+  .menu .menu__container .nav {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: start;
-    height: 45%;
-    padding-top: 4%;
-    background-color: rgba(173, 216, 230, 0.448);
+    justify-content: space-between;
+    width: 100%;
+    height: 270px;
+    margin-bottom: 85px;
   }
-  .nav .nav__li {
+  .menu .menu__container .nav li:hover {
+    background: rgba(221, 226, 255, 0.205);
+  }
+  .menu .menu__container .nav li {
+    width: inherit;
+    height: 59px;
+    justify-content: start;
+    align-items: center;
+    padding-left: 35px;
+  }
+  .menu .menu__container .nav li img {
+    margin-right: 6%;
+  }
+  .menu .menu__container .nav li .nav__li1 img {
+    margin-right: 6%;
+  }
+  .menu .menu__container .nav li a {
+    display: block;
+  }
+  .menu .menu__container .nav .nav__li1 {
+    width: 100%;
     display: flex;
     align-items: center;
-    height: 20%;
-    width: inherit;
-    padding-left: 7%;
-    margin-bottom: 1px;
+    background: rgba(221, 226, 255, 0.205);
   }
-  .nav .nav__li > a {
-    display: inline-block;
-    color: rgba(255, 255, 255, 0.653);
-    font-family: sans-serif;
-    font-weight: lighter;
+  .menu .menu__container .letterLogo {
+    width: 163px;
+    height: 87px;
   }
-  .nav .nav_icon {
-    margin-right: 12px;
+}
+@media screen and (min-width: 1024px) {
+  .menu {
+    left: 0;
   }
-
-  .letterLogo {
-    height: 15%;
-    max-width: 180px;
-    margin: 20% 0;
+  .menu .menu__container .btnCloseMenu {
+    display: none;
   }
 }
 /*
-* .userInfo > div(share link)only desktop
-*/
-.userInfo > div {
-  display: none;
-}
-
-/*
-* .progressStatusBar since tablet 
+* .progressStatusBar since tablet
 */
 .progressStatusBar {
   display: none;
 }
 
-.btnOpenMenu {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  top: 0;
-  right: 0;
+/*
+* .userInfo > div  share link only desktop
+*/
+.userInfo__propertyLink {
   display: none;
 }
 
@@ -324,11 +325,17 @@
   min-width: 290px;
   padding-bottom: 100px;
   background-color: #E5E5E5;
+  height: 100vh;
+}
+
+.btnOpenMenu {
+  display: none;
 }
 
 .dash__container {
   width: 100vw;
   min-width: 290px;
+  max-width: 1500px;
   padding-top: 50px;
   height: auto;
 }
@@ -348,16 +355,9 @@
 }
 
 .blackboard {
-  display: flex;
-  flex-direction: column-reverse;
   width: 100%;
-  max-width: 900px;
-  margin: auto;
   border: 1px solid #d0d0d3;
   border-radius: 0.5rem;
-  overflow-x: scroll;
-  scroll-behavior: contain;
-  scroll-snap-type: x proximity;
   background-color: #FFFFFF;
 }
 
@@ -406,12 +406,21 @@
 }
 
 @media screen and (min-width: 499px) {
-  .dash__container {
-    background-color: salmon;
+  .btnOpenMenu {
+    display: block;
+    position: absolute;
+    top: 33px;
+    left: 20px;
+    width: 50px;
   }
 
-  .dashboard {
-    padding-bottom: 50px;
+  .dash__container {
+    background-color: salmon;
+    padding-bottom: 70px;
+  }
+
+  .userInfo h1 {
+    text-align: center;
   }
 }
 @media screen and (min-width: 767px) {
@@ -420,12 +429,8 @@
   }
 
   .blackboard {
-    width: 95%;
-  }
-
-  .userInfo h1 {
-    text-align: center;
-    font-size: 3rem;
+    width: 93%;
+    margin: 0 auto;
   }
 
   .progressStatusBarCell {
@@ -436,9 +441,8 @@
     display: block;
     display: flex;
     flex-direction: row;
-    width: 98%;
-    max-width: 900px;
-    margin: 40px auto 30px auto;
+    width: 96%;
+    margin: 15px auto;
     text-align: center;
   }
 
@@ -465,11 +469,11 @@
 
   .progressStatusBar > div > span {
     color: #9FA2B4;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
 
   .progressStatusBar > div > div {
-    height: 30px;
+    height: 25px;
     border-radius: 8px;
     border: 1px solid #d0d0d3;
     background-color: #d5e4e4;
@@ -480,8 +484,57 @@
   }
 }
 @media screen and (min-width: 1024px) {
+  .btnOpenMenu {
+    display: none;
+  }
+
   .dash__container {
     background-color: pink;
+    padding-left: 275px;
+  }
+
+  .blackboard {
+    width: 98%;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+
+  .userInfo {
+    margin: 0 13px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .userInfo h1 {
+    text-align: initial;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .userInfo__propertyLink {
+    display: block;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #6c6d70;
+  }
+
+  .userInfo__propertyLink div {
+    width: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 6px;
+  }
+
+  .userInfo__propertyLink div img {
+    width: 13.7px;
+    height: 15.44px;
+  }
+
+  .progressStatusBar {
+    width: 100%;
   }
 }
 .preparation__container {
@@ -521,7 +574,6 @@
   min-width: 300px;
   font-size: 1.8rem;
   line-height: 4.4rem;
-  scroll-snap-align: center;
 }
 
 .promoDescription {
@@ -541,7 +593,7 @@
 
 .promoDescription h2 {
   margin: 30px 0;
-  font-size: 3.8rem;
+  font-size: 3.6rem;
   font-weight: bold;
   color: black;
 }
@@ -562,6 +614,32 @@ li span {
 @media screen and (min-width: 767px) {
   .promoContainer {
     padding: 80px 9rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .promoContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0 0;
+    padding: 3rem 0 4.5rem 3rem;
+  }
+
+  .promoDescription {
+    width: 50%;
+  }
+
+  .promoImage {
+    margin: auto 0;
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .promoDescription {
+    width: 60%;
+  }
+
+  .promoImage {
+    width: 40%;
   }
 }
 .tramite__container {
@@ -640,7 +718,7 @@ body {
 }
 
 .is__active {
-  left: -250px;
+  left: 0;
   transition-duration: 1s;
 }
 
