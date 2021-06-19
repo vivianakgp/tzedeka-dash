@@ -298,17 +298,25 @@
     height: 87px;
   }
 }
+@media screen and (min-width: 1024px) {
+  .menu {
+    left: 0;
+  }
+  .menu .menu__container .btnCloseMenu {
+    display: none;
+  }
+}
 /*
-* .userInfo > div(share link)only desktop
+* .progressStatusBar since tablet
 */
-.userInfo > div {
+.progressStatusBar {
   display: none;
 }
 
 /*
-* .progressStatusBar since tablet 
+* .userInfo > div  share link only desktop
 */
-.progressStatusBar {
+.userInfo__propertyLink {
   display: none;
 }
 
@@ -317,6 +325,7 @@
   min-width: 290px;
   padding-bottom: 100px;
   background-color: #E5E5E5;
+  height: 100vh;
 }
 
 .btnOpenMenu {
@@ -326,6 +335,7 @@
 .dash__container {
   width: 100vw;
   min-width: 290px;
+  max-width: 1500px;
   padding-top: 50px;
   height: auto;
 }
@@ -345,16 +355,9 @@
 }
 
 .blackboard {
-  display: flex;
-  flex-direction: column-reverse;
   width: 100%;
-  max-width: 900px;
-  margin: auto;
   border: 1px solid #d0d0d3;
   border-radius: 0.5rem;
-  overflow-x: scroll;
-  scroll-behavior: contain;
-  scroll-snap-type: x proximity;
   background-color: #FFFFFF;
 }
 
@@ -413,10 +416,11 @@
 
   .dash__container {
     background-color: salmon;
+    padding-bottom: 70px;
   }
 
-  .dashboard {
-    padding-bottom: 50px;
+  .userInfo h1 {
+    text-align: center;
   }
 }
 @media screen and (min-width: 767px) {
@@ -425,12 +429,8 @@
   }
 
   .blackboard {
-    width: 95%;
-  }
-
-  .userInfo h1 {
-    text-align: center;
-    font-size: 3rem;
+    width: 93%;
+    margin: 0 auto;
   }
 
   .progressStatusBarCell {
@@ -441,9 +441,8 @@
     display: block;
     display: flex;
     flex-direction: row;
-    width: 98%;
-    max-width: 900px;
-    margin: 40px auto 30px auto;
+    width: 96%;
+    margin: 15px auto;
     text-align: center;
   }
 
@@ -470,11 +469,11 @@
 
   .progressStatusBar > div > span {
     color: #9FA2B4;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
 
   .progressStatusBar > div > div {
-    height: 30px;
+    height: 25px;
     border-radius: 8px;
     border: 1px solid #d0d0d3;
     background-color: #d5e4e4;
@@ -485,8 +484,57 @@
   }
 }
 @media screen and (min-width: 1024px) {
+  .btnOpenMenu {
+    display: none;
+  }
+
   .dash__container {
     background-color: pink;
+    padding-left: 275px;
+  }
+
+  .blackboard {
+    width: 98%;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+
+  .userInfo {
+    margin: 0 13px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .userInfo h1 {
+    text-align: initial;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .userInfo__propertyLink {
+    display: block;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #6c6d70;
+  }
+
+  .userInfo__propertyLink div {
+    width: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 6px;
+  }
+
+  .userInfo__propertyLink div img {
+    width: 13.7px;
+    height: 15.44px;
+  }
+
+  .progressStatusBar {
+    width: 100%;
   }
 }
 .preparation__container {
@@ -526,7 +574,6 @@
   min-width: 300px;
   font-size: 1.8rem;
   line-height: 4.4rem;
-  scroll-snap-align: center;
 }
 
 .promoDescription {
@@ -546,7 +593,7 @@
 
 .promoDescription h2 {
   margin: 30px 0;
-  font-size: 3.8rem;
+  font-size: 2.4rem;
   font-weight: bold;
   color: black;
 }
@@ -567,6 +614,36 @@ li span {
 @media screen and (min-width: 767px) {
   .promoContainer {
     padding: 80px 9rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .promoContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0 0;
+    padding: 3rem 0 4.5rem 3rem;
+  }
+
+  .promoDescription h2 {
+    font-size: 3.6rem;
+  }
+
+  .promoDescription {
+    width: 50%;
+  }
+
+  .promoImage {
+    margin: auto 0;
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .promoDescription {
+    width: 60%;
+  }
+
+  .promoImage {
+    width: 40%;
   }
 }
 .tramite__container {
@@ -629,6 +706,10 @@ li span {
   padding: 0 18px;
 }
 
+/*
+* font to html all document: font-family: 'Lato', sans-serif;
+* font to headlines and menu: font-family: 'Mulish', sans-serif;
+*/
 * {
   box-sizing: border-box;
   padding: 0;

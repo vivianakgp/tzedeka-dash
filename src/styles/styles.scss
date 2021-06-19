@@ -6,7 +6,10 @@
 @import './pages/components-dash/views-dash/tramite.scss';
 @import './pages/components-dash/views-dash/escritura.scss';
 
-
+/*
+* font to html all document: font-family: 'Lato', sans-serif;
+* font to headlines and menu: font-family: 'Mulish', sans-serif;
+*/
 *{
     box-sizing: border-box;
     padding: 0;
@@ -25,4 +28,6 @@ body {
     left: 0;
     transition-duration:  1s;
 }
+
+
 

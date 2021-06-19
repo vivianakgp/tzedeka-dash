@@ -1,29 +1,76 @@
-.tramite__container{
-    padding: 40px  1rem;
-    height: auto;
-    margin-bottom: 100px;
-    font-size: 1.8rem;
-    line-height: 4rem;
-    text-align: justify;
-
+.tramiteContainer {
     position: relative;
+    padding: 60px 5rem;
+    height: auto;
     min-width: 300px;
-    background-color: rgb(92, 184, 226);
-    scroll-snap-align: center;
-    // margin-right: 50%;
+    font-size: 1.8rem;
+    line-height: 4.4rem;
+    //scroll-snap-align: center;    //
+    //background-color: rgb(153, 211, 208);
 
 }
-.tramite__image img {
-    width: 100%;
-    height: 100%;
-}
-.tramite__description h2 {
-    text-align: center;
-    margin: 30px 0;
-    font-weight: bold;
-}
-.tramite__description {
+.tramiteDescription {
     display: flex;
     flex-direction: column;
-    padding: 0 18px;
 }
+.tramiteImage {
+    max-width: 500px;
+    margin:auto;
+}
+.tramiteImage img {
+    width: 100%;
+    height: auto;
+}
+.tramiteDescription h2 {
+    margin: 30px 0;
+    font-size: 2.4rem;
+    font-weight: bold;
+    color:black;
+}
+li {
+    font-weight: bold;
+}
+li span {
+    font-weight: 400;
+}
+@media screen and(min-width:499px) {
+    .tramiteContainer {
+        padding: 80px 4rem;
+    }
+}
+@media screen and(min-width:767px) {
+    .tramiteContainer {
+        padding: 80px 9rem;
+    }
+}
+@media screen and(min-width:1024px) {
+    .tramiteContainer  {
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 0 0;
+        padding: 3rem 0 4.5rem 3rem ;
+    }
+    .tramiteDescription h2 {
+        font-size: 3.6rem;
+    }
+    .tramiteDescription {
+        width: 50%;
+        //background-color: pink;
+    }
+    .tramiteImage {
+        // background-color: lightblue;
+        //max-width: 500px;
+        margin: auto 0;
+        width: 50%;
+    }
+
+}
+@media screen and(min-width:1200px) {
+    .tramiteDescription {
+        width: 60%;
+    }
+    .tramiteImage {
+        width: 40%;
+    }
+}
+

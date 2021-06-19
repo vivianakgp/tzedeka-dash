@@ -1,40 +1,67 @@
 export default () => {
   const Title = 'Preparación';
-  // mensage description
-  const point1 = `Nuestra página web: Nuestra carta estrella para tu propiedad, el mejor diseño y estrategias van dirigidas hacía aqui.`;
-  const point2 = `Portales inmobiliarios: Sitios como Inmuebles24 y vivanuncios reciben a miles de personas que buscan una nueva propiedad y la tuya estara entre las opciones que veran.`;
-  const point3 = `Redes sociales: Compartimos tu propiedad en diferentes redes sociales, creamos campañas y anuncios dirigidos.`;
-  const point4 = `Red de contacto e inmobiliarios: Presentamos a inmobiliaria y agentes tu propiedad como una opción para sus clientes.`;
+  /*
+  * message description *
+  */
+  const txtBold1 = 'Fotografía y video:  ';
+  const txtLight1 = 'Tomamos la multimedia necesaría para la promoción, edición y postproducción.';
+  const txtBold2 = 'Ficha de propiedad:  ';
+  const txtLight2 = 'Con la información y fotografías recabadas diseñamos una ficha con lo más importante.';
+  const txtBold3 = 'Carga de propiedad: ';
+  const txtLight3 = 'Subimos la ficha de propiedad a nuestra web tzedeka.com y sitios de busqueda inmobiliaria.';
+  const txtBold4 = 'Diseño de publicidad y material gráfico ';
   /*
   * creating elements html*
   */
   const preparationView = document.createElement('section');
-  preparationView.setAttribute('class', 'preparation__container');
-  // main elements 
+  preparationView.setAttribute('class', 'prepaContainer');
+  // main elements
+  const imageDiv = document.createElement('div');
   const descriptionDiv = document.createElement('div');
-  const image = document.createElement('div');
-  image.setAttribute('class', 'preparation__image');
-  descriptionDiv.setAttribute('class', 'preparation__description');
+  descriptionDiv.setAttribute('class', 'prepaDescription');
+  imageDiv.setAttribute('class', 'prepaImage');
   // main elements children
+  const img = document.createElement('img');
   const title = document.createElement('h2');
-  const paragraph = document.createElement('p');
-  const imgCasaEnVenta = document.createElement('img');
+  const description = document.createElement('ul');
+  img.setAttribute('src', '../assets/images/CasaEnVenta.png');
   title.innerText = Title;
-  //paragraph.innerText = preparationMsg;
-  imgCasaEnVenta.setAttribute('src', '../assets/images/CasaEnVenta.png');
-  // preparationView elements
-  preparationView.appendChild(image);
+  // description elements
+  const breakpoint1 = document.createElement('li');
+  const breakpoint2 = document.createElement('li');
+  const breakpoint3 = document.createElement('li');
+  const breakpoint4 = document.createElement('li');
+  const span1 = document.createElement('span');
+  const span2 = document.createElement('span');
+  const span3 = document.createElement('span');
+  const span4 = document.createElement('span');
+  breakpoint1.innerHTML = `${txtBold1}`;
+  breakpoint2.innerHTML = `${txtBold2}`;
+  breakpoint3.innerHTML = `${txtBold3}`;
+  breakpoint4.innerHTML = `${txtBold4}`;
+  span1.innerText = `${txtLight1}`;
+  span2.innerText = `${txtLight2}`;
+  span3.innerText = `${txtLight3}`;
+  /*
+  * nesting *
+  */
+  // main elements
+  preparationView.appendChild(imageDiv);
   preparationView.appendChild(descriptionDiv);
-  // children
-  image.appendChild(imgCasaEnVenta);
+  // main elements children
+  imageDiv.appendChild(img);
   descriptionDiv.appendChild(title);
-  descriptionDiv.appendChild(paragraph);
+  descriptionDiv.appendChild(description);
+  //  description children
+  description.appendChild(breakpoint1);
+  description.appendChild(breakpoint2);
+  description.appendChild(breakpoint3);
+  description.appendChild(breakpoint4);
+  // description breakpoint children
+  breakpoint1.appendChild(span1);
+  breakpoint2.appendChild(span2);
+  breakpoint3.appendChild(span3);
+  breakpoint4.appendChild(span4);
+
   return preparationView;
 };
-// const point1 = '•Fotografia y video:';
-//   const point2 = '•Ficha de propiedad:';
-//   const point3 = '•Ficha de propiedad:';
-//   const point4 = '•Ficha de propiedad:';
-//   const text1 = 'Tomamos la multimedia necesaria para la promocion, edición y postproducción.'
-//   const text2 = 'Con la información y fotografías recabadas diseñamos una ficha con lo más importante.'
-//   const text3 = 'Subimos la ficha de propiedad a nuestra web y sitios d busqueda inmobiliaria.'

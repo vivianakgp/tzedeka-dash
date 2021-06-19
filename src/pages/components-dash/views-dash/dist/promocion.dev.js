@@ -20,7 +20,7 @@ var _default = function _default() {
   var txtBold4 = 'Red de contacto e inmobiliarios: ';
   var txtLight4 = 'Presentamos a inmobiliaria y agentes tu propiedad como una opción para sus clientes.';
   /*
-  * creating elements html *
+  * creating elements html * *
   */
 
   var promoView = document.createElement('section');

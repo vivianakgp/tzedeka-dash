@@ -12,7 +12,7 @@ export default () => {
   const txtBold4 = 'Red de contacto e inmobiliarios: ';
   const txtLight4 = 'Presentamos a inmobiliaria y agentes tu propiedad como una opción para sus clientes.';
   /*
-  * creating elements html *
+  * creating elements html * *
   */
   const promoView = document.createElement('section');
   promoView.setAttribute('class', 'promoContainer');

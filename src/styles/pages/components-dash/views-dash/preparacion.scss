@@ -1,47 +1,75 @@
-.preparation__container {
-    padding: 40px 5%;
-    height: auto;
-    margin-bottom: 100px;
-    font-size: 1.8rem;
-    line-height: 4rem;
-    text-align: justify;
-
-
+.prepaContainer {
     position: relative;
+    padding: 60px 5rem;
+    height: auto;
     min-width: 300px;
-    background-color: rgb(202, 226, 92);
-    scroll-snap-align: center;
-    //margin: 0 15%;
+    font-size: 1.8rem;
+    line-height: 4.4rem;
+    // background-color: rgb(202, 226, 92);
 
 }
-.preparation__image img {
-    height: 100%;
-    width: 100%;
-}
-.preparation__description h2{
-    text-align: center;
-    margin: 30px 0;
-    font-weight: bold;
-}
-.preparation__description {
+.prepaDescription {
     display: flex;
     flex-direction: column;
-    padding: 0 18px;
 }
+.prepaImage {
+    max-width: 500px;
+    margin:auto;
+}
+.prepaImage img {
+    width: 100%;
+    height: auto;
 
+}
+.prepaDescription h2{
+    margin: 30px 0;
+    font-size: 2.4rem;
+    font-weight: bold;
+    color:black;
+}
+li {
+    font-weight: bold;
+}
+li span {
+    font-weight: 400;
+}
+@media screen and(min-width:499px) {
+    .prepaContainer {
+        padding: 80px 4rem;
+    }
+}
+@media screen and(min-width:767px) {
+    .prepaContainer {
+        padding: 80px 9rem;
+    }
+}
+@media screen and(min-width:1024px) {
+    .prepaContainer  {
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 0 0;
+        padding: 3rem 0 4.5rem 3rem ;
+    }
+    .prepaDescription h2 {
+        font-size: 3.6rem;
+    }
+    .prepaDescription {
+        width: 50%;
+        //background-color: pink;
+    }
+    .prepaImage {
+        // background-color: lightblue;
+        //max-width: 500px;
+        margin: auto 0;
+        width: 50%;
+    }
 
-@media screen and (min-width:1024px) {
-    // .preparation__container {
-    //     background-color: chocolate;
-    //     display: flex;
-    //     flex-direction: row-reverse;
-
-    // }
-    // .preparation__image {
-    //     width: 70%;
-    //     background-color: cyan;
-    // }
-    // .preparation__description {
-    //     background-color: darkblue;
-    // }
+}
+@media screen and(min-width:1200px) {
+    .prepaDescription {
+        width: 60%;
+    }
+    .prepaImage {
+        width: 40%;
+    }
 }

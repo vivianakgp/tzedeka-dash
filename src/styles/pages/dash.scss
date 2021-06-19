@@ -1,5 +1,4 @@
 
-
 /*
 * .progressStatusBar since tablet
 */
@@ -16,10 +15,11 @@
 .dashboard {
     width: 100vw;
     min-width: 290px;
-    padding-bottom: 100px;
     background-color:#E5E5E5;
     height: 100vh;
     //overflow: hidden;
+    //padding-bottom: 100px;
+
 }
 .btnOpenMenu { // only in vertical menu
     display: none;
@@ -29,7 +29,10 @@
     min-width: 290px;
     max-width: 1500px;
     padding-top: 50px;
+    padding-bottom: 120px;
     height: auto;
+    background-color:#E5E5E5;
+
 }
 .userInfo {
     display: flex;
@@ -105,7 +108,7 @@
 
     }
     .dash__container {
-        background-color:salmon;
+        //background-color:salmon;
         padding-bottom: 70px;
     }
     .userInfo  h1 {
@@ -115,7 +118,7 @@
 }
 @media screen and (min-width:767px) {
     .dash__container {
-        background-color:rgba(231, 216, 227, 0.87);
+        //background-color:rgba(231, 216, 227, 0.87);
     }
     .blackboard {
         width: 93%;
@@ -170,7 +173,7 @@
         display: none;
     }
     .dash__container {
-        background-color:pink;
+        //background-color:pink;
         padding-left: 275px;
         //height: 100vh;
 

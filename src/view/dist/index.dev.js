@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.vista = exports.views = void 0;
+exports.dashboardViews = exports.vista = exports.views = void 0;
 
 var _controller = require("../controller/controller.js");
 
@@ -13,20 +13,38 @@ var _registry = _interopRequireDefault(require("../pages/registry.js"));
 
 var _dash = _interopRequireDefault(require("../pages/dash.js"));
 
+var _preparacion = _interopRequireDefault(require("../pages/components-dash/views-dash/preparacion.js"));
+
+var _promocion = _interopRequireDefault(require("../pages/components-dash/views-dash/promocion.js"));
+
+var _tramite = _interopRequireDefault(require("../pages/components-dash/views-dash/tramite.js"));
+
+var _escritura = _interopRequireDefault(require("../pages/components-dash/views-dash/escritura.js"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 // eslint-disable-next-line import/no-cycle
-// importo todas las vistas
-// exporto mi objeto views y vista / es importado en controller.
-// creo un objeto con propiedades que contienen
+// views
+// eslint-disable-next-line import/no-cycle
+// views on dashboard
+// creo un objeto views con propiedades que contienen
 // una pagina/funcion ocea que son metodos del objeto views
+var currentProgressStr = 'Preparación'; // Preparación, En Promoción, Tramite y Avalúo, Escritura
+
 var views = {
   login: _login["default"],
   registry: _registry["default"],
   dash: _dash["default"]
+};
+exports.views = views;
+var dashboardViews = {
+  preparacion: _preparacion["default"],
+  promocion: _promocion["default"],
+  tramite: _tramite["default"],
+  escritura: _escritura["default"]
 }; // creo un objeto llamado vista este mandara la informacion de las interfaces al controller.
 
-exports.views = views;
+exports.dashboardViews = dashboardViews;
 var vista = {
   logIn: function logIn() {
     var formLogin = document.getElementById('formLogin');
@@ -39,6 +57,37 @@ var vista = {
       formLogin.reset();
       return _controller.controller.logInAuth(userData);
     });
+  },
+  transformCurrentProgressToNumber: function transformCurrentProgressToNumber() {
+    // se ejecuta en el metodo showCurrentProgressView del controller
+    switch (currentProgressStr) {
+      case 'Preparación':
+        return 0;
+
+      case 'En Promoción':
+        return 1;
+
+      case 'Tramite y Avalúo':
+        return 2;
+
+      case 'Escritura':
+        return 3;
+
+      default:
+        return 404;
+      // show pag 404
+    }
+  },
+  // metodo que agregue el evento a los dos botones del dash en celular
+  addEventClickBtnDashOnCell: function addEventClickBtnDashOnCell() {
+    var btnNextProgressView = document.getElementById('btnNextProgressView');
+    btnNextProgressView.addEventListener('click', _controller.controller.traversesArrayForward); // const btnPreviousProgressView = document.getElementById('btnPreviousProgressView');
+    // btnPreviousProgressView.addEventListener('click', controller.progressArrayBackwards);
+    // btnPreviousProgressView.addEventListener('click', controller.test);
+  },
+  removeEventClickBtnDashOnCell: function removeEventClickBtnDashOnCell() {
+    var btnNextProgressView = document.getElementById('btnNextProgressView');
+    btnNextProgressView.removeEventListener('click', _controller.controller.traversesArrayForward);
   }
 };
 exports.vista = vista;
