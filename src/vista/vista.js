@@ -12,7 +12,6 @@ import tramiteView from '../pages/components-dash/views-dash/tramite.js';
 import escrituraView from '../pages/components-dash/views-dash/escritura.js';
 
 const currentProgressStr = 'Escritura'; // Preparación, En Promoción, Tramite y Avalúo, Escritura
-// PODRIA SER UNA CLASS
 
 const views = {
   login: Login,
@@ -28,12 +27,7 @@ const dashboardViews = {
 
 };
 const vista = {
-
-  // SUS METODOS
   // -- logIn:INICIA SESION
-  // -- transformCurrentProgressToNumber: TRANSFORMA LA VISTA RECIENTE EN NUMERO
-  // -- addEventClickBtnDashOnCell:EGREGA CLIKS A LOS BOTONES DEL DASH EN CELL
-  // -- removeEventClickBtnDashOnCell: LOS REMUEVE
   logIn: () => {
     const formLogin = document.getElementById('formLogin');
     formLogin.addEventListener('submit', (e) => {
@@ -46,6 +40,7 @@ const vista = {
       return controller.logInAuth(userData);
     });
   },
+  // -- transformCurrentProgressToNumber: TRANSFORMA LA VISTA RECIENTE EN NUMERO
   transformCurrentProgressToNumber: () => {
     // se ejecuta en el metodo showCurrentProgressView del controller
     // y en el scope global del controller
@@ -62,6 +57,7 @@ const vista = {
         return 404;// show pag 404
     }
   },
+  //
 
 };
 export { views, vista, dashboardViews };

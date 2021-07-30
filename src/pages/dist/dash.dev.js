@@ -85,21 +85,25 @@ var _default = function _default() {
   var block4 = document.createElement('div'); //  blocks's children
 
   var block1Title = document.createElement('span');
-  var block1Div = document.createElement('div');
   var block2Title = document.createElement('span');
-  var block2Div = document.createElement('div');
   var block3Title = document.createElement('span');
-  var block3Div = document.createElement('div');
   var block4Title = document.createElement('span');
-  var block4Div = document.createElement('div');
+  var block1Btn = document.createElement('div');
+  var block2Btn = document.createElement('div');
+  var block3Btn = document.createElement('div');
+  var block4Btn = document.createElement('div');
   block1Title.innerHTML = 'Preparación';
-  block1Div.setAttribute('data-progress', '1');
   block2Title.innerHTML = 'En Promoción';
-  block2Div.setAttribute('data-progress', '2');
   block3Title.innerHTML = 'Tramite y Avalúo';
-  block3Div.setAttribute('data-progress', '3');
   block4Title.innerHTML = 'Escritura';
-  block4Div.setAttribute('data-progress', '4');
+  block1Btn.setAttribute('data-progress', '1');
+  block2Btn.setAttribute('data-progress', '2');
+  block3Btn.setAttribute('data-progress', '3');
+  block4Btn.setAttribute('data-progress', '4');
+  block1Btn.setAttribute('class', 'btnProgressStatusBar');
+  block2Btn.setAttribute('class', 'btnProgressStatusBar');
+  block3Btn.setAttribute('class', 'btnProgressStatusBar');
+  block4Btn.setAttribute('class', 'btnProgressStatusBar');
   /*
   * progressStatusBarCell children *
   - only in cell
@@ -151,13 +155,13 @@ var _default = function _default() {
   progressStatusBar.appendChild(block4); // progressStatusBar / blocks's children
 
   block1.appendChild(block1Title);
-  block1.appendChild(block1Div);
+  block1.appendChild(block1Btn);
   block2.appendChild(block2Title);
-  block2.appendChild(block2Div);
+  block2.appendChild(block2Btn);
   block3.appendChild(block3Title);
-  block3.appendChild(block3Div);
+  block3.appendChild(block3Btn);
   block4.appendChild(block4Title);
-  block4.appendChild(block4Div); // progressStatusBarCell children
+  block4.appendChild(block4Btn); // progressStatusBarCell children
 
   progressStatusBarCell.appendChild(progressStatusCell); // btnsChangeViewsToCell children
 

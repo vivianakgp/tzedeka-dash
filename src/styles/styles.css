@@ -344,7 +344,7 @@
   border-bottom: 1px solid #d0d0d3;
 }
 
-.btnsChangeViewsToCell button {
+.btnsChangeViewsT {
   height: 28px;
   width: 115px;
   padding: 20px;
@@ -413,6 +413,7 @@
   .progressStatusBar > div > span {
     color: #9FA2B4;
     font-size: 1.9rem;
+    display: block;
   }
 
   .progressStatusBar > div > div {

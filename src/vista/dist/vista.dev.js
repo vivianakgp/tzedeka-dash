@@ -28,7 +28,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 // eslint-disable-next-line import/no-cycle
 // views on dashboard
 var currentProgressStr = 'Escritura'; // Preparación, En Promoción, Tramite y Avalúo, Escritura
-// PODRIA SER UNA CLASS
 
 var views = {
   login: _login["default"],
@@ -44,11 +43,7 @@ var dashboardViews = {
 };
 exports.dashboardViews = dashboardViews;
 var vista = {
-  // SUS METODOS
   // -- logIn:INICIA SESION
-  // -- transformCurrentProgressToNumber: TRANSFORMA LA VISTA RECIENTE EN NUMERO
-  // -- addEventClickBtnDashOnCell:EGREGA CLIKS A LOS BOTONES DEL DASH EN CELL
-  // -- removeEventClickBtnDashOnCell: LOS REMUEVE
   logIn: function logIn() {
     var formLogin = document.getElementById('formLogin');
     formLogin.addEventListener('submit', function (e) {
@@ -61,6 +56,7 @@ var vista = {
       return _controller.controller.logInAuth(userData);
     });
   },
+  // -- transformCurrentProgressToNumber: TRANSFORMA LA VISTA RECIENTE EN NUMERO
   transformCurrentProgressToNumber: function transformCurrentProgressToNumber() {
     // se ejecuta en el metodo showCurrentProgressView del controller
     // y en el scope global del controller
@@ -81,6 +77,7 @@ var vista = {
         return 404;
       // show pag 404
     }
-  }
+  } //
+
 };
 exports.vista = vista;

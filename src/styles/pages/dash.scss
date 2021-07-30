@@ -88,7 +88,7 @@
     border-bottom: 1px solid #d0d0d3;
 
 }
-.btnsChangeViewsToCell  button {
+.btnsChangeViewsT {
     height: 28px;
     width: 115px;
     padding:20px;
@@ -156,12 +156,17 @@
     .progressStatusBar > div > span {
         color:#9FA2B4;
         font-size:1.9rem;
+        display: block;
+
 
     }
     .progressStatusBar > div > div {
         height: 25px;
         border-radius: 8px;
         border: 1px solid #d0d0d3;
+        //width: inherit;
+        //border-style: none;
+        //background-color: rgb(238, 24, 209);
         background-color: rgb(213, 228, 228);
     }
     .btnsChangeViewsToCell {
@@ -173,7 +178,7 @@
         display: none;
     }
     .dash__container {
-        //background-color:pink;
+        // background-color:pink;
         padding-left: 275px;
         //height: 100vh;
 
