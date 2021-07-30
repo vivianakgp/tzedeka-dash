@@ -5,21 +5,21 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.dashboardViews = exports.vista = exports.views = void 0;
 
-var _controller = require("../controller/controller.js");
+var _controller = require("../controller/controller.js.js.js.js");
 
-var _login = _interopRequireDefault(require("../pages/login.js"));
+var _login = _interopRequireDefault(require("../pages/login.js.js.js.js"));
 
-var _registry = _interopRequireDefault(require("../pages/registry.js"));
+var _registry = _interopRequireDefault(require("../pages/registry.js.js.js.js"));
 
-var _dash = _interopRequireDefault(require("../pages/dash.js"));
+var _dash = _interopRequireDefault(require("../pages/dash.js.js.js.js"));
 
-var _preparacion = _interopRequireDefault(require("../pages/components-dash/views-dash/preparacion.js"));
+var _preparacion = _interopRequireDefault(require("../pages/components-dash/views-dash/preparacion.js.js.js.js"));
 
-var _promocion = _interopRequireDefault(require("../pages/components-dash/views-dash/promocion.js"));
+var _promocion = _interopRequireDefault(require("../pages/components-dash/views-dash/promocion.js.js.js.js"));
 
-var _tramite = _interopRequireDefault(require("../pages/components-dash/views-dash/tramite.js"));
+var _tramite = _interopRequireDefault(require("../pages/components-dash/views-dash/tramite.js.js.js.js"));
 
-var _escritura = _interopRequireDefault(require("../pages/components-dash/views-dash/escritura.js"));
+var _escritura = _interopRequireDefault(require("../pages/components-dash/views-dash/escritura.js.js.js.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -81,9 +81,9 @@ var vista = {
   // metodo que agregue el evento a los dos botones del dash en celular
   addEventClickBtnDashOnCell: function addEventClickBtnDashOnCell() {
     var btnNextProgressView = document.getElementById('btnNextProgressView');
-    btnNextProgressView.addEventListener('click', _controller.controller.traversesArrayForward); // const btnPreviousProgressView = document.getElementById('btnPreviousProgressView');
-    // btnPreviousProgressView.addEventListener('click', controller.progressArrayBackwards);
-    // btnPreviousProgressView.addEventListener('click', controller.test);
+    var btnPreviousProgressView = document.getElementById('btnPreviousProgressView');
+    btnNextProgressView.addEventListener('click', _controller.controller.traversesArrayForward);
+    btnPreviousProgressView.addEventListener('click', _controller.controller.progressArrayBackwards); // btnPreviousProgressView.addEventListener('click', controller.test);
   },
   removeEventClickBtnDashOnCell: function removeEventClickBtnDashOnCell() {
     var btnNextProgressView = document.getElementById('btnNextProgressView');

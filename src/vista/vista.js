@@ -1,6 +1,5 @@
 // eslint-disable-next-line import/no-cycle
 import { controller } from '../controller/controller.js';
-
 // views
 import Login from '../pages/login.js';
 import Registry from '../pages/registry.js';
@@ -12,16 +11,15 @@ import promoView from '../pages/components-dash/views-dash/promocion.js';
 import tramiteView from '../pages/components-dash/views-dash/tramite.js';
 import escrituraView from '../pages/components-dash/views-dash/escritura.js';
 
-// creo un objeto views con propiedades que contienen
-// una pagina/funcion ocea que son metodos del objeto views
-
-const currentProgressStr = 'Preparación'; // Preparación, En Promoción, Tramite y Avalúo, Escritura
+const currentProgressStr = 'Escritura'; // Preparación, En Promoción, Tramite y Avalúo, Escritura
+// PODRIA SER UNA CLASS
 
 const views = {
   login: Login,
   registry: Registry,
   dash: Dash,
 };
+
 const dashboardViews = {
   preparacion: preparacionView,
   promocion: promoView,
@@ -29,8 +27,13 @@ const dashboardViews = {
   escritura: escrituraView,
 
 };
-// creo un objeto llamado vista este mandara la informacion de las interfaces al controller.
 const vista = {
+
+  // SUS METODOS
+  // -- logIn:INICIA SESION
+  // -- transformCurrentProgressToNumber: TRANSFORMA LA VISTA RECIENTE EN NUMERO
+  // -- addEventClickBtnDashOnCell:EGREGA CLIKS A LOS BOTONES DEL DASH EN CELL
+  // -- removeEventClickBtnDashOnCell: LOS REMUEVE
   logIn: () => {
     const formLogin = document.getElementById('formLogin');
     formLogin.addEventListener('submit', (e) => {
@@ -45,6 +48,7 @@ const vista = {
   },
   transformCurrentProgressToNumber: () => {
     // se ejecuta en el metodo showCurrentProgressView del controller
+    // y en el scope global del controller
     switch (currentProgressStr) {
       case 'Preparación':
         return 0;
@@ -58,17 +62,6 @@ const vista = {
         return 404;// show pag 404
     }
   },
-  // metodo que agregue el evento a los dos botones del dash en celular
-  addEventClickBtnDashOnCell: () => {
-    const btnNextProgressView = document.getElementById('btnNextProgressView');
-    btnNextProgressView.addEventListener('click', controller.traversesArrayForward);
-    // const btnPreviousProgressView = document.getElementById('btnPreviousProgressView');
-    // btnPreviousProgressView.addEventListener('click', controller.progressArrayBackwards);
-    // btnPreviousProgressView.addEventListener('click', controller.test);
-  },
-  removeEventClickBtnDashOnCell: () => {
-    const btnNextProgressView = document.getElementById('btnNextProgressView');
-    btnNextProgressView.removeEventListener('click', controller.traversesArrayForward);
-  },
+
 };
 export { views, vista, dashboardViews };

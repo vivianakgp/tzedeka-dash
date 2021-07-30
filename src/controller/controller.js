@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-cycle
-import { views, vista, dashboardViews } from '../view/index.js';
+import { views, vista, dashboardViews } from '../vista/vista.js';
 import { model } from '../model/model.js';
 
 const preparacion = dashboardViews.preparacion();
@@ -12,17 +12,13 @@ const arrayProgressViews = [
   tramite,
   escritura,
 ];
-
-// creamos un objeto que controla las vistas las ejecuta segun el tipo de hash en el navegador.
-// controla la informacion que pasa de la vista al modelo y viceversa
-// nuestro objeto se llama contoller y tiene una propiedad que contiene una funcion(metodo)
-// exporto el objeto cotroller/ es importado en main.js, model y vista.
 const currentProgressNumber = vista.transformCurrentProgressToNumber();
 let Counter = currentProgressNumber;
 console.log(`${Counter} :valor del contador`);
+
 export const controller = {
+  // --  1º templateChange: DETECTA EL HASH Y CAMBIA LA VISTA
   templateChange: (hash) => {
-    // hash es pasado como parametro enviado desde la funcion initial con window.location.hash
     const mainSection = document.getElementById('container');
     mainSection.innerHTML = ' ';
     switch (hash) {
@@ -36,12 +32,13 @@ export const controller = {
       case '#/dashboard':
         mainSection.appendChild(views.dash());
         controller.showCurrentProgressView();
-        vista.addEventClickBtnDashOnCell();
+        controller.addEventClickBtnDashOnCell();
 
         break;
       default:
     }
   },
+  // -- 2º logInAuth: CIERRA SESION
   logInAuth: (userData) => model.logInAuth(userData)
     .then(() => {
       // location.hash='#/register';
@@ -63,6 +60,7 @@ export const controller = {
       // eslint-disable-next-line no-console
       console.log(error);
     }),
+  // -- 3º getCurrentUser: DETECTA EL ID USER
   getCurrentUser: () => {
     model.getCurrentUser((user) => {
       if (user) {
@@ -72,6 +70,7 @@ export const controller = {
       }
     });
   },
+  // -- 4º showCurrentProgressView: MUESTRA LA VISTA* POR DEFAULT QUE LE CORRESPONDE EN EL DASH
   showCurrentProgressView: () => {
     console.log(`${currentProgressNumber} :valor de vista a mostrar`);
     const blackboard = document.getElementById('Blackboard');
@@ -93,34 +92,51 @@ export const controller = {
         // show pag err
     }
   },
-  // metodo para contolar la vista del boton previous progress en dash cell
+  // -- 5º addEventClickBtnDashOnCell: AGREGA LOS EVENTOS PARA CAMBIAR
+  // DE VISTA* EN LOS BTN DEL DASH SOLO EN CELL
+  addEventClickBtnDashOnCell: () => {
+    const btnNextProgressView = document.getElementById('btnNextProgressView');
+    const btnPreviousProgressView = document.getElementById('btnPreviousProgressView');
+    btnNextProgressView.addEventListener('click', controller.traversesArrayForward);
+    btnPreviousProgressView.addEventListener('click', controller.progressArrayBackwards);
+  },
+  // -- 6º traversesArrayForward: RECORRE EL ARRAY DE VISTAS*/DASH ADELANTE
   traversesArrayForward: () => {
-    console.log('evento click activado');
     const blackboard = document.getElementById('Blackboard');
     blackboard.innerHTML = '';
-    if (Counter < arrayProgressViews.length - 2) {
+    if (Counter < arrayProgressViews.length - 1) {
       blackboard.appendChild(arrayProgressViews[Counter + 1]);
       // eslint-disable-next-line no-plusplus
       Counter++;
       console.log(`${Counter} :valor del contador al plusplus`);
-    } else if (Counter === arrayProgressViews.length - 2) {
-      blackboard.appendChild(arrayProgressViews[Counter + 1]);
-      vista.removeEventClickBtnDashOnCell();
+    } else if (Counter === arrayProgressViews.length - 1) {
+      blackboard.appendChild(arrayProgressViews[Counter]);
+      console.log(`${Counter} : debe de ser 3`);
+      controller.removeEventClickBtnNextProgressViewOnCell();
     }
   },
+  // -- 7º progressArrayBackwards:RECORRE EL ARRAY DE VISTAS*/DASH A TRAS
   progressArrayBackwards: () => {
     const blackboard = document.getElementById('Blackboard');
+    blackboard.innerHTML = '';
     if (Counter === 0) {
-      // eslint-disable-next-line no-plusplus
-      Counter++;
-    } else if (Counter > 0) {
-      blackboard.innerHTML = '';
+      blackboard.appendChild(arrayProgressViews[Counter]);
+      console.log('contador es igual a 0, :)');
+      controller.removeEventClickBtnPreviousProgressViewOnCell();
+      console.log(`${Counter} :valor del contador al--`);
+    } else {
       blackboard.appendChild(arrayProgressViews[Counter - 1]);
       // eslint-disable-next-line no-plusplus
       Counter--;
+      console.log(`${Counter} :valor del contador al--`);
     }
   },
-  // test: () => {
-  //   alert('evento');
-  // },
+  removeEventClickBtnNextProgressViewOnCell: () => {
+    const btnNextProgressView = document.getElementById('btnNextProgressView');
+    btnNextProgressView.removeEventListener('click', controller.traversesArrayForward);
+  },
+  removeEventClickBtnPreviousProgressViewOnCell: () => {
+    const btnPreviousProgressView = document.getElementById('btnPreviousProgressView');
+    btnPreviousProgressView.removeEventListener('click', controller.progressArrayBackwards);
+  },
 };

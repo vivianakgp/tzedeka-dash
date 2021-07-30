@@ -2,10 +2,9 @@
 
 var _controller = require("./controller/controller.js");
 
+// AQUI INICIA LA APPLICACION
 var initial = function initial() {
-  // console.log('esta es la primer funcion(initial)
-  // que extrae el location.hash y lo envia al controlador');
-  var hash = window.location.hash; // console.log(hash);
+  var hash = window.location.hash;
 
   _controller.controller.templateChange(hash);
 
