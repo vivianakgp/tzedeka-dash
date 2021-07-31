@@ -16,7 +16,8 @@
     width: 100vw;
     min-width: 290px;
     background-color:#E5E5E5;
-    height: 100vh;
+    // height: 100vh;
+    height: auto;
     //overflow: hidden;
     //padding-bottom: 100px;
 
@@ -81,14 +82,13 @@
 }
 .btnsChangeViewsToCell {
     position: relative;
-    top:-3px;
     display:flex;
+    top:-3px;
     justify-content: space-between;
     background:#FFFFFF;
     border-bottom: 1px solid #d0d0d3;
-
 }
-.btnsChangeViewsT {
+.btnsChangeViews {
     height: 28px;
     width: 115px;
     padding:20px;
@@ -97,6 +97,10 @@
     background-color:#CAB98E;
 
 }
+.hideBtn {
+    opacity: 50%;
+}
+
 
 @media screen and (min-width:499px) {
     .btnOpenMenu {
@@ -118,7 +122,7 @@
 }
 @media screen and (min-width:767px) {
     .dash__container {
-        //background-color:rgba(231, 216, 227, 0.87);
+        // background-color:rgba(230, 29, 176, 0.87);
     }
     .blackboard {
         width: 93%;

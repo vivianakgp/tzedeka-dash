@@ -120,9 +120,9 @@ var _default = function _default() {
   var btnPreviousProgressView = document.createElement('button');
   var btnNextProgressView = document.createElement('button');
   btnNextProgressView.setAttribute('id', 'btnNextProgressView');
-  btnPreviousProgressView.setAttribute('id', 'btnPreviousProgressView'); // btnNextProgressView.setAttribute('class', 'btnNextProgressView');
-  // btnPreviousProgressView.setAttribute('class', 'btnPreviousProgressView');
-
+  btnPreviousProgressView.setAttribute('id', 'btnPreviousProgressView');
+  btnNextProgressView.setAttribute('class', 'btnsChangeViews');
+  btnPreviousProgressView.setAttribute('class', 'btnsChangeViews');
   /*
   * nesting *
   */

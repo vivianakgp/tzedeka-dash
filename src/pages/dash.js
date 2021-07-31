@@ -104,8 +104,8 @@ export default () => {
   const btnNextProgressView = document.createElement('button');
   btnNextProgressView.setAttribute('id', 'btnNextProgressView');
   btnPreviousProgressView.setAttribute('id', 'btnPreviousProgressView');
-  // btnNextProgressView.setAttribute('class', 'btnNextProgressView');
-  // btnPreviousProgressView.setAttribute('class', 'btnPreviousProgressView');
+  btnNextProgressView.setAttribute('class', 'btnsChangeViews');
+  btnPreviousProgressView.setAttribute('class', 'btnsChangeViews');
   /*
   * nesting *
   */

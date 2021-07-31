@@ -16,7 +16,7 @@
   width: 100vw;
   min-width: 290px;
   background-color: #E5E5E5;
-  height: 100vh;
+  height: auto;
 }
 
 .btnOpenMenu {
@@ -82,20 +82,24 @@
 
 .btnsChangeViewsToCell {
   position: relative;
-  top: -3px;
   display: flex;
+  top: -3px;
   justify-content: space-between;
   background: #FFFFFF;
   border-bottom: 1px solid #d0d0d3;
 }
 
-.btnsChangeViewsT {
+.btnsChangeViews {
   height: 28px;
   width: 115px;
   padding: 20px;
   border: none;
   border-radius: 1px;
   background-color: #CAB98E;
+}
+
+.hideBtn {
+  opacity: 50%;
 }
 
 @media screen and (min-width: 499px) {
