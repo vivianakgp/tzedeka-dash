@@ -1,0 +1,103 @@
+/* colors */
+/* Herencias */
+.login {
+  width: 100vw;
+  height: 100vh;
+  max-width: 1450px;
+}
+
+.formLogin__Container {
+  width: 100%;
+  height: 100%;
+}
+
+.formLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 88%;
+  max-width: 600px;
+  height: 70vh;
+  margin: 30px auto;
+  background-color: #000000;
+}
+
+.imgLogin__Container {
+  display: none;
+}
+
+.formLogin__div--grey {
+  width: 100%;
+  height: 55px;
+  background-color: rgba(246, 235, 229, 0.5);
+}
+
+.formLogin__h1 {
+  color: #ffffff;
+  font-size: 6vw;
+  font-weight: lighter;
+  margin-bottom: 15%;
+}
+
+.formLogin__input--id, .formLogin__input--pass {
+  width: 77%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding-left: 20px;
+  border-style: none;
+  height: 45px;
+}
+
+.formLogin__btn {
+  width: 55%;
+  height: 35px;
+  background-color: #C9BCAC;
+  color: #000000;
+  border-style: none;
+  border-radius: 5px;
+  margin: 10% 0 8% 0;
+}
+
+.formLogin__paragraph {
+  color: #ffffff;
+  font-size: 2.2vw;
+}
+
+.formLogin__anchor {
+  color: #ffffff;
+}
+
+@media only screen and (min-width: 1024px) {
+  .login {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .formLogin__Container {
+    display: block;
+    width: 42%;
+  }
+
+  .imgLogin__Container {
+    display: block;
+    width: 58%;
+  }
+
+  .imgLoginContainer__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .formLogin {
+    width: 100%;
+  }
+
+  .formLogin__h1 {
+    font-size: 4vw;
+  }
+
+  .formLogin__paragraph {
+    font-size: 1.5vw;
+  }
+}

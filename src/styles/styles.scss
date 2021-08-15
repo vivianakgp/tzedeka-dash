@@ -1,13 +1,35 @@
 @import './pages/login.scss';
-@import './pages/registry.scss';
+@import './menu.scss';
+@import './pages/dash.scss';
+@import './pages/components-dash/views-dash/preparacion.scss';
+@import './pages/components-dash/views-dash/promocion.scss';
+@import './pages/components-dash/views-dash/tramite.scss';
+@import './pages/components-dash/views-dash/escritura.scss';
 
-
+/*
+* font to html all document: font-family: 'Lato', sans-serif;
+* font to headlines and menu: font-family: 'Mulish', sans-serif;
+*/
 *{
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
 }
+html{
+    font-size: 62.5%;
+    font-family: 'Lato', sans-serif;
+}
+
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: black;
+
 }
+.is__active {
+    left: 0;
+    transition-duration:  1s;
+}
+.hideBtn {
+    opacity: 30%;
+}
+
+

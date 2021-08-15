@@ -5,19 +5,21 @@
   "main": "src/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "serve src/"
+    "start": "serve src/",
+    "sass": "sass",
+    "sass-watch": "sass --watch src/styles/styles.scss src/styles/styles.css"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/plugin-transform-modules-commonjs": "^7.12.1",
     "eslint": "^7.16.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.22.1"
+    "eslint-plugin-import": "^2.22.1",
+    "serve": "^12.0.0"
   },
   "dependencies": {
-    "serve": "^11.3.2"
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-modules-commonjs": "^7.12.1"
   }
 }

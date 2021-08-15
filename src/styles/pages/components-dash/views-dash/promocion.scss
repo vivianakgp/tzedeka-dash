@@ -1,0 +1,80 @@
+.promoContainer {
+    position: relative;
+    padding: 60px 5rem;
+    height: auto;
+    min-width: 300px;
+    font-size: 1.8rem;
+    line-height: 4.4rem;
+    //scroll-snap-align: center;    //
+    //background-color: rgb(153, 211, 208);
+
+}
+.promoDescription {
+    display: flex;
+    flex-direction: column;
+    //background-color: rgb(209, 238, 130);
+}
+.promoImage {
+    //background-color: lightblue;
+    max-width: 500px;
+    margin:auto;
+}
+.promoImage img {
+    width: 100%;
+    height: auto;
+}
+.promoDescription h2 {
+    margin: 30px 0;
+    font-size: 2.4rem;
+    font-weight: bold;
+    color:black;
+}
+li {
+    font-weight: bold;
+}
+li span {
+    font-weight: 400;
+}
+@media screen and(min-width:499px) {
+    .promoContainer {
+        padding: 80px 4rem;
+    }
+}
+@media screen and(min-width:767px) {
+    .promoContainer {
+        padding: 80px 9rem;
+    }
+}
+@media screen and(min-width:1024px) {
+    .promoContainer  {
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 0 0;
+        padding: 3rem 0 4.5rem 3rem ;
+    }
+    .promoDescription h2 {
+        font-size: 3.6rem;
+    }
+    .promoDescription {
+        width: 50%;
+        //background-color: pink;
+    }
+    .promoImage {
+        // background-color: lightblue;
+        //max-width: 500px;
+        margin: auto 0;
+        width: 50%;
+    }
+
+}
+@media screen and(min-width:1200px) {
+    .promoDescription {
+        width: 60%;
+    }
+    .promoImage {
+        width: 40%;
+    }
+}
+
+
+
