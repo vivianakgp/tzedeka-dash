@@ -1,50 +1,57 @@
 /* colors */
 /* Herencias */
 .login {
-  width: 100%;
-  display: flex;
+  width: 100vw;
+  height: 100vh;
   max-width: 1450px;
 }
 
-.formLogin {
+.formLogin__Container {
   width: 100%;
+  height: 100%;
+}
+
+.formLogin {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 15%;
+  width: 88%;
+  max-width: 600px;
+  height: 70vh;
+  margin: 30px auto;
   background-color: #000000;
 }
 
-.imgLogin__img {
+.imgLogin__Container {
   display: none;
 }
 
 .formLogin__div--grey {
   width: 100%;
-  height: 18%;
+  height: 55px;
   background-color: rgba(246, 235, 229, 0.5);
-  margin-bottom: 30%;
 }
 
 .formLogin__h1 {
   color: #ffffff;
-  font-size: 8vw;
+  font-size: 6vw;
   font-weight: lighter;
   margin-bottom: 15%;
 }
 
 .formLogin__input--id, .formLogin__input--pass {
-  width: 80%;
+  width: 77%;
+  height: auto;
   margin-bottom: 10px;
   border-radius: 5px;
   padding-left: 20px;
   border-style: none;
-  height: 70px;
+  height: 45px;
 }
 
 .formLogin__btn {
-  width: 50%;
-  height: 50px;
+  width: 55%;
+  height: 35px;
   background-color: #C9BCAC;
   color: #000000;
   border-style: none;
@@ -54,104 +61,44 @@
 
 .formLogin__paragraph {
   color: #ffffff;
-  font-size: 4vw;
+  font-size: 2.2vw;
 }
 
 .formLogin__anchor {
   color: #ffffff;
 }
 
-@media only screen and (min-width: 600px) {
-  .formLogin__input--id, .formLogin__input--pass {
-    width: 70%;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    padding-left: 20px;
-    border-style: none;
+@media only screen and (min-width: 1024px) {
+  .login {
+    display: flex;
+    flex-direction: row;
   }
 
-  .formLogin__h1 {
-    font-size: 6vw;
-  }
-
-  .formLogin__btn {
-    width: 35%;
-  }
-
-  .formLogin__div--grey {
-    height: 14%;
-  }
-}
-@media only screen and (min-width: 750px) {
-  .formLogin__input--id, .formLogin__input--pass {
-    width: 400px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    padding-left: 20px;
-    border-style: none;
-    height: 75px;
-  }
-
-  .formLogin__btn {
-    width: 230px;
-    height: 60px;
-  }
-
-  .formLogin__h1 {
-    font-size: 40px;
-  }
-
-  .formLogin__paragraph {
-    font-size: 22px;
-  }
-}
-@media only screen and (min-width: 1023px) {
-  .formLogin__div--grey {
-    margin-bottom: 20%;
-  }
-
-  .formLogin__h1 {
-    margin-bottom: 10%;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  .formLogin, .imgLogin {
-    width: 50%;
-  }
-
-  .formLogin__div--grey {
-    height: 7%;
-    margin-bottom: 30%;
-  }
-
-  .imgLogin {
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-  }
-
-  .imgLogin__img {
+  .formLogin__Container {
     display: block;
-    position: absolute;
+    width: 42%;
+  }
+
+  .imgLogin__Container {
+    display: block;
+    width: 58%;
+  }
+
+  .imgLoginContainer__img {
     width: 100%;
     height: 100%;
   }
 
-  .formLogin__input--id, .formLogin__input--pass {
-    width: 530px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    padding-left: 20px;
-    border-style: none;
-    height: 65px;
-    min-height: 65px;
+  .formLogin {
+    width: 100%;
   }
 
-  .formLogin__btn {
-    width: 280px;
-    height: 50px;
-    min-height: 50px;
-    margin-bottom: 12%;
+  .formLogin__h1 {
+    font-size: 4vw;
+  }
+
+  .formLogin__paragraph {
+    font-size: 1.5vw;
   }
 }
 .menu {
@@ -323,9 +270,8 @@
 .dashboard {
   width: 100vw;
   min-width: 290px;
-  padding-bottom: 100px;
   background-color: #E5E5E5;
-  height: 100vh;
+  height: auto;
 }
 
 .btnOpenMenu {
@@ -337,7 +283,9 @@
   min-width: 290px;
   max-width: 1500px;
   padding-top: 50px;
+  padding-bottom: 120px;
   height: auto;
+  background-color: #E5E5E5;
 }
 
 .userInfo {
@@ -389,20 +337,24 @@
 
 .btnsChangeViewsToCell {
   position: relative;
-  top: -3px;
   display: flex;
+  top: -3px;
   justify-content: space-between;
   background: #FFFFFF;
   border-bottom: 1px solid #d0d0d3;
 }
 
-.btnsChangeViewsToCell button {
+.btnsChangeViews {
   height: 28px;
   width: 115px;
   padding: 20px;
   border: none;
   border-radius: 1px;
   background-color: #CAB98E;
+}
+
+.hideBtn {
+  opacity: 50%;
 }
 
 @media screen and (min-width: 499px) {
@@ -415,7 +367,6 @@
   }
 
   .dash__container {
-    background-color: salmon;
     padding-bottom: 70px;
   }
 
@@ -424,10 +375,6 @@
   }
 }
 @media screen and (min-width: 767px) {
-  .dash__container {
-    background-color: rgba(231, 216, 227, 0.87);
-  }
-
   .blackboard {
     width: 93%;
     margin: 0 auto;
@@ -470,6 +417,7 @@
   .progressStatusBar > div > span {
     color: #9FA2B4;
     font-size: 1.9rem;
+    display: block;
   }
 
   .progressStatusBar > div > div {
@@ -489,7 +437,6 @@
   }
 
   .dash__container {
-    background-color: pink;
     padding-left: 275px;
   }
 
@@ -537,36 +484,85 @@
     width: 100%;
   }
 }
-.preparation__container {
-  padding: 40px 5%;
-  height: auto;
-  margin-bottom: 100px;
-  font-size: 1.8rem;
-  line-height: 4rem;
-  text-align: justify;
+.prepaContainer {
   position: relative;
+  padding: 60px 5rem;
+  height: auto;
   min-width: 300px;
-  background-color: #cae25c;
-  scroll-snap-align: center;
+  font-size: 1.8rem;
+  line-height: 4.4rem;
 }
 
-.preparation__image img {
-  height: 100%;
+.prepaDescription {
+  display: flex;
+  flex-direction: column;
+}
+
+.prepaImage {
+  max-width: 500px;
+  margin: auto;
+}
+
+.prepaImage img {
   width: 100%;
+  height: auto;
 }
 
-.preparation__description h2 {
-  text-align: center;
+.prepaDescription h2 {
   margin: 30px 0;
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: black;
+}
+
+li {
   font-weight: bold;
 }
 
-.preparation__description {
-  display: flex;
-  flex-direction: column;
-  padding: 0 18px;
+li span {
+  font-weight: 400;
 }
 
+@media screen and (min-width: 499px) {
+  .prepaContainer {
+    padding: 80px 4rem;
+  }
+}
+@media screen and (min-width: 767px) {
+  .prepaContainer {
+    padding: 80px 9rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .prepaContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0 0;
+    padding: 3rem 0 4.5rem 3rem;
+  }
+
+  .prepaDescription h2 {
+    font-size: 3.6rem;
+  }
+
+  .prepaDescription {
+    width: 50%;
+  }
+
+  .prepaImage {
+    margin: auto 0;
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .prepaDescription {
+    width: 60%;
+  }
+
+  .prepaImage {
+    width: 40%;
+  }
+}
 .promoContainer {
   position: relative;
   padding: 60px 5rem;
@@ -646,66 +642,163 @@ li span {
     width: 40%;
   }
 }
-.tramite__container {
-  padding: 40px 1rem;
-  height: auto;
-  margin-bottom: 100px;
-  font-size: 1.8rem;
-  line-height: 4rem;
-  text-align: justify;
+.tramiteContainer {
   position: relative;
+  padding: 60px 5rem;
+  height: auto;
   min-width: 300px;
-  background-color: #5cb8e2;
-  scroll-snap-align: center;
+  font-size: 1.8rem;
+  line-height: 4.4rem;
 }
 
-.tramite__image img {
+.tramiteDescription {
+  display: flex;
+  flex-direction: column;
+}
+
+.tramiteImage {
+  max-width: 500px;
+  margin: auto;
+}
+
+.tramiteImage img {
+  width: 100%;
+  height: auto;
+}
+
+.tramiteDescription h2 {
+  margin: 30px 0;
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: black;
+}
+
+li {
+  font-weight: bold;
+}
+
+li span {
+  font-weight: 400;
+}
+
+@media screen and (min-width: 499px) {
+  .tramiteContainer {
+    padding: 80px 4rem;
+  }
+}
+@media screen and (min-width: 767px) {
+  .tramiteContainer {
+    padding: 80px 9rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .tramiteContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0 0;
+    padding: 3rem 0 4.5rem 3rem;
+  }
+
+  .tramiteDescription h2 {
+    font-size: 3.6rem;
+  }
+
+  .tramiteDescription {
+    width: 50%;
+  }
+
+  .tramiteImage {
+    margin: auto 0;
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .tramiteDescription {
+    width: 60%;
+  }
+
+  .tramiteImage {
+    width: 40%;
+  }
+}
+.escrituraContainer {
+  position: relative;
+  padding: 60px 5rem;
+  height: auto;
+  min-width: 300px;
+  font-size: 1.8rem;
+  line-height: 4.4rem;
+}
+
+.escrituraDescription {
+  display: flex;
+  flex-direction: column;
+}
+
+.escriImage {
+  max-width: 500px;
+  margin: auto;
+}
+
+.escriImage img {
   width: 100%;
   height: 100%;
 }
 
-.tramite__description h2 {
+.escrituraDescription h2 {
   text-align: center;
   margin: 30px 0;
   font-weight: bold;
 }
 
-.tramite__description {
-  display: flex;
-  flex-direction: column;
-  padding: 0 18px;
-}
-
-.escritura__container {
-  padding: 40px 1rem;
-  height: auto;
-  margin-bottom: 100px;
-  font-size: 1.8rem;
-  line-height: 4rem;
-  text-align: justify;
-  position: relative;
-  min-width: 300px;
-  background-color: #e25ccc;
-  scroll-snap-align: center;
-}
-
-.escritura__image img {
-  width: 100%;
-  height: 100%;
-}
-
-.escritura__description h2 {
-  text-align: center;
-  margin: 30px 0;
+li {
   font-weight: bold;
 }
 
-.escritura__description {
-  display: flex;
-  flex-direction: column;
-  padding: 0 18px;
+li span {
+  font-weight: 400;
 }
 
+@media screen and (min-width: 499px) {
+  .escrituraContainer {
+    padding: 80px 4rem;
+  }
+}
+@media screen and (min-width: 767px) {
+  .escrituraContainer {
+    padding: 80px 9rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .escrituraContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0 0;
+    padding: 3rem 0 4.5rem 3rem;
+  }
+
+  .escrituraDescription h2 {
+    font-size: 3.6rem;
+  }
+
+  .escrituraDescription {
+    width: 50%;
+  }
+
+  .escriImage {
+    margin: auto 0;
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .escrituraDescription {
+    width: 60%;
+  }
+
+  .escriImage {
+    width: 40%;
+  }
+}
 /*
 * font to html all document: font-family: 'Lato', sans-serif;
 * font to headlines and menu: font-family: 'Mulish', sans-serif;
@@ -728,4 +821,8 @@ body {
 .is__active {
   left: 0;
   transition-duration: 1s;
+}
+
+.hideBtn {
+  opacity: 30%;
 }

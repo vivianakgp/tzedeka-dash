@@ -3,15 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.dashboardViews = exports.vista = exports.views = void 0;
+exports.vista = void 0;
 
 var _controller = require("../controller/controller.js");
 
 var _login = _interopRequireDefault(require("../pages/login.js"));
 
-var _registry = _interopRequireDefault(require("../pages/registry.js"));
-
-var _dash = _interopRequireDefault(require("../pages/dash.js"));
+var _dash = require("../pages/dash.js");
 
 var _preparacion = _interopRequireDefault(require("../pages/components-dash/views-dash/preparacion.js"));
 
@@ -24,25 +22,20 @@ var _escritura = _interopRequireDefault(require("../pages/components-dash/views-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 // eslint-disable-next-line import/no-cycle
-// views
-// eslint-disable-next-line import/no-cycle
+// main views
+// import Registry from '../pages/registry.js';
 // views on dashboard
-var currentProgressStr = 'Escritura'; // Preparación, En Promoción, Tramite y Avalúo, Escritura
-
-var views = {
-  login: _login["default"],
-  registry: _registry["default"],
-  dash: _dash["default"]
-};
-exports.views = views;
-var dashboardViews = {
-  preparacion: _preparacion["default"],
-  promocion: _promocion["default"],
-  tramite: _tramite["default"],
-  escritura: _escritura["default"]
-};
-exports.dashboardViews = dashboardViews;
 var vista = {
+  mainViews: {
+    Login: _login["default"],
+    Dash: _dash.dashboard
+  },
+  dashboardViews: {
+    preparacion: (0, _preparacion["default"])(),
+    promocion: (0, _promocion["default"])(),
+    tramite: (0, _tramite["default"])(),
+    escritura: (0, _escritura["default"])()
+  },
   // -- logIn:INICIA SESION
   logIn: function logIn() {
     var formLogin = document.getElementById('formLogin');
@@ -53,13 +46,14 @@ var vista = {
         password: formLogin.password.value
       };
       formLogin.reset();
-      return _controller.controller.logInAuth(userData);
+      return _controller.controller.logInAuth(userData); // arreglar esta parte para que no sea llamado el controlador
     });
   },
-  // -- transformCurrentProgressToNumber: TRANSFORMA LA VISTA RECIENTE EN NUMERO
-  transformCurrentProgressToNumber: function transformCurrentProgressToNumber() {
-    // se ejecuta en el metodo showCurrentProgressView del controller
-    // y en el scope global del controller
+  // -- transformCurrentViewInDashToNumber: TRANSFORMA LA VISTA RECIENTE EN NUMERO
+  transformCurrentViewInDashToNumber: function transformCurrentViewInDashToNumber() {
+    // Preparación, En Promoción, Tramite y Avalúo, Escritura
+    var currentProgressStr = _dash.user.currentProgressDashViewStr;
+
     switch (currentProgressStr) {
       case 'Preparación':
         return 0;
@@ -77,7 +71,6 @@ var vista = {
         return 404;
       // show pag 404
     }
-  } //
-
+  }
 };
 exports.vista = vista;

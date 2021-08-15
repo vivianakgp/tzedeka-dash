@@ -1,32 +1,26 @@
 // eslint-disable-next-line import/no-cycle
 import { controller } from '../controller/controller.js';
-// views
+// main views
 import Login from '../pages/login.js';
-import Registry from '../pages/registry.js';
-// eslint-disable-next-line import/no-cycle
-import Dash from '../pages/dash.js';
+// import Registry from '../pages/registry.js';
+import { dashboard, user } from '../pages/dash.js';
 // views on dashboard
 import preparacionView from '../pages/components-dash/views-dash/preparacion.js';
 import promoView from '../pages/components-dash/views-dash/promocion.js';
 import tramiteView from '../pages/components-dash/views-dash/tramite.js';
 import escrituraView from '../pages/components-dash/views-dash/escritura.js';
 
-const currentProgressStr = 'Escritura'; // Preparación, En Promoción, Tramite y Avalúo, Escritura
-
-const views = {
-  login: Login,
-  registry: Registry,
-  dash: Dash,
-};
-
-const dashboardViews = {
-  preparacion: preparacionView,
-  promocion: promoView,
-  tramite: tramiteView,
-  escritura: escrituraView,
-
-};
 const vista = {
+  mainViews: {
+    Login,
+    Dash: dashboard,
+  },
+  dashboardViews: {
+    preparacion: preparacionView(),
+    promocion: promoView(),
+    tramite: tramiteView(),
+    escritura: escrituraView(),
+  },
   // -- logIn:INICIA SESION
   logIn: () => {
     const formLogin = document.getElementById('formLogin');
@@ -38,12 +32,13 @@ const vista = {
       };
       formLogin.reset();
       return controller.logInAuth(userData);
+      // arreglar esta parte para que no sea llamado el controlador
     });
   },
-  // -- transformCurrentProgressToNumber: TRANSFORMA LA VISTA RECIENTE EN NUMERO
-  transformCurrentProgressToNumber: () => {
-    // se ejecuta en el metodo showCurrentProgressView del controller
-    // y en el scope global del controller
+  // -- transformCurrentViewInDashToNumber: TRANSFORMA LA VISTA RECIENTE EN NUMERO
+  transformCurrentViewInDashToNumber() {
+    // Preparación, En Promoción, Tramite y Avalúo, Escritura
+    const currentProgressStr = user.currentProgressDashViewStr;
     switch (currentProgressStr) {
       case 'Preparación':
         return 0;
@@ -57,7 +52,6 @@ const vista = {
         return 404;// show pag 404
     }
   },
-  //
 
 };
-export { views, vista, dashboardViews };
+export { vista };

@@ -3,21 +3,22 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.user = exports.dashboard = void 0;
 
 var _menu = _interopRequireDefault(require("./menu.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var currentProgress = 'En Promoción'; // traerme este valor desde la vista que ahi estara
-
-var userName = ' martin ricardo'; // traerme este valor desde la vista que ahi estara
-
-var linkPropertyPublication = 'http://localhost:5000/#/dashboard//localhost:5000/#/dashboard'; // traerme este valor desde la vista que ahi estara
-
+// Preparación, En Promoción, Tramite y Avalúo, Escritura
+var user = {
+  currentProgressDashViewStr: 'Preparación',
+  name: 'David',
+  linkPropertyPublication: 'http://localhost:5000/#/dashboard//localhost:5000/#/dashboard'
+};
+exports.user = user;
 var menu = (0, _menu["default"])(); // ojo con este no se si sea correcto ponerlo fuera de mi funcion
 
-var _default = function _default() {
+var dashboard = function dashboard() {
   /*
   * creating elements html *
   */
@@ -27,7 +28,7 @@ var _default = function _default() {
   container.setAttribute('class', 'dash__container'); // button open menu
 
   var btnOpenMenu = document.createElement('img');
-  btnOpenMenu.setAttribute('class', 'btnOpenMenu');
+  btnOpenMenu.setAttribute('id', 'btnOpenMenu');
   btnOpenMenu.setAttribute('src', '../assets/menu-icons/burger_menu.svg');
   /*
   * main divisors *
@@ -60,12 +61,12 @@ var _default = function _default() {
   propertyLink.setAttribute('class', 'userInfo__propertyLink'); // welcome child
 
   var span = document.createElement('span');
-  welcome.innerText = 'Bienvenido';
-  span.innerText = "".concat(userName); // propertyLink children
+  welcome.innerText = 'Bienvenido'; // span.innerText = user.name; solo en desktop
+  // propertyLink children
 
   var link = document.createElement('p');
-  var networkIcons = document.createElement('div');
-  link.innerHTML = "Link de mi Propiedad: ".concat(linkPropertyPublication); // propertyLink / networkIcons children
+  var networkIcons = document.createElement('div'); // link.innerHTML = `Link de mi Propiedad: ${linkPropertyPublication}`;
+  // propertyLink / networkIcons children
   // link.innerHTML = `Link de mi Propiedad: ${linkPropertyPublication}`;
 
   var iconWhats = document.createElement('img');
@@ -111,7 +112,7 @@ var _default = function _default() {
 
   var progressStatusCell = document.createElement('div');
   progressStatusCell.setAttribute('class', 'progressStatusBarCell__status');
-  progressStatusCell.innerText = "".concat(currentProgress);
+  progressStatusCell.innerText = user.currentProgressDashViewStr;
   /*
   * btnsChangeViewsToCell children *
   - only in cell
@@ -120,9 +121,11 @@ var _default = function _default() {
   var btnPreviousProgressView = document.createElement('button');
   var btnNextProgressView = document.createElement('button');
   btnNextProgressView.setAttribute('id', 'btnNextProgressView');
-  btnPreviousProgressView.setAttribute('id', 'btnPreviousProgressView');
   btnNextProgressView.setAttribute('class', 'btnsChangeViews');
+  btnNextProgressView.innerHTML = 'Siguiente';
+  btnPreviousProgressView.setAttribute('id', 'btnPreviousProgressView');
   btnPreviousProgressView.setAttribute('class', 'btnsChangeViews');
+  btnPreviousProgressView.innerHTML = 'Anterior';
   /*
   * nesting *
   */
@@ -170,4 +173,4 @@ var _default = function _default() {
   return dash;
 };
 
-exports["default"] = _default;
+exports.dashboard = dashboard;

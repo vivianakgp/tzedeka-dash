@@ -3,9 +3,9 @@ import { controller } from './controller/controller.js';
 
 const initial = () => {
   const hash = window.location.hash;
-  controller.templateChange(hash);
+  controller.changeMainView(hash);
   window.addEventListener('hashchange', () => {
-    controller.templateChange(hash);
+    controller.changeMainView(hash);
   });
 };
 window.addEventListener('load', initial);

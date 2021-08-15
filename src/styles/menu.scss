@@ -3,12 +3,10 @@ $share-width: 100%;
 $share-heigth: 50%;
 
 .menu {
-    position: relative;
     position: fixed;
     z-index: 100;
     height: 109px;
     width: 100%;
-    //min-width: 275px;
     top: calc(100vh - 109px);
     background-color: $menu-background;
         .menu__container {
@@ -34,7 +32,7 @@ $share-heigth: 50%;
                         width: 100%;
                         height: 150%;
                     }
-            }
+            } 
             .nav {
                 display: flex;
                 flex-direction: row;

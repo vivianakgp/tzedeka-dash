@@ -1,10 +1,12 @@
 import Menu from './menu.js';
-
-const currentProgress = 'En Promoción';// traerme este valor desde la vista que ahi estara
-const userName = ' martin ricardo';// traerme este valor desde la vista que ahi estara
-const linkPropertyPublication = 'http://localhost:5000/#/dashboard//localhost:5000/#/dashboard';// traerme este valor desde la vista que ahi estara
+// Preparación, En Promoción, Tramite y Avalúo, Escritura
+const user = {
+  currentProgressDashViewStr: 'Preparación',
+  name: 'David',
+  linkPropertyPublication: 'http://localhost:5000/#/dashboard//localhost:5000/#/dashboard',
+};
 const menu = Menu();// ojo con este no se si sea correcto ponerlo fuera de mi funcion
-export default () => {
+const dashboard = () => {
   /*
   * creating elements html *
   */
@@ -14,7 +16,7 @@ export default () => {
   container.setAttribute('class', 'dash__container');
   // button open menu
   const btnOpenMenu = document.createElement('img');
-  btnOpenMenu.setAttribute('class', 'btnOpenMenu');
+  btnOpenMenu.setAttribute('id', 'btnOpenMenu');
   btnOpenMenu.setAttribute('src', '../assets/menu-icons/burger_menu.svg');
   /*
   * main divisors *
@@ -46,11 +48,11 @@ export default () => {
   // welcome child
   const span = document.createElement('span');
   welcome.innerText = 'Bienvenido';
-  span.innerText = `${userName}`;
+  // span.innerText = user.name; solo en desktop
   // propertyLink children
   const link = document.createElement('p');
   const networkIcons = document.createElement('div');
-  link.innerHTML = `Link de mi Propiedad: ${linkPropertyPublication}`;
+  // link.innerHTML = `Link de mi Propiedad: ${linkPropertyPublication}`;
   // propertyLink / networkIcons children
   // link.innerHTML = `Link de mi Propiedad: ${linkPropertyPublication}`;
   const iconWhats = document.createElement('img');
@@ -94,7 +96,7 @@ export default () => {
   */
   const progressStatusCell = document.createElement('div');
   progressStatusCell.setAttribute('class', 'progressStatusBarCell__status');
-  progressStatusCell.innerText = `${currentProgress}`;
+  progressStatusCell.innerText = user.currentProgressDashViewStr;
 
   /*
   * btnsChangeViewsToCell children *
@@ -103,9 +105,11 @@ export default () => {
   const btnPreviousProgressView = document.createElement('button');
   const btnNextProgressView = document.createElement('button');
   btnNextProgressView.setAttribute('id', 'btnNextProgressView');
-  btnPreviousProgressView.setAttribute('id', 'btnPreviousProgressView');
   btnNextProgressView.setAttribute('class', 'btnsChangeViews');
+  btnNextProgressView.innerHTML = 'Siguiente';
+  btnPreviousProgressView.setAttribute('id', 'btnPreviousProgressView');
   btnPreviousProgressView.setAttribute('class', 'btnsChangeViews');
+  btnPreviousProgressView.innerHTML = 'Anterior';
   /*
   * nesting *
   */
@@ -151,3 +155,4 @@ export default () => {
   btnsChangeViewsToCell.appendChild(btnNextProgressView);
   return dash;
 };
+export { dashboard, user };

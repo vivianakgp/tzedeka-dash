@@ -22,7 +22,7 @@
     //padding-bottom: 100px;
 
 }
-.btnOpenMenu { // only in vertical menu
+#btnOpenMenu { // only in vertical menu
     display: none;
 }
 .dash__container {
@@ -87,29 +87,28 @@
     justify-content: space-between;
     background:#FFFFFF;
     border-bottom: 1px solid #d0d0d3;
+
 }
 .btnsChangeViews {
-    height: 28px;
-    width: 115px;
-    padding:20px;
+    height: 38px;
+    width: 140px;
     border:none;
     border-radius: 1px;
+    color:rgb(65, 63, 63);
+    font-size: 16px;
     background-color:#CAB98E;
 
 }
-.hideBtn {
-    opacity: 50%;
-}
+
 
 
 @media screen and (min-width:499px) {
-    .btnOpenMenu {
+    #btnOpenMenu {
         display: block;
         position: absolute;
         top: 33px;
         left: 20px;
-        width: 50px;
-
+        width: 40px;
     }
     .dash__container {
         //background-color:salmon;

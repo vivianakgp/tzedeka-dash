@@ -9,48 +9,44 @@ var _vista = require("../vista/vista.js");
 
 var _model = require("../model/model.js");
 
-/* eslint-disable no-plusplus */
+var _methodsDesk = require("./methodsDesk.js");
 
-/* eslint-disable max-len */
+var _methodsCell = require("./methodsCell.js");
+
 // eslint-disable-next-line import/no-cycle
-var preparacion = _vista.dashboardViews.preparacion();
+// eslint-disable-next-line import/no-cycle
+// numberOfCurrentDashboardView: numero de vista para mostrar por defecto
+var numberOfCurrentDashboardView = _vista.vista.transformCurrentViewInDashToNumber();
 
-var promocion = _vista.dashboardViews.promocion();
-
-var tramite = _vista.dashboardViews.tramite();
-
-var escritura = _vista.dashboardViews.escritura();
-
-var arrayProgressViews = [preparacion, promocion, tramite, escritura];
-
-var currentProgressNumber = _vista.vista.transformCurrentProgressToNumber();
-
-var Counter = currentProgressNumber;
-console.log("".concat(Counter, " :valor del contador"));
 var controller = {
-  // --  templateChange: DETECTA EL HASH Y CAMBIA LA VISTA
-  templateChange: function templateChange(hash) {
+  // --  templateChange: DETECTA EL HASH Y CAMBIA LAS PRINCIPALES VISTAS
+  changeMainView: function changeMainView(hash) {
     var mainSection = document.getElementById('container');
-    mainSection.innerHTML = ' ';
+    mainSection.innerHTML = '';
 
     switch (hash) {
       case '':
-        mainSection.appendChild(_vista.views.login());
+        mainSection.appendChild(_vista.vista.mainViews.Login());
 
         _vista.vista.logIn();
 
         break;
 
       case '#/register':
-        mainSection.appendChild(_vista.views.registry());
+        mainSection.appendChild(_vista.vista.mainViews.Registry());
         break;
 
       case '#/dashboard':
-        mainSection.appendChild(_vista.views.dash());
+        mainSection.appendChild(_vista.vista.mainViews.Dash());
         controller.showCurrentProgressView();
-        controller.addEventClickBtnDashInCell();
-        controller.addEventClickBtnDashInDesktop();
-        controller.changeDisableBtnDefault();
+        controller.clickBurgerMenu();
+
+        _methodsDesk.methodsDesktop.addEventClickBtnDashInDesktop();
+
+        _methodsCell.methodsCell.controllerBtnNextProgressViewInCell();
+
+        _methodsCell.methodsCell.controllerBtnPreviousProgressViewInCell();
+
         break;
 
       default:
@@ -89,135 +85,38 @@ var controller = {
       }
     });
   },
-  // -- showCurrentProgressView: MUESTRA LA VISTA* POR DEFAULT QUE LE CORRESPONDE EN EL DASH
+  // -- showCurrentProgressView: MUESTRA VISTA DE INICIO EN EL DASHBOARD
   showCurrentProgressView: function showCurrentProgressView() {
-    console.log("".concat(currentProgressNumber, " :valor de vista a mostrar"));
     var blackboard = document.getElementById('Blackboard');
     blackboard.innerHTML = '';
 
-    switch (currentProgressNumber) {
+    switch (numberOfCurrentDashboardView) {
       case 0:
-        blackboard.appendChild(_vista.dashboardViews.preparacion());
+        blackboard.appendChild(_vista.vista.dashboardViews.preparacion);
         break;
 
       case 1:
-        blackboard.appendChild(_vista.dashboardViews.promocion());
+        blackboard.appendChild(_vista.vista.dashboardViews.promocion);
         break;
 
       case 2:
-        blackboard.appendChild(_vista.dashboardViews.tramite());
+        blackboard.appendChild(_vista.vista.dashboardViews.tramite);
         break;
 
       case 3:
-        blackboard.appendChild(_vista.dashboardViews.escritura());
+        blackboard.appendChild(_vista.vista.dashboardViews.escritura);
         break;
 
       default: // show pag err
 
     }
   },
-  // -- REMUEVEN EVENTOS CLICK EN BTN CELL
-  removeEventClickBtnNextProgressViewInCell: function removeEventClickBtnNextProgressViewInCell() {
-    var btnNextProgressView = document.getElementById('btnNextProgressView');
-    btnNextProgressView.removeEventListener('click', controller.traversesArrayForward);
-  },
-  removeEventClickBtnPreviousProgressViewInCell: function removeEventClickBtnPreviousProgressViewInCell() {
-    var btnPreviousProgressView = document.getElementById('btnPreviousProgressView');
-    btnPreviousProgressView.removeEventListener('click', controller.progressArrayBackwards);
-  },
-  //  changeDisableBtn: HABILITA Y DESABILITA EL BTN EN CELL
-  changeDisableBtnDefault: function changeDisableBtnDefault() {
-    var btnNextProgressView = document.getElementById('btnNextProgressView');
-    var btnPreviousProgressView = document.getElementById('btnPreviousProgressView');
-
-    if (Counter === 3) {
-      btnNextProgressView.classList.add('hideBtn');
-    } else if (Counter === 0) {
-      btnPreviousProgressView.classList.add('hideBtn');
-    }
-  },
-  // -- traversesArrayForward: RECORRE EL ARRAY DE VISTAS*/DASH ADELANTE
-  traversesArrayForward: function traversesArrayForward() {
-    var btnNextProgressView = document.getElementById('btnNextProgressView');
-    var btnPreviousProgressView = document.getElementById('btnPreviousProgressView');
-    var blackboard = document.getElementById('Blackboard');
-    blackboard.innerHTML = '';
-    btnPreviousProgressView.classList.remove('hideBtn');
-
-    if (Counter < arrayProgressViews.length - 2) {
-      blackboard.appendChild(arrayProgressViews[Counter + 1]); // eslint-disable-next-line no-plusplus
-
-      Counter++;
-      console.log("".concat(Counter, " :valor del contador al plusplus"));
-    } else if (Counter === arrayProgressViews.length - 2) {
-      blackboard.appendChild(arrayProgressViews[Counter + 1]);
-      btnNextProgressView.classList.add('hideBtn');
-      controller.removeEventClickBtnNextProgressViewInCell(); // eslint-disable-next-line no-plusplus
-
-      Counter++;
-      console.log("".concat(Counter, " :valor del contador al plusplus en condicional 2 y elimina el evento"));
-    }
-  },
-  // -- progressArrayBackwards:RECORRE EL ARRAY DE VISTAS*/DASH ATRAS
-  progressArrayBackwards: function progressArrayBackwards() {
-    var btnNextProgressView = document.getElementById('btnNextProgressView');
-    var btnPreviousProgressView = document.getElementById('btnPreviousProgressView');
-    var blackboard = document.getElementById('Blackboard');
-    blackboard.innerHTML = '';
-
-    if (Counter === 1) {
-      console.log("".concat(Counter, " :valor del contador al--"));
-      blackboard.appendChild(arrayProgressViews[Counter - 1]);
-      btnPreviousProgressView.classList.add('hideBtn');
-      controller.removeEventClickBtnPreviousProgressViewInCell();
-    } else {
-      blackboard.appendChild(arrayProgressViews[Counter - 1]);
-      console.log("".concat(Counter, " :valor del contador al--"));
-      btnNextProgressView.classList.remove('hideBtn'); // eslint-disable-next-line no-plusplus
-
-      Counter--;
-    }
-  },
-  // -- addEventClickBtnDashOnCell: AGREGA LOS EVENTOS PARA CAMBIAR
-  // DE VISTA* EN LOS BTN DEL DASH SOLO EN CELL
-  addEventClickBtnDashInCell: function addEventClickBtnDashInCell() {
-    var btnNextProgressView = document.getElementById('btnNextProgressView');
-    var btnPreviousProgressView = document.getElementById('btnPreviousProgressView');
-    btnNextProgressView.addEventListener('click', controller.traversesArrayForward);
-    btnPreviousProgressView.addEventListener('click', controller.progressArrayBackwards);
-  },
-  // --  addEventClickBtnDash: AGREGA EVENTOS EN LOS BTN DE progressStatusBar EN DESKTOP
-  addEventClickBtnDashInDesktop: function addEventClickBtnDashInDesktop() {
-    var buttonsProgressStatusBar = document.getElementsByClassName('btnProgressStatusBar');
-    Array.prototype.forEach.call(buttonsProgressStatusBar, function (btn) {
-      btn.addEventListener('click', function (evt) {
-        controller.progressStatusBarChangeOfViews(evt);
-      });
+  clickBurgerMenu: function clickBurgerMenu() {
+    var burgerButton = document.getElementById('btnOpenMenu');
+    console.log(burgerButton);
+    burgerButton.addEventListener('click', function () {
+      alert('burger btn');
     });
-  },
-  // -- progressStatusBarChangeOfViews: ABRE VISTA DEL BOTON QUE DISPARO EL EVENTO CLICK
-  progressStatusBarChangeOfViews: function progressStatusBarChangeOfViews(evt) {
-    var progress = evt.target.dataset.progress;
-    var blackboard = document.getElementById('Blackboard');
-    blackboard.innerHTML = ''; // eslint-disable-next-line default-case
-
-    switch (progress) {
-      case '1':
-        blackboard.appendChild(preparacion);
-        break;
-
-      case '2':
-        blackboard.appendChild(promocion);
-        break;
-
-      case '3':
-        blackboard.appendChild(tramite);
-        break;
-
-      case '4':
-        blackboard.appendChild(escritura);
-        break;
-    }
   }
 };
 exports.controller = controller;
