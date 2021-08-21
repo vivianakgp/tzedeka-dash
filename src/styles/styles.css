@@ -1,112 +1,9 @@
-/* colors */
-/* Herencias */
-.login {
-  width: 100vw;
-  height: 100vh;
-  max-width: 1450px;
-}
-
-.formLogin__Container {
-  width: 100%;
-  height: 100%;
-}
-
-.formLogin {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 88%;
-  max-width: 600px;
-  height: 70vh;
-  margin: 30px auto;
-  background-color: #000000;
-}
-
-.imgLogin__Container {
-  display: none;
-}
-
-.formLogin__div--grey {
-  width: 100%;
-  height: 55px;
-  background-color: rgba(246, 235, 229, 0.5);
-}
-
-.formLogin__h1 {
-  color: #ffffff;
-  font-size: 6vw;
-  font-weight: lighter;
-  margin-bottom: 15%;
-}
-
-.formLogin__input--id, .formLogin__input--pass {
-  width: 77%;
-  height: auto;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  padding-left: 20px;
-  border-style: none;
-  height: 45px;
-}
-
-.formLogin__btn {
-  width: 55%;
-  height: 35px;
-  background-color: #C9BCAC;
-  color: #000000;
-  border-style: none;
-  border-radius: 5px;
-  margin: 10% 0 8% 0;
-}
-
-.formLogin__paragraph {
-  color: #ffffff;
-  font-size: 2.2vw;
-}
-
-.formLogin__anchor {
-  color: #ffffff;
-}
-
-@media only screen and (min-width: 1024px) {
-  .login {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .formLogin__Container {
-    display: block;
-    width: 42%;
-  }
-
-  .imgLogin__Container {
-    display: block;
-    width: 58%;
-  }
-
-  .imgLoginContainer__img {
-    width: 100%;
-    height: 100%;
-  }
-
-  .formLogin {
-    width: 100%;
-  }
-
-  .formLogin__h1 {
-    font-size: 4vw;
-  }
-
-  .formLogin__paragraph {
-    font-size: 1.5vw;
-  }
-}
 .menu {
   position: fixed;
   z-index: 100;
   height: 109px;
   width: 100%;
-  top: calc(100vh - 109px);
+  bottom: 0;
   background-color: #231f20;
 }
 .menu .menu__container {
@@ -175,10 +72,11 @@
 */
 @media screen and (min-width: 499px) {
   .menu {
+    position: absolute;
     top: 0;
     left: -275px;
     width: 275px;
-    height: 100vh;
+    height: 100%;
     padding-top: 2%;
     transition-duration: 1s;
   }
@@ -252,38 +150,126 @@
     display: none;
   }
 }
-/*
-* .progressStatusBar since tablet
-*/
-.progressStatusBar {
-  display: none;
-}
-
-/*
-* .userInfo > div  share link only desktop
-*/
-.userInfo__propertyLink {
-  display: none;
-}
-
-.dashboard {
+/* colors */
+/* Herencias */
+.login {
   width: 100vw;
-  min-width: 290px;
-  background-color: #E5E5E5;
-  height: auto;
+  height: 100vh;
+  max-width: 1400px;
 }
 
-#btnOpenMenu {
+.formLogin__Container {
+  width: 100%;
+  height: 100%;
+}
+
+.formLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 88%;
+  max-width: 600px;
+  height: auto;
+  margin: 20vh auto;
+  background-color: #000000;
+}
+
+.imgLogin__Container {
+  display: none;
+}
+
+.formLogin__div--grey {
+  width: 100%;
+  height: 55px;
+  background-color: rgba(246, 235, 229, 0.5);
+}
+
+.formLogin__h1 {
+  color: #ffffff;
+  font-size: 6vw;
+  font-weight: lighter;
+  margin-bottom: 15%;
+}
+
+.formLogin__input--id, .formLogin__input--pass {
+  width: 77%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding-left: 20px;
+  border-style: none;
+  height: 45px;
+}
+
+.formLogin__showAuthErr {
+  color: #dfb66a;
+  margin-top: 20px;
+}
+
+.formLogin__btn {
+  width: 55%;
+  height: 35px;
+  background-color: #C9BCAC;
+  color: #000000;
+  border-style: none;
+  border-radius: 5px;
+  margin: 5% 0;
+}
+
+.formLogin__paragraph {
+  color: #ffffff;
+  font-size: 2.2vw;
+}
+
+.formLogin__anchor {
+  color: #ffffff;
+}
+
+@media only screen and (min-width: 1100px) {
+  .login {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .formLogin__Container {
+    display: block;
+    width: 42%;
+  }
+
+  .imgLogin__Container {
+    display: block;
+    width: 58%;
+  }
+
+  .imgLoginContainer__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .formLogin {
+    width: 100%;
+  }
+
+  .formLogin__h1 {
+    font-size: 4vw;
+  }
+
+  .formLogin__paragraph {
+    font-size: 1.5vw;
+  }
+}
+.progressStatusBar, .userInfo__propertyLink, #btnOpenMenu {
   display: none;
 }
 
 .dash__container {
+  position: relative;
   width: 100vw;
+  height: auto;
   min-width: 290px;
   max-width: 1500px;
   padding-top: 50px;
   padding-bottom: 120px;
-  height: auto;
   background-color: #E5E5E5;
 }
 
@@ -480,31 +466,31 @@
     width: 100%;
   }
 }
-.prepaContainer {
+.boardView__container {
   position: relative;
-  padding: 60px 5rem;
   height: auto;
   min-width: 300px;
+  padding: 60px 5rem;
   font-size: 1.8rem;
   line-height: 4.4rem;
 }
 
-.prepaDescription {
+.boardView__description {
   display: flex;
   flex-direction: column;
 }
 
-.prepaImage {
-  max-width: 500px;
+.boardView__image {
+  max-width: 400px;
   margin: auto;
 }
 
-.prepaImage img {
+.boardView__image img {
   width: 100%;
   height: auto;
 }
 
-.prepaDescription h2 {
+.boardView__description h2 {
   margin: 30px 0;
   font-size: 2.4rem;
   font-weight: bold;
@@ -520,285 +506,45 @@ li span {
 }
 
 @media screen and (min-width: 499px) {
-  .prepaContainer {
+  .boardView__container {
     padding: 80px 4rem;
   }
 }
 @media screen and (min-width: 767px) {
-  .prepaContainer {
+  .boardView__container {
     padding: 80px 9rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  .prepaContainer {
+  .boardView__container {
     display: flex;
     flex-direction: row-reverse;
     padding: 0 0;
     padding: 3rem 0 4.5rem 3rem;
   }
 
-  .prepaDescription h2 {
-    font-size: 3.6rem;
-  }
-
-  .prepaDescription {
+  .boardView__description {
     width: 50%;
   }
 
-  .prepaImage {
+  .boardView__description h2 {
+    font-size: 3.6rem;
+  }
+
+  .boardView__image {
     margin: auto 0;
     width: 50%;
   }
 }
 @media screen and (min-width: 1200px) {
-  .prepaDescription {
+  .boardView__description {
     width: 60%;
   }
 
-  .prepaImage {
+  .boardView__image {
     width: 40%;
   }
 }
-.promoContainer {
-  position: relative;
-  padding: 60px 5rem;
-  height: auto;
-  min-width: 300px;
-  font-size: 1.8rem;
-  line-height: 4.4rem;
-}
-
-.promoDescription {
-  display: flex;
-  flex-direction: column;
-}
-
-.promoImage {
-  max-width: 500px;
-  margin: auto;
-}
-
-.promoImage img {
-  width: 100%;
-  height: auto;
-}
-
-.promoDescription h2 {
-  margin: 30px 0;
-  font-size: 2.4rem;
-  font-weight: bold;
-  color: black;
-}
-
-li {
-  font-weight: bold;
-}
-
-li span {
-  font-weight: 400;
-}
-
-@media screen and (min-width: 499px) {
-  .promoContainer {
-    padding: 80px 4rem;
-  }
-}
-@media screen and (min-width: 767px) {
-  .promoContainer {
-    padding: 80px 9rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .promoContainer {
-    display: flex;
-    flex-direction: row-reverse;
-    padding: 0 0;
-    padding: 3rem 0 4.5rem 3rem;
-  }
-
-  .promoDescription h2 {
-    font-size: 3.6rem;
-  }
-
-  .promoDescription {
-    width: 50%;
-  }
-
-  .promoImage {
-    margin: auto 0;
-    width: 50%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .promoDescription {
-    width: 60%;
-  }
-
-  .promoImage {
-    width: 40%;
-  }
-}
-.tramiteContainer {
-  position: relative;
-  padding: 60px 5rem;
-  height: auto;
-  min-width: 300px;
-  font-size: 1.8rem;
-  line-height: 4.4rem;
-}
-
-.tramiteDescription {
-  display: flex;
-  flex-direction: column;
-}
-
-.tramiteImage {
-  max-width: 500px;
-  margin: auto;
-}
-
-.tramiteImage img {
-  width: 100%;
-  height: auto;
-}
-
-.tramiteDescription h2 {
-  margin: 30px 0;
-  font-size: 2.4rem;
-  font-weight: bold;
-  color: black;
-}
-
-li {
-  font-weight: bold;
-}
-
-li span {
-  font-weight: 400;
-}
-
-@media screen and (min-width: 499px) {
-  .tramiteContainer {
-    padding: 80px 4rem;
-  }
-}
-@media screen and (min-width: 767px) {
-  .tramiteContainer {
-    padding: 80px 9rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .tramiteContainer {
-    display: flex;
-    flex-direction: row-reverse;
-    padding: 0 0;
-    padding: 3rem 0 4.5rem 3rem;
-  }
-
-  .tramiteDescription h2 {
-    font-size: 3.6rem;
-  }
-
-  .tramiteDescription {
-    width: 50%;
-  }
-
-  .tramiteImage {
-    margin: auto 0;
-    width: 50%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .tramiteDescription {
-    width: 60%;
-  }
-
-  .tramiteImage {
-    width: 40%;
-  }
-}
-.escrituraContainer {
-  position: relative;
-  padding: 60px 5rem;
-  height: auto;
-  min-width: 300px;
-  font-size: 1.8rem;
-  line-height: 4.4rem;
-}
-
-.escrituraDescription {
-  display: flex;
-  flex-direction: column;
-}
-
-.escriImage {
-  max-width: 500px;
-  margin: auto;
-}
-
-.escriImage img {
-  width: 100%;
-  height: 100%;
-}
-
-.escrituraDescription h2 {
-  text-align: center;
-  margin: 30px 0;
-  font-weight: bold;
-}
-
-li {
-  font-weight: bold;
-}
-
-li span {
-  font-weight: 400;
-}
-
-@media screen and (min-width: 499px) {
-  .escrituraContainer {
-    padding: 80px 4rem;
-  }
-}
-@media screen and (min-width: 767px) {
-  .escrituraContainer {
-    padding: 80px 9rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .escrituraContainer {
-    display: flex;
-    flex-direction: row-reverse;
-    padding: 0 0;
-    padding: 3rem 0 4.5rem 3rem;
-  }
-
-  .escrituraDescription h2 {
-    font-size: 3.6rem;
-  }
-
-  .escrituraDescription {
-    width: 50%;
-  }
-
-  .escriImage {
-    margin: auto 0;
-    width: 50%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .escrituraDescription {
-    width: 60%;
-  }
-
-  .escriImage {
-    width: 40%;
-  }
-}
-/*
-* font to html all document: font-family: 'Lato', sans-serif;
-* font to headlines and menu: font-family: 'Mulish', sans-serif;
-*/
 * {
   box-sizing: border-box;
   padding: 0;

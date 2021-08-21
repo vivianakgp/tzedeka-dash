@@ -33,6 +33,7 @@ var _default = function _default() {
   var h1 = document.createElement('h1');
   var inputEmail = document.createElement('input');
   var inputPassword = document.createElement('input');
+  var logInMessage = document.createElement('p');
   var btn = document.createElement('button');
   var paragraph = document.createElement('p');
   var anchor = document.createElement('a');
@@ -46,6 +47,8 @@ var _default = function _default() {
   inputPassword.setAttribute('class', 'formLogin__input--pass');
   inputPassword.setAttribute('placeholder', 'ID Cliente');
   inputPassword.setAttribute('name', 'password');
+  logInMessage.setAttribute('class', 'formLogin__showAuthErr');
+  logInMessage.setAttribute('id', 'loginMessage');
   btn.setAttribute('class', 'formLogin__btn');
   btn.setAttribute('type', 'submit');
   btn.setAttribute('value', 'Ingresar');
@@ -73,6 +76,7 @@ var _default = function _default() {
   formLogin.appendChild(h1);
   formLogin.appendChild(inputEmail);
   formLogin.appendChild(inputPassword);
+  formLogin.appendChild(logInMessage);
   formLogin.appendChild(btn);
   formLogin.appendChild(paragraph);
   paragraph.appendChild(anchor);

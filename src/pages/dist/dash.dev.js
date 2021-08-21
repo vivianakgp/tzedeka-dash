@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.user = exports.dashboard = void 0;
+exports.dashboard = exports.user = void 0;
 
 var _menu = _interopRequireDefault(require("./menu.js"));
 
@@ -11,12 +11,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 // Preparación, En Promoción, Tramite y Avalúo, Escritura
 var user = {
-  currentProgressDashViewStr: 'Preparación',
+  currentProgressDashViewStr: 'Escritura',
   name: 'David',
   linkPropertyPublication: 'http://localhost:5000/#/dashboard//localhost:5000/#/dashboard'
 };
 exports.user = user;
-var menu = (0, _menu["default"])(); // ojo con este no se si sea correcto ponerlo fuera de mi funcion
 
 var dashboard = function dashboard() {
   /*
@@ -130,10 +129,10 @@ var dashboard = function dashboard() {
   * nesting *
   */
 
-  dash.appendChild(container);
-  dash.appendChild(menu); // button open menu
+  dash.appendChild(container); // button open menu and menu
 
-  container.appendChild(btnOpenMenu); //  main div
+  container.appendChild(btnOpenMenu);
+  container.appendChild((0, _menu["default"])()); //  main div
 
   container.appendChild(userInfo);
   container.appendChild(progressStatusBarCell);

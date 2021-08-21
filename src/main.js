@@ -1,5 +1,4 @@
 import { controller } from './controller/controller.js';
-// AQUI INICIA LA APPLICACION
 
 const initial = () => {
   const hash = window.location.hash;

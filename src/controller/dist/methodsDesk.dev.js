@@ -4,11 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.methodsDesktop = void 0;
-
-var _vista = require("../vista/vista.js");
-
 // todos los metodos de desktop
 // eslint-disable-next-line import/no-cycle
+// import { vista } from '../vista/vista.js';
 var methodsDesktop = {
   // --  addEventClickBtnDash: AGREGA EVENTOS EN LOS BTN DE progressStatusBar EN DESKTOP
   addEventClickBtnDashInDesktop: function addEventClickBtnDashInDesktop() {
@@ -28,19 +26,19 @@ var methodsDesktop = {
 
     switch (progress) {
       case '1':
-        blackboard.appendChild(_vista.vista.dashboardViews.preparacion);
+        blackboard.appendChild(vista.dashboardViews.preparacion);
         break;
 
       case '2':
-        blackboard.appendChild(_vista.vista.dashboardViews.promocion);
+        blackboard.appendChild(vista.dashboardViews.promocion);
         break;
 
       case '3':
-        blackboard.appendChild(_vista.vista.dashboardViews.tramite);
+        blackboard.appendChild(vista.dashboardViews.tramite);
         break;
 
       case '4':
-        blackboard.appendChild(_vista.vista.dashboardViews.escritura);
+        blackboard.appendChild(vista.dashboardViews.escritura);
         break;
     }
   }

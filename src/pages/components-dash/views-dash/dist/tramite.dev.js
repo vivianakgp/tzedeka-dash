@@ -8,8 +8,8 @@ exports["default"] = void 0;
 var _default = function _default() {
   var Title = 'Tramite y Avalúo';
   /*
-   * message description *
-   */
+  * message description *
+  */
 
   var txtBold1 = 'Avalúo: ';
   var txtLight1 = 'Se envía con cita a un valuador a tu propiedad quien calculará y revisará que el precio coincida con el valor.';
@@ -24,12 +24,12 @@ var _default = function _default() {
   */
 
   var tramiteView = document.createElement('section');
-  tramiteView.setAttribute('class', 'tramiteContainer'); // main elements
+  tramiteView.setAttribute('class', 'boardView__container'); // main elements
 
   var imageDiv = document.createElement('div');
   var descriptionDiv = document.createElement('div');
-  descriptionDiv.setAttribute('class', 'tramiteDescription');
-  imageDiv.setAttribute('class', 'tramiteImage'); // main elements children
+  descriptionDiv.setAttribute('class', 'boardView__description');
+  imageDiv.setAttribute('class', 'boardView__description'); // main elements children
 
   var img = document.createElement('img');
   var title = document.createElement('h2');

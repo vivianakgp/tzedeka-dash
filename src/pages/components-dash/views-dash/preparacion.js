@@ -14,12 +14,12 @@ export default () => {
   * creating elements html*
   */
   const preparationView = document.createElement('section');
-  preparationView.setAttribute('class', 'prepaContainer');
+  preparationView.setAttribute('class', 'boardView__container');
   // main elements
   const imageDiv = document.createElement('div');
   const descriptionDiv = document.createElement('div');
-  descriptionDiv.setAttribute('class', 'prepaDescription');
-  imageDiv.setAttribute('class', 'prepaImage');
+  descriptionDiv.setAttribute('class', 'boardView__description');
+  imageDiv.setAttribute('class', 'boardView__image');
   // main elements children
   const img = document.createElement('img');
   const title = document.createElement('h2');

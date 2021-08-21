@@ -1,12 +1,12 @@
 import Menu from './menu.js';
+
 // Preparación, En Promoción, Tramite y Avalúo, Escritura
-const user = {
-  currentProgressDashViewStr: 'Preparación',
+export const user = {
+  currentProgressDashViewStr: 'Escritura',
   name: 'David',
   linkPropertyPublication: 'http://localhost:5000/#/dashboard//localhost:5000/#/dashboard',
 };
-const menu = Menu();// ojo con este no se si sea correcto ponerlo fuera de mi funcion
-const dashboard = () => {
+export const dashboard = () => {
   /*
   * creating elements html *
   */
@@ -114,9 +114,9 @@ const dashboard = () => {
   * nesting *
   */
   dash.appendChild(container);
-  dash.appendChild(menu);
-  // button open menu
+  // button open menu and menu
   container.appendChild(btnOpenMenu);
+  container.appendChild(Menu());
   //  main div
   container.appendChild(userInfo);
   container.appendChild(progressStatusBarCell);
@@ -155,4 +155,3 @@ const dashboard = () => {
   btnsChangeViewsToCell.appendChild(btnNextProgressView);
   return dash;
 };
-export { dashboard, user };

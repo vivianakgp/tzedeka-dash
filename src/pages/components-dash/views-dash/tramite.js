@@ -1,6 +1,6 @@
-export default () => { 
+export default () => {
   const Title = 'Tramite y Avalúo';
- /*
+  /*
   * message description *
   */
   const txtBold1 = 'Avalúo: ';
@@ -15,12 +15,12 @@ export default () => {
   * creating elements html * *
   */
   const tramiteView = document.createElement('section');
-  tramiteView.setAttribute('class', 'tramiteContainer');
+  tramiteView.setAttribute('class', 'boardView__container');
   // main elements
   const imageDiv = document.createElement('div');
   const descriptionDiv = document.createElement('div');
-  descriptionDiv.setAttribute('class', 'tramiteDescription');
-  imageDiv.setAttribute('class', 'tramiteImage');
+  descriptionDiv.setAttribute('class', 'boardView__description');
+  imageDiv.setAttribute('class', 'boardView__description');
   // main elements children
   const img = document.createElement('img');
   const title = document.createElement('h2');

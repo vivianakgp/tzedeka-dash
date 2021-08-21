@@ -17,7 +17,7 @@ $width__share:100%;
 .login {
     width: 100vw;
     height: 100vh;
-    max-width: 1450px;
+    max-width: 1400px;
 }
 .formLogin__Container {
     width: 100%;
@@ -29,8 +29,8 @@ $width__share:100%;
     align-items: center;
     width: 88%;
     max-width: 600px;
-    height: 70vh;
-    margin: 30px auto;
+    height: auto;
+    margin: 20vh auto;
     background-color: $black;
 }
 .imgLogin__Container {
@@ -52,6 +52,10 @@ $width__share:100%;
     @include formLogin__inputs(77%);
     height: 45px;
 }
+.formLogin__showAuthErr {
+    color:rgb(223, 182, 106);
+    margin-top: 20px;
+}
 .formLogin__btn {
     width: 55%;
     height: 35px;
@@ -59,7 +63,7 @@ $width__share:100%;
     color:$black;
     border-style: none;
     border-radius: 5px;
-    margin: 10% 0 8% 0;
+    margin: 5% 0;
 }
 .formLogin__paragraph {
     color:$white;
@@ -68,7 +72,7 @@ $width__share:100%;
 .formLogin__anchor{
     color:$white;
 }
-@media only screen and (min-width:1024px){
+@media only screen and (min-width:1100px){
     .login {
         display: flex;
         flex-direction: row;

@@ -1,35 +1,15 @@
-/*
-* .progressStatusBar since tablet
-*/
-.progressStatusBar {
-  display: none;
-}
-
-/*
-* .userInfo > div  share link only desktop
-*/
-.userInfo__propertyLink {
-  display: none;
-}
-
-.dashboard {
-  width: 100vw;
-  min-width: 290px;
-  background-color: #E5E5E5;
-  height: auto;
-}
-
-#btnOpenMenu {
+.progressStatusBar, .userInfo__propertyLink, #btnOpenMenu {
   display: none;
 }
 
 .dash__container {
+  position: relative;
   width: 100vw;
+  height: auto;
   min-width: 290px;
   max-width: 1500px;
   padding-top: 50px;
   padding-bottom: 120px;
-  height: auto;
   background-color: #E5E5E5;
 }
 
