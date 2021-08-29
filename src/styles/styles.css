@@ -1,3 +1,239 @@
+/* colors */
+/* Herencias */
+.login {
+  width: 100vw;
+  height: 100vh;
+  max-width: 1400px;
+}
+
+.formLogin__Container {
+  width: 100%;
+  height: 100%;
+}
+
+.formLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 88%;
+  max-width: 600px;
+  height: auto;
+  margin: 20vh auto;
+  background-color: #000000;
+}
+
+.imgLogin__Container {
+  display: none;
+}
+
+.formLogin__div--grey {
+  width: 100%;
+  height: 55px;
+  background-color: rgba(246, 235, 229, 0.5);
+}
+
+.formLogin__h1 {
+  color: #ffffff;
+  font-size: 6vw;
+  font-weight: lighter;
+  margin-bottom: 15%;
+}
+
+.formLogin__input--id, .formLogin__input--pass {
+  width: 77%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding-left: 20px;
+  border-style: none;
+  height: 45px;
+}
+
+.formLogin__showAuthErr {
+  color: #dfb66a;
+  margin-top: 20px;
+}
+
+.formLogin__btn {
+  width: 55%;
+  height: 35px;
+  background-color: #C9BCAC;
+  color: #000000;
+  border-style: none;
+  border-radius: 5px;
+  margin: 5% 0;
+}
+
+.formLogin__paragraph {
+  color: #ffffff;
+  font-size: 2.2vw;
+}
+
+.formLogin__anchor {
+  color: #ffffff;
+}
+
+@media only screen and (min-width: 1100px) {
+  .login {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .formLogin__Container {
+    display: block;
+    width: 42%;
+  }
+
+  .imgLogin__Container {
+    display: block;
+    width: 58%;
+  }
+
+  .imgLoginContainer__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .formLogin {
+    width: 100%;
+  }
+
+  .formLogin__h1 {
+    font-size: 4vw;
+  }
+
+  .formLogin__paragraph {
+    font-size: 1.5vw;
+  }
+}
+.boardView__container {
+  position: relative;
+  height: auto;
+  min-width: 300px;
+  padding: 60px 5rem;
+  font-size: 1.8rem;
+  line-height: 4.4rem;
+}
+.boardView__container .boardView__image {
+  max-width: 400px;
+  margin: auto;
+}
+.boardView__container .boardView__image img {
+  width: 100%;
+  height: auto;
+}
+.boardView__container .boardView__description {
+  display: flex;
+  flex-direction: column;
+}
+.boardView__container .boardView__description h2 {
+  margin: 30px 0;
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: black;
+}
+.boardView__container .boardView__description li {
+  font-weight: bold;
+}
+.boardView__container .boardView__description li span {
+  font-weight: 400;
+}
+
+@media screen and (min-width: 499px) {
+  .boardView__container {
+    padding: 80px 4rem;
+  }
+}
+@media screen and (min-width: 767px) {
+  .boardView__container {
+    padding: 80px 9rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .boardView__container {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0 0;
+    padding: 3rem 0 4.5rem 3rem;
+  }
+
+  .boardView__description {
+    width: 50%;
+  }
+
+  .boardView__description h2 {
+    font-size: 3.6rem;
+  }
+
+  .boardView__image {
+    margin: auto 0;
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .boardView__description {
+    width: 60%;
+  }
+
+  .boardView__image {
+    width: 40%;
+  }
+}
+.dash__progressStatusBarCell {
+  width: 90%;
+  max-width: 450px;
+  height: 23px;
+  margin: 40px auto;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  border: 1px solid #d0d0d3;
+  background-color: lightcoral;
+}
+.dash__progressStatusBarCell div {
+  height: 21px;
+  width: 70%;
+  margin: 0 15%;
+  border-left: 1px solid #d0d0d3;
+  border-right: 1px solid #d0d0d3;
+  border-radius: 8px;
+  color: #9f9376;
+  text-align: center;
+  font-family: "Mulish", sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  background-color: #f3ceca;
+}
+
+@media screen and (min-width: 767px) {
+  .dash__progressStatusBarCell {
+    display: none;
+  }
+}
+.blackboard__containerBtnChangeView {
+  position: relative;
+  display: flex;
+  top: -3px;
+  justify-content: space-between;
+  background: #FFFFFF;
+  border-bottom: 1px solid #d0d0d3;
+}
+
+.BtnChangeView {
+  height: 38px;
+  width: 140px;
+  border: none;
+  border-radius: 1px;
+  color: #413f3f;
+  font-size: 16px;
+  background-color: #CAB98E;
+}
+
+@media screen and (min-width: 767px) {
+  .blackboard__containerBtnChangeView {
+    display: none;
+  }
+}
 .menu {
   position: fixed;
   z-index: 100;
@@ -150,115 +386,111 @@
     display: none;
   }
 }
-/* colors */
-/* Herencias */
-.login {
-  width: 100vw;
-  height: 100vh;
-  max-width: 1400px;
-}
-
-.formLogin__Container {
-  width: 100%;
-  height: 100%;
-}
-
-.formLogin {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 88%;
-  max-width: 600px;
-  height: auto;
-  margin: 20vh auto;
-  background-color: #000000;
-}
-
-.imgLogin__Container {
+.blackboard__progressStatusBar {
   display: none;
 }
 
-.formLogin__div--grey {
-  width: 100%;
-  height: 55px;
-  background-color: rgba(246, 235, 229, 0.5);
-}
-
-.formLogin__h1 {
-  color: #ffffff;
-  font-size: 6vw;
-  font-weight: lighter;
-  margin-bottom: 15%;
-}
-
-.formLogin__input--id, .formLogin__input--pass {
-  width: 77%;
-  height: auto;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  padding-left: 20px;
-  border-style: none;
-  height: 45px;
-}
-
-.formLogin__showAuthErr {
-  color: #dfb66a;
-  margin-top: 20px;
-}
-
-.formLogin__btn {
-  width: 55%;
-  height: 35px;
-  background-color: #C9BCAC;
-  color: #000000;
-  border-style: none;
-  border-radius: 5px;
-  margin: 5% 0;
-}
-
-.formLogin__paragraph {
-  color: #ffffff;
-  font-size: 2.2vw;
-}
-
-.formLogin__anchor {
-  color: #ffffff;
-}
-
-@media only screen and (min-width: 1100px) {
-  .login {
+@media screen and (min-width: 767px) {
+  .blackboard__progressStatusBar {
     display: flex;
     flex-direction: row;
+    width: 96%;
+    margin: 15px auto;
+    text-align: center;
+    background-color: lightgreen;
   }
-
-  .formLogin__Container {
+  .blackboard__progressStatusBar > div {
+    width: 38%;
+    position: relative;
+    z-index: 100;
+  }
+  .blackboard__progressStatusBar > div > span {
+    color: #9FA2B4;
+    font-size: 1.9rem;
     display: block;
-    width: 42%;
   }
-
-  .imgLogin__Container {
-    display: block;
-    width: 58%;
+  .blackboard__progressStatusBar > div > div {
+    height: 25px;
+    border-radius: 8px;
+    border: 1px solid #d0d0d3;
+    background-color: #d5e4e4;
   }
-
-  .imgLoginContainer__img {
-    width: 100%;
-    height: 100%;
+  .blackboard__progressStatusBar div:nth-child(4) {
+    width: 15%;
+    left: -13px;
   }
-
-  .formLogin {
-    width: 100%;
+  .blackboard__progressStatusBar div:nth-child(2) {
+    right: -10px;
+    z-index: 2;
   }
-
-  .formLogin__h1 {
-    font-size: 4vw;
-  }
-
-  .formLogin__paragraph {
-    font-size: 1.5vw;
+  .blackboard__progressStatusBar div:nth-child(1) {
+    right: -18px;
+    z-index: 1;
   }
 }
-.progressStatusBar, .userInfo__propertyLink, #btnOpenMenu {
+@media screen and (min-width: 1024px) {
+  .blackboard__progressStatusBar {
+    width: 100%;
+  }
+}
+.blackboard__userInfo {
+  display: flex;
+  background-color: lightcoral;
+}
+.blackboard__userInfo h1 {
+  width: 80%;
+  margin: 0 auto;
+  font-family: "Mulish", sans-serif;
+  font-size: 2.4rem;
+  font-weight: bold;
+  line-height: 2.6rem;
+  color: #252733;
+}
+.blackboard__userInfo .propertyLinkContainer {
+  display: none;
+}
+
+@media screen and (min-width: 499px) {
+  .blackboard__userInfo h1 {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .blackboard__userInfo {
+    margin: 0 13px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blackboard__userInfo h1 {
+    text-align: initial;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .propertyLinkContainer {
+    display: block;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #6c6d70;
+  }
+
+  .propertyLinkContainer div {
+    width: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 6px;
+  }
+
+  .propertyLinkContainer div img {
+    width: 13.7px;
+    height: 15.44px;
+  }
+}
+#btnOpenMenu {
   display: none;
 }
 
@@ -273,70 +505,11 @@
   background-color: #E5E5E5;
 }
 
-.userInfo {
-  display: flex;
-}
-
-.userInfo h1 {
-  width: 80%;
-  margin: 0 auto;
-  font-family: "Mulish", sans-serif;
-  font-size: 2.4rem;
-  font-weight: bold;
-  line-height: 2.6rem;
-  color: #252733;
-}
-
 .blackboard {
   width: 100%;
   border: 1px solid #d0d0d3;
   border-radius: 0.5rem;
   background-color: #FFFFFF;
-}
-
-.progressStatusBarCell {
-  width: 90%;
-  max-width: 450px;
-  height: 23px;
-  margin: 40px auto;
-  margin-bottom: 25px;
-  border-radius: 8px;
-  border: 1px solid #d0d0d3;
-}
-
-.progressStatusBarCell__status {
-  height: 21px;
-  width: 70%;
-  margin: 0 15%;
-  border-left: 1px solid #d0d0d3;
-  border-right: 1px solid #d0d0d3;
-  border-radius: 8px;
-  color: #9f9376;
-  text-align: center;
-  font-family: "Mulish", sans-serif;
-  font-size: 1.4rem;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-  background-color: #f3ceca;
-}
-
-.btnsChangeViewsToCell {
-  position: relative;
-  display: flex;
-  top: -3px;
-  justify-content: space-between;
-  background: #FFFFFF;
-  border-bottom: 1px solid #d0d0d3;
-}
-
-.btnsChangeViews {
-  height: 38px;
-  width: 140px;
-  border: none;
-  border-radius: 1px;
-  color: #413f3f;
-  font-size: 16px;
-  background-color: #CAB98E;
 }
 
 @media screen and (min-width: 499px) {
@@ -351,66 +524,11 @@
   .dash__container {
     padding-bottom: 70px;
   }
-
-  .userInfo h1 {
-    text-align: center;
-  }
 }
 @media screen and (min-width: 767px) {
   .blackboard {
     width: 93%;
     margin: 0 auto;
-  }
-
-  .progressStatusBarCell {
-    display: none;
-  }
-
-  .progressStatusBar {
-    display: block;
-    display: flex;
-    flex-direction: row;
-    width: 96%;
-    margin: 15px auto;
-    text-align: center;
-  }
-
-  .progressStatusBar > div {
-    width: 38%;
-    position: relative;
-    z-index: 100;
-  }
-
-  .progressStatusBar div:nth-child(4) {
-    width: 15%;
-    left: -13px;
-  }
-
-  .progressStatusBar div:nth-child(2) {
-    right: -10px;
-    z-index: 2;
-  }
-
-  .progressStatusBar div:nth-child(1) {
-    right: -18px;
-    z-index: 1;
-  }
-
-  .progressStatusBar > div > span {
-    color: #9FA2B4;
-    font-size: 1.9rem;
-    display: block;
-  }
-
-  .progressStatusBar > div > div {
-    height: 25px;
-    border-radius: 8px;
-    border: 1px solid #d0d0d3;
-    background-color: #d5e4e4;
-  }
-
-  .btnsChangeViewsToCell {
-    display: none;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -426,123 +544,6 @@
     width: 98%;
     margin: 0 auto;
     overflow-x: hidden;
-  }
-
-  .userInfo {
-    margin: 0 13px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .userInfo h1 {
-    text-align: initial;
-    width: 100%;
-    margin-bottom: 12px;
-  }
-
-  .userInfo__propertyLink {
-    display: block;
-    display: flex;
-    justify-content: flex-end;
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #6c6d70;
-  }
-
-  .userInfo__propertyLink div {
-    width: 72px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 6px;
-  }
-
-  .userInfo__propertyLink div img {
-    width: 13.7px;
-    height: 15.44px;
-  }
-
-  .progressStatusBar {
-    width: 100%;
-  }
-}
-.boardView__container {
-  position: relative;
-  height: auto;
-  min-width: 300px;
-  padding: 60px 5rem;
-  font-size: 1.8rem;
-  line-height: 4.4rem;
-}
-
-.boardView__description {
-  display: flex;
-  flex-direction: column;
-}
-
-.boardView__image {
-  max-width: 400px;
-  margin: auto;
-}
-
-.boardView__image img {
-  width: 100%;
-  height: auto;
-}
-
-.boardView__description h2 {
-  margin: 30px 0;
-  font-size: 2.4rem;
-  font-weight: bold;
-  color: black;
-}
-
-li {
-  font-weight: bold;
-}
-
-li span {
-  font-weight: 400;
-}
-
-@media screen and (min-width: 499px) {
-  .boardView__container {
-    padding: 80px 4rem;
-  }
-}
-@media screen and (min-width: 767px) {
-  .boardView__container {
-    padding: 80px 9rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .boardView__container {
-    display: flex;
-    flex-direction: row-reverse;
-    padding: 0 0;
-    padding: 3rem 0 4.5rem 3rem;
-  }
-
-  .boardView__description {
-    width: 50%;
-  }
-
-  .boardView__description h2 {
-    font-size: 3.6rem;
-  }
-
-  .boardView__image {
-    margin: auto 0;
-    width: 50%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .boardView__description {
-    width: 60%;
-  }
-
-  .boardView__image {
-    width: 40%;
   }
 }
 * {

@@ -11,7 +11,7 @@ export default () => {
   const txtLight3 = 'Se entrega la propiedad al comprador en las condiciones pactadas y firmando la entrega.';
   /*
   * creating elements html * *
-  */
+  */ 
   const escrituraView = document.createElement('section');
   escrituraView.setAttribute('class', 'boardView__container');
   // main elements

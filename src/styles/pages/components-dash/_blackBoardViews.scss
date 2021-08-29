@@ -5,31 +5,33 @@
     padding: 60px 5rem;
     font-size: 1.8rem;
     line-height: 4.4rem;
+    .boardView__image {
+        max-width: 400px;
+        margin:auto;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .boardView__description {
+        display: flex;
+        flex-direction: column;
+        h2 {
+            margin: 30px 0;
+            font-size: 2.4rem;
+            font-weight: bold;
+            color:black;
+        }
+        li {
+            font-weight: bold;
+            span {
+                font-weight: 400;
+            }
+        }
+    }
 }
-.boardView__description {
-    display: flex;
-    flex-direction: column;
-}
-.boardView__image {
-    max-width: 400px;
-    margin:auto;
-}
-.boardView__image img {
-    width: 100%;
-    height: auto;
-}
-.boardView__description h2 {
-    margin: 30px 0;
-    font-size: 2.4rem;
-    font-weight: bold;
-    color:black;
-}
-li {
-    font-weight: bold;
-}
-li span {
-    font-weight: 400;
-}
+
+
 @media screen and(min-width:499px) {
     .boardView__container {
         padding: 80px 4rem;
@@ -61,6 +63,7 @@ li span {
 @media screen and(min-width:1200px) {
     .boardView__description {
         width: 60%;
+       
     }
     .boardView__image {
         width: 40%;
