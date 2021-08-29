@@ -1,8 +1,5 @@
-// eslint-disable-next-line import/no-cycle
-import { controller } from '../controller/controller.js';
 // main views
 import Login from '../pages/login.js';
-// import Registry from '../pages/registry.js';
 import { dashboard, user } from '../pages/dash.js';
 // views on dashboard
 import preparacionView from '../pages/components-dash/views-dash/preparacion.js';
@@ -21,18 +18,12 @@ const vista = {
     tramite: tramiteView(),
     escritura: escrituraView(),
   },
-  // -- logIn:INICIA SESION
-  logIn: () => {
-    const formLogin = document.getElementById('formLogin');
-    formLogin.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const userData = {
-        email: formLogin.email.value,
-        password: formLogin.password.value,
-      };
-      formLogin.reset();
-      return controller.logInAuth(userData);
-      // arreglar esta parte para que no sea llamado el controlador
+  // -- showAuthenticationError: MOSTRAR ERROR DE LOGIN
+  showAuthenticationError: (messageErr, form) => {
+    const logInMessage = document.getElementById('loginMessage');
+    logInMessage.innerHTML = messageErr;
+    form.addEventListener('keydown', () => {
+      logInMessage.innerHTML = '';
     });
   },
   // -- transformCurrentViewInDashToNumber: TRANSFORMA LA VISTA RECIENTE EN NUMERO

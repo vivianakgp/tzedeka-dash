@@ -1,106 +1,36 @@
 
-/*
-* .progressStatusBar since tablet
-*/
-.progressStatusBar {
+@import'./components-dash/blackBoardViews';
+@import './components-dash/componentsInCell/progressStatusBarCell';
+@import './components-dash/componentsInCell/btnsChangeViewsToCell';
+@import './components-dash/components/menu';
+@import './components-dash/components/progressStatusBar';
+@import './components-dash/components/userInfo';
+
+
+// *Hidden elements from mobile first* //
+    // #btnOpenMenu only in vertical menu
+#btnOpenMenu {
     display:none;
 }
-/*
-* .userInfo > div  share link only desktop
-*/
-.userInfo__propertyLink{
-    display: none;
-}
-//   //    //
-.dashboard {
-    width: 100vw;
-    min-width: 290px;
-    background-color:#E5E5E5;
-    // height: 100vh;
-    height: auto;
-    //overflow: hidden;
-    //padding-bottom: 100px;
-
-}
-#btnOpenMenu { // only in vertical menu
-    display: none;
-}
+//   *Elements styles from mobile* //
 .dash__container {
+    position: relative;
     width: 100vw;
+    height: auto;
     min-width: 290px;
     max-width: 1500px;
     padding-top: 50px;
     padding-bottom: 120px;
-    height: auto;
     background-color:#E5E5E5;
-
-}
-.userInfo {
-    display: flex;
-}
-.userInfo  h1 {
-    width: 80%;
-    margin: 0 auto;
-    font-family: 'Mulish', sans-serif;
-    font-size: 2.4rem;
-    font-weight: bold;
-    line-height: 2.6rem;
-    color: #252733;
 }
 .blackboard {
     width: 100%;
     border: 1px solid #d0d0d3;
     border-radius: .5rem ;
-    //overflow-x: scroll;
-    //scroll-behavior: contain;
-    //scroll-snap-type: x proximity;
     background-color: #FFFFFF;
 }
-.progressStatusBarCell {
-    width: 90%;
-    max-width: 450px;
-    height: 23px;
-    margin: 40px auto;
-    margin-bottom: 25px;
-    border-radius: 8px;
-    border: 1px solid #d0d0d3;
-}
-.progressStatusBarCell__status {
-    height: 21px;
-    width: 70%;
-    margin: 0 15%;
-    border-left:1px solid #d0d0d3;
-    border-right: 1px solid #d0d0d3;
-    border-radius: 8px;
-    color:rgba(159, 147, 118, 1);
-    text-align: center;
-    font-family: 'Mulish', sans-serif;
-    font-size: 1.4rem;
-    font-weight: bold;
-    letter-spacing: .5px;
-    background-color: rgb(243, 206, 202);
-}
-.btnsChangeViewsToCell {
-    position: relative;
-    display:flex;
-    top:-3px;
-    justify-content: space-between;
-    background:#FFFFFF;
-    border-bottom: 1px solid #d0d0d3;
 
-}
-.btnsChangeViews {
-    height: 38px;
-    width: 140px;
-    border:none;
-    border-radius: 1px;
-    color:rgb(65, 63, 63);
-    font-size: 16px;
-    background-color:#CAB98E;
-
-}
-
-
+//   * media 499px change menu horizontal to vertical * //
 
 @media screen and (min-width:499px) {
     #btnOpenMenu {
@@ -111,136 +41,28 @@
         width: 40px;
     }
     .dash__container {
-        //background-color:salmon;
         padding-bottom: 70px;
     }
-    .userInfo  h1 {
-        text-align:center;
 
-    }
 }
 @media screen and (min-width:767px) {
-    .dash__container {
-        // background-color:rgba(230, 29, 176, 0.87);
-    }
     .blackboard {
         width: 93%;
         margin: 0 auto;
     }
-    .progressStatusBarCell {
-        display: none;
-    }
-    .progressStatusBar {
-        display:block;
-        display:flex;
-        flex-direction: row;
-        width: 96%;
-        margin: 15px auto;
-        text-align: center;
-        //background-color: rgba(140, 10, 101, 0.329);
-}
-    .progressStatusBar > div {
-        width:38%;
-        position:relative;
-        z-index:100;
-    }
-    .progressStatusBar div:nth-child(4) {
-        width:15%;
-        left:-13px;
-    }
-    .progressStatusBar div:nth-child(2) {
-        right:-10px;
-        z-index:2;
-    }
-    .progressStatusBar div:nth-child(1) {
-        right:-18px;
-        z-index:1;
-    }
-    .progressStatusBar > div > span {
-        color:#9FA2B4;
-        font-size:1.9rem;
-        display: block;
 
-
-    }
-    .progressStatusBar > div > div {
-        height: 25px;
-        border-radius: 8px;
-        border: 1px solid #d0d0d3;
-        //width: inherit;
-        //border-style: none;
-        //background-color: rgb(238, 24, 209);
-        background-color: rgb(213, 228, 228);
-    }
-    .btnsChangeViewsToCell {
-        display:none;
-    }
 }
 @media screen and (min-width:1024px) {
     .btnOpenMenu {
         display: none;
     }
     .dash__container {
-        // background-color:pink;
         padding-left: 275px;
-        //height: 100vh;
-
     }
     .blackboard {
         width: 98%;
         margin: 0 auto;
-        //flex-direction:column;
-        //overflow-x: scroll;
         overflow-x: hidden;
-        // scroll-behavior: contain;
-        // scroll-snap-type: x proximity;
-    }
-    .userInfo {
-        margin: 0 13px;
-        display: flex;
-        flex-direction: column;
-    }
-    .userInfo  h1 {
-        //background-color: lightblue;
-        text-align: initial;
-        width: 100%;
-        margin-bottom: 12px;
-        //padding-right: 10px;
-
-    }
-    .userInfo__propertyLink {
-        display: block;
-        display: flex;
-        //flex-direction: column;
-        justify-content: flex-end;
-        //align-items: flex-end;
-        //width: 60%;
-        font-size: 1.4rem;
-        font-weight: bold;
-        color: rgba(108, 109, 112, 1);
-        //background-color: rgba(0, 0, 0, 0.315);;
-    }
-    .userInfo__propertyLink p {
-        //display: inline-block;
-        //margin-right: 5%;
-        //background-color: magenta;
-
-
-    }
-    .userInfo__propertyLink div {
-        //background-color: khaki;
-        width: 72px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-left: 6px;
-    }
-    .userInfo__propertyLink div img{
-        width: 13.7px;
-        height: 15.44px;
-    }
-    .progressStatusBar {
-        width: 100%;
-        //background-color: mediumblue;
     }
 }
+

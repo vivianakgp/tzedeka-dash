@@ -1,0 +1,23 @@
+.blackboard__containerBtnChangeView {
+    position: relative;
+    display:flex;
+    top:-3px;
+    justify-content: space-between;
+    background:#FFFFFF;
+    border-bottom: 1px solid #d0d0d3;
+}
+.BtnChangeView {
+    height: 38px;
+    width: 140px;
+    border:none;
+    border-radius: 1px;
+    color:rgb(65, 63, 63);
+    font-size: 16px;
+    background-color:#CAB98E;
+
+}
+@media screen and (min-width:767px) {
+    .blackboard__containerBtnChangeView {
+        display:none;
+    }
+}

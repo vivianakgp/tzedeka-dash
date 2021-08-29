@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "serve src/",
     "sass": "sass",
-    "sass-watch": "sass --watch src/styles/styles.scss src/styles/styles.css"
+    "sass-watch": "sass --watch src/styles/styles.scss src/styles/styles.css",
+    "build": "babel src -d lib"
   },
   "author": "",
   "license": "ISC",

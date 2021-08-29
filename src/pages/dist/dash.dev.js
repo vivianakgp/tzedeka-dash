@@ -3,20 +3,25 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.user = exports.dashboard = void 0;
+exports.dashboard = exports.user = void 0;
 
 var _menu = _interopRequireDefault(require("./menu.js"));
+
+var _progressStatusBarCell = _interopRequireDefault(require("./components-dash/componentsInCell/progressStatusBarCell.js"));
+
+var _btnsChangeViewsToCell = _interopRequireDefault(require("./components-dash/componentsInCell/btnsChangeViewsToCell.js"));
+
+var _progressStatusBar = _interopRequireDefault(require("./components-dash/components/progressStatusBar.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 // Preparación, En Promoción, Tramite y Avalúo, Escritura
 var user = {
-  currentProgressDashViewStr: 'Preparación',
+  currentProgressDashViewStr: 'Escritura',
   name: 'David',
   linkPropertyPublication: 'http://localhost:5000/#/dashboard//localhost:5000/#/dashboard'
 };
 exports.user = user;
-var menu = (0, _menu["default"])(); // ojo con este no se si sea correcto ponerlo fuera de mi funcion
 
 var dashboard = function dashboard() {
   /*
@@ -33,23 +38,19 @@ var dashboard = function dashboard() {
   /*
   * main divisors *
   - userInfo
-  - progressStatusBar
   - blackboard
-  - progressStatusBarCell and btnsChangeViewsToCell elements only in cell
+  - IMPORTADO progressStatusBar element in tablet and desk
+  - IMPORTADO progressStatusBarCell and btnsChangeViewsToCell elements only in cell
   */
 
   var userInfo = document.createElement('div');
-  var progressStatusBar = document.createElement('div');
-  var blackboard = document.createElement('div');
-  var progressStatusBarCell = document.createElement('div');
-  var btnsChangeViewsToCell = document.createElement('div'); //  adding classes to the main divisors
+  var blackboard = document.createElement('div'); // const progressStatusBar = document.createElement('div');
+  //  adding classes to the main divisors
 
-  userInfo.setAttribute('class', 'userInfo');
-  progressStatusBar.setAttribute('class', 'progressStatusBar');
+  userInfo.setAttribute('class', 'userInfo'); // progressStatusBar.setAttribute('class', 'progressStatusBar');
+
   blackboard.setAttribute('class', 'blackboard');
   blackboard.setAttribute('id', 'Blackboard');
-  progressStatusBarCell.setAttribute('class', 'progressStatusBarCell');
-  btnsChangeViewsToCell.setAttribute('class', 'btnsChangeViewsToCell');
   /*
   * userInfo children *
   - welcome
@@ -76,70 +77,49 @@ var dashboard = function dashboard() {
   iconFace.setAttribute('src', '../assets/social-icons/icon_facebook.svg');
   iconShare.setAttribute('src', '../assets/social-icons/icon_copy.svg');
   /*
-  * progressStatusBar children *
-  - blocks to tablet and desktop
-  */
+   * progressStatusBar children *
+   - blocks to tablet and desktop
+   */
+  // const block1 = document.createElement('div');
+  // const block2 = document.createElement('div');
+  // const block3 = document.createElement('div');
+  // const block4 = document.createElement('div');
+  //  blocks's children
+  // const block1Title = document.createElement('span');
+  // const block2Title = document.createElement('span');
+  // const block3Title = document.createElement('span');
+  // const block4Title = document.createElement('span');
+  // const block1Btn = document.createElement('div');
+  // const block2Btn = document.createElement('div');
+  // const block3Btn = document.createElement('div');
+  // const block4Btn = document.createElement('div');
+  // block1Title.innerHTML = 'Preparación';
+  // block2Title.innerHTML = 'En Promoción';
+  // block3Title.innerHTML = 'Tramite y Avalúo';
+  // block4Title.innerHTML = 'Escritura';
+  // block1Btn.setAttribute('data-progress', '1');
+  // block2Btn.setAttribute('data-progress', '2');
+  // block3Btn.setAttribute('data-progress', '3');
+  // block4Btn.setAttribute('data-progress', '4');
+  // block1Btn.setAttribute('class', 'btnProgressStatusBar');
+  // block2Btn.setAttribute('class', 'btnProgressStatusBar');
+  // block3Btn.setAttribute('class', 'btnProgressStatusBar');
+  // block4Btn.setAttribute('class', 'btnProgressStatusBar');
 
-  var block1 = document.createElement('div');
-  var block2 = document.createElement('div');
-  var block3 = document.createElement('div');
-  var block4 = document.createElement('div'); //  blocks's children
-
-  var block1Title = document.createElement('span');
-  var block2Title = document.createElement('span');
-  var block3Title = document.createElement('span');
-  var block4Title = document.createElement('span');
-  var block1Btn = document.createElement('div');
-  var block2Btn = document.createElement('div');
-  var block3Btn = document.createElement('div');
-  var block4Btn = document.createElement('div');
-  block1Title.innerHTML = 'Preparación';
-  block2Title.innerHTML = 'En Promoción';
-  block3Title.innerHTML = 'Tramite y Avalúo';
-  block4Title.innerHTML = 'Escritura';
-  block1Btn.setAttribute('data-progress', '1');
-  block2Btn.setAttribute('data-progress', '2');
-  block3Btn.setAttribute('data-progress', '3');
-  block4Btn.setAttribute('data-progress', '4');
-  block1Btn.setAttribute('class', 'btnProgressStatusBar');
-  block2Btn.setAttribute('class', 'btnProgressStatusBar');
-  block3Btn.setAttribute('class', 'btnProgressStatusBar');
-  block4Btn.setAttribute('class', 'btnProgressStatusBar');
-  /*
-  * progressStatusBarCell children *
-  - only in cell
-  */
-
-  var progressStatusCell = document.createElement('div');
-  progressStatusCell.setAttribute('class', 'progressStatusBarCell__status');
-  progressStatusCell.innerText = user.currentProgressDashViewStr;
-  /*
-  * btnsChangeViewsToCell children *
-  - only in cell
-  */
-
-  var btnPreviousProgressView = document.createElement('button');
-  var btnNextProgressView = document.createElement('button');
-  btnNextProgressView.setAttribute('id', 'btnNextProgressView');
-  btnNextProgressView.setAttribute('class', 'btnsChangeViews');
-  btnNextProgressView.innerHTML = 'Siguiente';
-  btnPreviousProgressView.setAttribute('id', 'btnPreviousProgressView');
-  btnPreviousProgressView.setAttribute('class', 'btnsChangeViews');
-  btnPreviousProgressView.innerHTML = 'Anterior';
   /*
   * nesting *
   */
 
-  dash.appendChild(container);
-  dash.appendChild(menu); // button open menu
+  dash.appendChild(container); // button open menu and menu
 
-  container.appendChild(btnOpenMenu); //  main div
+  container.appendChild(btnOpenMenu);
+  container.appendChild((0, _menu["default"])()); //  main div
 
   container.appendChild(userInfo);
-  container.appendChild(progressStatusBarCell);
-  container.appendChild(progressStatusBar);
+  container.appendChild((0, _progressStatusBarCell["default"])());
+  container.appendChild((0, _progressStatusBar["default"])());
   container.appendChild(blackboard);
-  container.appendChild(btnsChangeViewsToCell); // userInfo children
+  container.appendChild((0, _btnsChangeViewsToCell["default"])()); // userInfo children
 
   userInfo.appendChild(welcome);
   userInfo.appendChild(propertyLink); //  userInfo welcome and propertyLink children
@@ -151,25 +131,20 @@ var dashboard = function dashboard() {
   networkIcons.appendChild(iconWhats);
   networkIcons.appendChild(iconFace);
   networkIcons.appendChild(iconShare); // progressStatusBar children
+  // progressStatusBar.appendChild(block1);
+  // progressStatusBar.appendChild(block2);
+  // progressStatusBar.appendChild(block3);
+  // progressStatusBar.appendChild(block4);
+  // progressStatusBar / blocks's children
+  // block1.appendChild(block1Title);
+  // block1.appendChild(block1Btn);
+  // block2.appendChild(block2Title);
+  // block2.appendChild(block2Btn);
+  // block3.appendChild(block3Title);
+  // block3.appendChild(block3Btn);
+  // block4.appendChild(block4Title);
+  // block4.appendChild(block4Btn);
 
-  progressStatusBar.appendChild(block1);
-  progressStatusBar.appendChild(block2);
-  progressStatusBar.appendChild(block3);
-  progressStatusBar.appendChild(block4); // progressStatusBar / blocks's children
-
-  block1.appendChild(block1Title);
-  block1.appendChild(block1Btn);
-  block2.appendChild(block2Title);
-  block2.appendChild(block2Btn);
-  block3.appendChild(block3Title);
-  block3.appendChild(block3Btn);
-  block4.appendChild(block4Title);
-  block4.appendChild(block4Btn); // progressStatusBarCell children
-
-  progressStatusBarCell.appendChild(progressStatusCell); // btnsChangeViewsToCell children
-
-  btnsChangeViewsToCell.appendChild(btnPreviousProgressView);
-  btnsChangeViewsToCell.appendChild(btnNextProgressView);
   return dash;
 };
 

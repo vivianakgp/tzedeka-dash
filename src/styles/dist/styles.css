@@ -3,7 +3,7 @@
 .login {
   width: 100vw;
   height: 100vh;
-  max-width: 1450px;
+  max-width: 1400px;
 }
 
 .formLogin__Container {
@@ -17,8 +17,8 @@
   align-items: center;
   width: 88%;
   max-width: 600px;
-  height: 70vh;
-  margin: 30px auto;
+  height: auto;
+  margin: 20vh auto;
   background-color: #000000;
 }
 
@@ -49,6 +49,11 @@
   height: 45px;
 }
 
+.formLogin__showAuthErr {
+  color: #dfb66a;
+  margin-top: 20px;
+}
+
 .formLogin__btn {
   width: 55%;
   height: 35px;
@@ -56,7 +61,7 @@
   color: #000000;
   border-style: none;
   border-radius: 5px;
-  margin: 10% 0 8% 0;
+  margin: 5% 0;
 }
 
 .formLogin__paragraph {
@@ -68,7 +73,7 @@
   color: #ffffff;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1100px) {
   .login {
     display: flex;
     flex-direction: row;
@@ -101,13 +106,304 @@
     font-size: 1.5vw;
   }
 }
-.menu {
+.boardView__container {
   position: relative;
+  height: auto;
+  min-width: 300px;
+  padding: 60px 5rem;
+  font-size: 1.8rem;
+  line-height: 4.4rem;
+}
+
+.boardView__description {
+  display: flex;
+  flex-direction: column;
+}
+
+.boardView__image {
+  max-width: 400px;
+  margin: auto;
+}
+
+.boardView__image img {
+  width: 100%;
+  height: auto;
+}
+
+.boardView__description h2 {
+  margin: 30px 0;
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: black;
+}
+
+li {
+  font-weight: bold;
+}
+
+li span {
+  font-weight: 400;
+}
+
+@media screen and (min-width: 499px) {
+  .boardView__container {
+    padding: 80px 4rem;
+  }
+}
+@media screen and (min-width: 767px) {
+  .boardView__container {
+    padding: 80px 9rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .boardView__container {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0 0;
+    padding: 3rem 0 4.5rem 3rem;
+  }
+
+  .boardView__description {
+    width: 50%;
+  }
+
+  .boardView__description h2 {
+    font-size: 3.6rem;
+  }
+
+  .boardView__image {
+    margin: auto 0;
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .boardView__description {
+    width: 60%;
+  }
+
+  .boardView__image {
+    width: 40%;
+  }
+}
+.dash__progressStatusBarCell {
+  width: 90%;
+  max-width: 450px;
+  height: 23px;
+  margin: 40px auto;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  border: 1px solid #d0d0d3;
+  background-color: lightcoral;
+}
+
+.dash__progressStatusBarCell div {
+  height: 21px;
+  width: 70%;
+  margin: 0 15%;
+  border-left: 1px solid #d0d0d3;
+  border-right: 1px solid #d0d0d3;
+  border-radius: 8px;
+  color: #9f9376;
+  text-align: center;
+  font-family: "Mulish", sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  background-color: #f3ceca;
+}
+
+@media screen and (min-width: 767px) {
+  .dash__progressStatusBarCell {
+    display: none;
+  }
+}
+.btnsChangeViewsToCell {
+  position: relative;
+  display: flex;
+  top: -3px;
+  justify-content: space-between;
+  background: #FFFFFF;
+  border-bottom: 1px solid #d0d0d3;
+}
+
+.btnsChangeViews {
+  height: 38px;
+  width: 140px;
+  border: none;
+  border-radius: 1px;
+  color: #413f3f;
+  font-size: 16px;
+  background-color: #CAB98E;
+}
+
+@media screen and (min-width: 767px) {
+  .btnsChangeViewsToCell {
+    display: none;
+  }
+}
+.progressStatusBar, .userInfo__propertyLink, #btnOpenMenu {
+  display: none;
+}
+
+.dash__container {
+  position: relative;
+  width: 100vw;
+  height: auto;
+  min-width: 290px;
+  max-width: 1500px;
+  padding-top: 50px;
+  padding-bottom: 120px;
+  background-color: #E5E5E5;
+}
+
+.userInfo {
+  display: flex;
+  background-color: lightcoral;
+}
+
+.userInfo h1 {
+  width: 80%;
+  margin: 0 auto;
+  font-family: "Mulish", sans-serif;
+  font-size: 2.4rem;
+  font-weight: bold;
+  line-height: 2.6rem;
+  color: #252733;
+}
+
+.blackboard {
+  width: 100%;
+  border: 1px solid #d0d0d3;
+  border-radius: 0.5rem;
+  background-color: #FFFFFF;
+}
+
+@media screen and (min-width: 499px) {
+  #btnOpenMenu {
+    display: block;
+    position: absolute;
+    top: 33px;
+    left: 20px;
+    width: 40px;
+  }
+
+  .dash__container {
+    padding-bottom: 70px;
+  }
+
+  .userInfo h1 {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 767px) {
+  .blackboard {
+    width: 93%;
+    margin: 0 auto;
+  }
+
+  .progressStatusBar {
+    display: block;
+    display: flex;
+    flex-direction: row;
+    width: 96%;
+    margin: 15px auto;
+    text-align: center;
+    background-color: lightgreen;
+  }
+
+  .progressStatusBar > div {
+    width: 38%;
+    position: relative;
+    z-index: 100;
+  }
+
+  .progressStatusBar div:nth-child(4) {
+    width: 15%;
+    left: -13px;
+  }
+
+  .progressStatusBar div:nth-child(2) {
+    right: -10px;
+    z-index: 2;
+  }
+
+  .progressStatusBar div:nth-child(1) {
+    right: -18px;
+    z-index: 1;
+  }
+
+  .progressStatusBar > div > span {
+    color: #9FA2B4;
+    font-size: 1.9rem;
+    display: block;
+  }
+
+  .progressStatusBar > div > div {
+    height: 25px;
+    border-radius: 8px;
+    border: 1px solid #d0d0d3;
+    background-color: #d5e4e4;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .btnOpenMenu {
+    display: none;
+  }
+
+  .dash__container {
+    padding-left: 275px;
+  }
+
+  .blackboard {
+    width: 98%;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+
+  .userInfo {
+    margin: 0 13px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .userInfo h1 {
+    text-align: initial;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .userInfo__propertyLink {
+    display: block;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #6c6d70;
+  }
+
+  .userInfo__propertyLink div {
+    width: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 6px;
+  }
+
+  .userInfo__propertyLink div img {
+    width: 13.7px;
+    height: 15.44px;
+  }
+
+  .progressStatusBar {
+    width: 100%;
+  }
+}
+.menu {
   position: fixed;
   z-index: 100;
   height: 109px;
   width: 100%;
-  top: calc(100vh - 109px);
+  bottom: 0;
   background-color: #231f20;
 }
 .menu .menu__container {
@@ -176,10 +472,11 @@
 */
 @media screen and (min-width: 499px) {
   .menu {
+    position: absolute;
     top: 0;
     left: -275px;
     width: 275px;
-    height: 100vh;
+    height: 100%;
     padding-top: 2%;
     transition-duration: 1s;
   }
@@ -253,556 +550,6 @@
     display: none;
   }
 }
-/*
-* .progressStatusBar since tablet
-*/
-.progressStatusBar {
-  display: none;
-}
-
-/*
-* .userInfo > div  share link only desktop
-*/
-.userInfo__propertyLink {
-  display: none;
-}
-
-.dashboard {
-  width: 100vw;
-  min-width: 290px;
-  background-color: #E5E5E5;
-  height: auto;
-}
-
-.btnOpenMenu {
-  display: none;
-}
-
-.dash__container {
-  width: 100vw;
-  min-width: 290px;
-  max-width: 1500px;
-  padding-top: 50px;
-  padding-bottom: 120px;
-  height: auto;
-  background-color: #E5E5E5;
-}
-
-.userInfo {
-  display: flex;
-}
-
-.userInfo h1 {
-  width: 80%;
-  margin: 0 auto;
-  font-family: "Mulish", sans-serif;
-  font-size: 2.4rem;
-  font-weight: bold;
-  line-height: 2.6rem;
-  color: #252733;
-}
-
-.blackboard {
-  width: 100%;
-  border: 1px solid #d0d0d3;
-  border-radius: 0.5rem;
-  background-color: #FFFFFF;
-}
-
-.progressStatusBarCell {
-  width: 90%;
-  max-width: 450px;
-  height: 23px;
-  margin: 40px auto;
-  margin-bottom: 25px;
-  border-radius: 8px;
-  border: 1px solid #d0d0d3;
-}
-
-.progressStatusBarCell__status {
-  height: 21px;
-  width: 70%;
-  margin: 0 15%;
-  border-left: 1px solid #d0d0d3;
-  border-right: 1px solid #d0d0d3;
-  border-radius: 8px;
-  color: #9f9376;
-  text-align: center;
-  font-family: "Mulish", sans-serif;
-  font-size: 1.4rem;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-  background-color: #f3ceca;
-}
-
-.btnsChangeViewsToCell {
-  position: relative;
-  display: flex;
-  top: -3px;
-  justify-content: space-between;
-  background: #FFFFFF;
-  border-bottom: 1px solid #d0d0d3;
-}
-
-.btnsChangeViews {
-  height: 28px;
-  width: 115px;
-  padding: 20px;
-  border: none;
-  border-radius: 1px;
-  background-color: #CAB98E;
-}
-
-.hideBtn {
-  opacity: 50%;
-}
-
-@media screen and (min-width: 499px) {
-  .btnOpenMenu {
-    display: block;
-    position: absolute;
-    top: 33px;
-    left: 20px;
-    width: 50px;
-  }
-
-  .dash__container {
-    padding-bottom: 70px;
-  }
-
-  .userInfo h1 {
-    text-align: center;
-  }
-}
-@media screen and (min-width: 767px) {
-  .blackboard {
-    width: 93%;
-    margin: 0 auto;
-  }
-
-  .progressStatusBarCell {
-    display: none;
-  }
-
-  .progressStatusBar {
-    display: block;
-    display: flex;
-    flex-direction: row;
-    width: 96%;
-    margin: 15px auto;
-    text-align: center;
-  }
-
-  .progressStatusBar > div {
-    width: 38%;
-    position: relative;
-    z-index: 100;
-  }
-
-  .progressStatusBar div:nth-child(4) {
-    width: 15%;
-    left: -13px;
-  }
-
-  .progressStatusBar div:nth-child(2) {
-    right: -10px;
-    z-index: 2;
-  }
-
-  .progressStatusBar div:nth-child(1) {
-    right: -18px;
-    z-index: 1;
-  }
-
-  .progressStatusBar > div > span {
-    color: #9FA2B4;
-    font-size: 1.9rem;
-    display: block;
-  }
-
-  .progressStatusBar > div > div {
-    height: 25px;
-    border-radius: 8px;
-    border: 1px solid #d0d0d3;
-    background-color: #d5e4e4;
-  }
-
-  .btnsChangeViewsToCell {
-    display: none;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .btnOpenMenu {
-    display: none;
-  }
-
-  .dash__container {
-    padding-left: 275px;
-  }
-
-  .blackboard {
-    width: 98%;
-    margin: 0 auto;
-    overflow-x: hidden;
-  }
-
-  .userInfo {
-    margin: 0 13px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .userInfo h1 {
-    text-align: initial;
-    width: 100%;
-    margin-bottom: 12px;
-  }
-
-  .userInfo__propertyLink {
-    display: block;
-    display: flex;
-    justify-content: flex-end;
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #6c6d70;
-  }
-
-  .userInfo__propertyLink div {
-    width: 72px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 6px;
-  }
-
-  .userInfo__propertyLink div img {
-    width: 13.7px;
-    height: 15.44px;
-  }
-
-  .progressStatusBar {
-    width: 100%;
-  }
-}
-.prepaContainer {
-  position: relative;
-  padding: 60px 5rem;
-  height: auto;
-  min-width: 300px;
-  font-size: 1.8rem;
-  line-height: 4.4rem;
-}
-
-.prepaDescription {
-  display: flex;
-  flex-direction: column;
-}
-
-.prepaImage {
-  max-width: 500px;
-  margin: auto;
-}
-
-.prepaImage img {
-  width: 100%;
-  height: auto;
-}
-
-.prepaDescription h2 {
-  margin: 30px 0;
-  font-size: 2.4rem;
-  font-weight: bold;
-  color: black;
-}
-
-li {
-  font-weight: bold;
-}
-
-li span {
-  font-weight: 400;
-}
-
-@media screen and (min-width: 499px) {
-  .prepaContainer {
-    padding: 80px 4rem;
-  }
-}
-@media screen and (min-width: 767px) {
-  .prepaContainer {
-    padding: 80px 9rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .prepaContainer {
-    display: flex;
-    flex-direction: row-reverse;
-    padding: 0 0;
-    padding: 3rem 0 4.5rem 3rem;
-  }
-
-  .prepaDescription h2 {
-    font-size: 3.6rem;
-  }
-
-  .prepaDescription {
-    width: 50%;
-  }
-
-  .prepaImage {
-    margin: auto 0;
-    width: 50%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .prepaDescription {
-    width: 60%;
-  }
-
-  .prepaImage {
-    width: 40%;
-  }
-}
-.promoContainer {
-  position: relative;
-  padding: 60px 5rem;
-  height: auto;
-  min-width: 300px;
-  font-size: 1.8rem;
-  line-height: 4.4rem;
-}
-
-.promoDescription {
-  display: flex;
-  flex-direction: column;
-}
-
-.promoImage {
-  max-width: 500px;
-  margin: auto;
-}
-
-.promoImage img {
-  width: 100%;
-  height: auto;
-}
-
-.promoDescription h2 {
-  margin: 30px 0;
-  font-size: 2.4rem;
-  font-weight: bold;
-  color: black;
-}
-
-li {
-  font-weight: bold;
-}
-
-li span {
-  font-weight: 400;
-}
-
-@media screen and (min-width: 499px) {
-  .promoContainer {
-    padding: 80px 4rem;
-  }
-}
-@media screen and (min-width: 767px) {
-  .promoContainer {
-    padding: 80px 9rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .promoContainer {
-    display: flex;
-    flex-direction: row-reverse;
-    padding: 0 0;
-    padding: 3rem 0 4.5rem 3rem;
-  }
-
-  .promoDescription h2 {
-    font-size: 3.6rem;
-  }
-
-  .promoDescription {
-    width: 50%;
-  }
-
-  .promoImage {
-    margin: auto 0;
-    width: 50%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .promoDescription {
-    width: 60%;
-  }
-
-  .promoImage {
-    width: 40%;
-  }
-}
-.tramiteContainer {
-  position: relative;
-  padding: 60px 5rem;
-  height: auto;
-  min-width: 300px;
-  font-size: 1.8rem;
-  line-height: 4.4rem;
-}
-
-.tramiteDescription {
-  display: flex;
-  flex-direction: column;
-}
-
-.tramiteImage {
-  max-width: 500px;
-  margin: auto;
-}
-
-.tramiteImage img {
-  width: 100%;
-  height: auto;
-}
-
-.tramiteDescription h2 {
-  margin: 30px 0;
-  font-size: 2.4rem;
-  font-weight: bold;
-  color: black;
-}
-
-li {
-  font-weight: bold;
-}
-
-li span {
-  font-weight: 400;
-}
-
-@media screen and (min-width: 499px) {
-  .tramiteContainer {
-    padding: 80px 4rem;
-  }
-}
-@media screen and (min-width: 767px) {
-  .tramiteContainer {
-    padding: 80px 9rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .tramiteContainer {
-    display: flex;
-    flex-direction: row-reverse;
-    padding: 0 0;
-    padding: 3rem 0 4.5rem 3rem;
-  }
-
-  .tramiteDescription h2 {
-    font-size: 3.6rem;
-  }
-
-  .tramiteDescription {
-    width: 50%;
-  }
-
-  .tramiteImage {
-    margin: auto 0;
-    width: 50%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .tramiteDescription {
-    width: 60%;
-  }
-
-  .tramiteImage {
-    width: 40%;
-  }
-}
-.escrituraContainer {
-  position: relative;
-  padding: 60px 5rem;
-  height: auto;
-  min-width: 300px;
-  font-size: 1.8rem;
-  line-height: 4.4rem;
-}
-
-.escrituraDescription {
-  display: flex;
-  flex-direction: column;
-}
-
-.escriImage {
-  max-width: 500px;
-  margin: auto;
-}
-
-.escriImage img {
-  width: 100%;
-  height: 100%;
-}
-
-.escrituraDescription h2 {
-  text-align: center;
-  margin: 30px 0;
-  font-weight: bold;
-}
-
-li {
-  font-weight: bold;
-}
-
-li span {
-  font-weight: 400;
-}
-
-@media screen and (min-width: 499px) {
-  .escrituraContainer {
-    padding: 80px 4rem;
-  }
-}
-@media screen and (min-width: 767px) {
-  .escrituraContainer {
-    padding: 80px 9rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .escrituraContainer {
-    display: flex;
-    flex-direction: row-reverse;
-    padding: 0 0;
-    padding: 3rem 0 4.5rem 3rem;
-  }
-
-  .escrituraDescription h2 {
-    font-size: 3.6rem;
-  }
-
-  .escrituraDescription {
-    width: 50%;
-  }
-
-  .escriImage {
-    margin: auto 0;
-    width: 50%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .escrituraDescription {
-    width: 60%;
-  }
-
-  .escriImage {
-    width: 40%;
-  }
-}
-/*
-* font to html all document: font-family: 'Lato', sans-serif;
-* font to headlines and menu: font-family: 'Mulish', sans-serif;
-*/
 * {
   box-sizing: border-box;
   padding: 0;

@@ -24,12 +24,12 @@ var _default = function _default() {
   */
 
   var promoView = document.createElement('section');
-  promoView.setAttribute('class', 'promoContainer'); // main elements
+  promoView.setAttribute('class', 'boardView__container'); // main elements
 
   var imageDiv = document.createElement('div');
   var descriptionDiv = document.createElement('div');
-  descriptionDiv.setAttribute('class', 'promoDescription');
-  imageDiv.setAttribute('class', 'promoImage'); // main elements children
+  descriptionDiv.setAttribute('class', 'boardView__description');
+  imageDiv.setAttribute('class', 'boardView__image'); // main elements children
 
   var img = document.createElement('img');
   var title = document.createElement('h2');

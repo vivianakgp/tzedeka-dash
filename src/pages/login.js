@@ -27,6 +27,7 @@ export default () => {
   const h1 = document.createElement('h1');
   const inputEmail = document.createElement('input');
   const inputPassword = document.createElement('input');
+  const logInMessage = document.createElement('p');
   const btn = document.createElement('button');
   const paragraph = document.createElement('p');
   const anchor = document.createElement('a');
@@ -41,6 +42,8 @@ export default () => {
   inputPassword.setAttribute('class', 'formLogin__input--pass');
   inputPassword.setAttribute('placeholder', 'ID Cliente');
   inputPassword.setAttribute('name', 'password');
+  logInMessage.setAttribute('class', 'formLogin__showAuthErr');
+  logInMessage.setAttribute('id', 'loginMessage');
   btn.setAttribute('class', 'formLogin__btn');
   btn.setAttribute('type', 'submit');
   btn.setAttribute('value', 'Ingresar');
@@ -66,6 +69,7 @@ export default () => {
   formLogin.appendChild(h1);
   formLogin.appendChild(inputEmail);
   formLogin.appendChild(inputPassword);
+  formLogin.appendChild(logInMessage);
   formLogin.appendChild(btn);
   formLogin.appendChild(paragraph);
   paragraph.appendChild(anchor);

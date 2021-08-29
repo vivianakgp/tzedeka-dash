@@ -23,12 +23,12 @@ var _default = function _default() {
   */
 
   var preparationView = document.createElement('section');
-  preparationView.setAttribute('class', 'prepaContainer'); // main elements
+  preparationView.setAttribute('class', 'boardView__container'); // main elements
 
   var imageDiv = document.createElement('div');
   var descriptionDiv = document.createElement('div');
-  descriptionDiv.setAttribute('class', 'prepaDescription');
-  imageDiv.setAttribute('class', 'prepaImage'); // main elements children
+  descriptionDiv.setAttribute('class', 'boardView__description');
+  imageDiv.setAttribute('class', 'boardView__image'); // main elements children
 
   var img = document.createElement('img');
   var title = document.createElement('h2');

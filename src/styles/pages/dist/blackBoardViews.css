@@ -1,28 +1,28 @@
-.prepaContainer {
+.boardView__container {
   position: relative;
-  padding: 60px 5rem;
   height: auto;
   min-width: 300px;
+  padding: 60px 5rem;
   font-size: 1.8rem;
   line-height: 4.4rem;
 }
 
-.prepaDescription {
+.boardView__description {
   display: flex;
   flex-direction: column;
 }
 
-.prepaImage {
-  max-width: 500px;
+.boardView__image {
+  max-width: 400px;
   margin: auto;
 }
 
-.prepaImage img {
+.boardView__image img {
   width: 100%;
   height: auto;
 }
 
-.prepaDescription h2 {
+.boardView__description h2 {
   margin: 30px 0;
   font-size: 2.4rem;
   font-weight: bold;
@@ -38,42 +38,42 @@ li span {
 }
 
 @media screen and (min-width: 499px) {
-  .prepaContainer {
+  .boardView__container {
     padding: 80px 4rem;
   }
 }
 @media screen and (min-width: 767px) {
-  .prepaContainer {
+  .boardView__container {
     padding: 80px 9rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  .prepaContainer {
+  .boardView__container {
     display: flex;
     flex-direction: row-reverse;
     padding: 0 0;
     padding: 3rem 0 4.5rem 3rem;
   }
 
-  .prepaDescription h2 {
-    font-size: 3.6rem;
-  }
-
-  .prepaDescription {
+  .boardView__description {
     width: 50%;
   }
 
-  .prepaImage {
+  .boardView__description h2 {
+    font-size: 3.6rem;
+  }
+
+  .boardView__image {
     margin: auto 0;
     width: 50%;
   }
 }
 @media screen and (min-width: 1200px) {
-  .prepaDescription {
+  .boardView__description {
     width: 60%;
   }
 
-  .prepaImage {
+  .boardView__image {
     width: 40%;
   }
 }
