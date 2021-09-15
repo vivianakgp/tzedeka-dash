@@ -4,18 +4,21 @@ import btnsChangeViewsToCell from './components-dash/componentsInCell/btnsChange
 import progressStatusBar from './components-dash/components/progressStatusBar.js';
 import userInfo from './components-dash/components/userInfo.js';
 
+import commentModal from './components-dash/components/menu-modals/comments-modal.js';
+
 // Preparación, En Promoción, Tramite y Avalúo, Escritura
 export const user = {
-  currentProgressDashViewStr: 'Escritura',
-  name: 'David',
-  linkPropertyPublication: 'http://localhost:5000/#/dashboard//localhost:5000/#/dashboard',
+  currentProgressStr: 'Tramite y Avalúo',
+  userName: 'Juan',
+  propLink: 'http://localhost:5000/#/dashboard/',
 };
+const { userName, currentProgressStr, propLink } = user;
 export const dashboard = () => {
-  
   const dash = document.createElement('div');
   const container = document.createElement('div');
   dash.setAttribute('class', 'dashboard');
   container.setAttribute('class', 'dash__container');
+  container.setAttribute('id', 'dashboard');
   // button open menu
   const btnOpenMenu = document.createElement('img');
   btnOpenMenu.setAttribute('id', 'btnOpenMenu');
@@ -30,8 +33,6 @@ export const dashboard = () => {
   const blackboard = document.createElement('div');
   blackboard.setAttribute('class', 'blackboard');
   blackboard.setAttribute('id', 'Blackboard');
- 
-
   /*
   * nesting *
   */
@@ -39,13 +40,12 @@ export const dashboard = () => {
   // button open menu and menu
   container.appendChild(btnOpenMenu);
   container.appendChild(Menu());
+  container.appendChild(commentModal());
   //  main div
-  container.appendChild(userInfo());
-  container.appendChild(progressStatusBarCell());
-  container.appendChild(progressStatusBar());
+  container.appendChild(userInfo(propLink, userName));
+  container.appendChild(progressStatusBarCell(currentProgressStr));
+  container.appendChild(progressStatusBar(currentProgressStr));
   container.appendChild(blackboard);
   container.appendChild(btnsChangeViewsToCell());
-  
-   
   return dash;
 };

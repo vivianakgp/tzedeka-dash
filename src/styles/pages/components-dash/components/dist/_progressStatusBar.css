@@ -1,0 +1,51 @@
+.blackboard__progressStatusBar {
+  display: none;
+}
+
+.color {
+  color: #9f9376 !important;
+  font-weight: bolder;
+}
+
+@media screen and (min-width: 767px) {
+  .blackboard__progressStatusBar {
+    display: flex;
+    flex-direction: row;
+    width: 96%;
+    margin: 15px auto;
+    text-align: center;
+  }
+  .blackboard__progressStatusBar > div {
+    width: 38%;
+    position: relative;
+    z-index: 100;
+  }
+  .blackboard__progressStatusBar > div > span {
+    color: #9FA2B4;
+    font-size: 1.9rem;
+    display: block;
+  }
+  .blackboard__progressStatusBar > div > div {
+    height: 25px;
+    border-radius: 8px;
+    border: 1px solid #d0d0d3;
+    background-color: #d5e4e4;
+  }
+  .blackboard__progressStatusBar div:nth-child(4) {
+    width: 15%;
+    left: -13px;
+  }
+  .blackboard__progressStatusBar div:nth-child(2) {
+    right: -10px;
+    z-index: 2;
+  }
+  .blackboard__progressStatusBar div:nth-child(1) {
+    right: -18px;
+    z-index: 1;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .blackboard__progressStatusBar {
+    width: 100%;
+  }
+}

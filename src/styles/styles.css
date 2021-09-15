@@ -5,13 +5,19 @@
   height: 100vh;
   max-width: 1400px;
 }
-
-.formLogin__Container {
+.login .login__imgContainer {
+  display: none;
+}
+.login .login__formContainer {
   width: 100%;
   height: 100%;
 }
-
-.formLogin {
+.login .login__formContainer .login_divDecoration {
+  width: 100%;
+  height: 55px;
+  background-color: rgba(246, 235, 229, 0.5);
+}
+.login .login__formContainer .login__form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,25 +27,13 @@
   margin: 20vh auto;
   background-color: #000000;
 }
-
-.imgLogin__Container {
-  display: none;
-}
-
-.formLogin__div--grey {
-  width: 100%;
-  height: 55px;
-  background-color: rgba(246, 235, 229, 0.5);
-}
-
-.formLogin__h1 {
+.login .login__formContainer .login__form h1 {
   color: #ffffff;
   font-size: 6vw;
   font-weight: lighter;
   margin-bottom: 15%;
 }
-
-.formLogin__input--id, .formLogin__input--pass {
+.login .login__formContainer .login__form input {
   width: 77%;
   height: auto;
   margin-bottom: 10px;
@@ -48,13 +42,12 @@
   border-style: none;
   height: 45px;
 }
-
-.formLogin__showAuthErr {
+.login .login__formContainer .login__form div {
   color: #dfb66a;
   margin-top: 20px;
+  font-size: 1.2vw;
 }
-
-.formLogin__btn {
+.login .login__formContainer .login__form button {
   width: 55%;
   height: 35px;
   background-color: #C9BCAC;
@@ -63,13 +56,11 @@
   border-radius: 5px;
   margin: 5% 0;
 }
-
-.formLogin__paragraph {
+.login .login__formContainer .login__form p {
   color: #ffffff;
   font-size: 2.2vw;
 }
-
-.formLogin__anchor {
+.login .login__formContainer .login__form a {
   color: #ffffff;
 }
 
@@ -78,31 +69,25 @@
     display: flex;
     flex-direction: row;
   }
-
-  .formLogin__Container {
+  .login .login__imgContainer {
     display: block;
-    width: 42%;
+    width: 50%;
   }
-
-  .imgLogin__Container {
-    display: block;
-    width: 58%;
-  }
-
-  .imgLoginContainer__img {
+  .login .login__imgContainer img {
     width: 100%;
     height: 100%;
   }
-
-  .formLogin {
+  .login .login__formContainer {
+    display: block;
+    width: 50%;
+  }
+  .login .login__formContainer .login__form {
     width: 100%;
   }
-
-  .formLogin__h1 {
+  .login .login__formContainer .login__form h1 {
     font-size: 4vw;
   }
-
-  .formLogin__paragraph {
+  .login .login__formContainer .login__form p {
     font-size: 1.5vw;
   }
 }
@@ -187,7 +172,6 @@
   margin-bottom: 25px;
   border-radius: 8px;
   border: 1px solid #d0d0d3;
-  background-color: lightcoral;
 }
 .dash__progressStatusBarCell div {
   height: 21px;
@@ -234,160 +218,13 @@
     display: none;
   }
 }
-.menu {
-  position: fixed;
-  z-index: 100;
-  height: 109px;
-  width: 100%;
-  bottom: 0;
-  background-color: #231f20;
-}
-.menu .menu__container {
-  display: flex;
-  flex-direction: column-reverse;
-  height: inherit;
-}
-.menu .menu__container .btnCloseMenu {
-  display: none;
-}
-.menu .menu__container .logoTz {
-  display: none;
-}
-.menu .menu__container .letterLogo {
-  display: flex;
-  align-self: center;
-  position: relative;
-  overflow: hidden;
-  width: 137px;
-  height: 50%;
-}
-.menu .menu__container .letterLogo .letterLogo__img {
-  position: absolute;
-  bottom: -20px;
-  width: 100%;
-  height: 150%;
-}
-.menu .menu__container .nav {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 50%;
-}
-.menu .menu__container .nav li {
-  display: flex;
-  justify-content: center;
-  width: 30%;
-  font-family: "Mulish", sans-serif;
-  font-size: 1.6rem;
-  font-weight: lighter;
-  letter-spacing: 0.2px;
-  color: #DDE2FF;
-  padding-bottom: 3%;
-}
-.menu .menu__container .nav li img {
-  width: 16px;
-}
-.menu .menu__container .nav li a {
-  display: none;
-}
-.menu .menu__container .nav .nav__li1 {
-  width: 70%;
-  display: flex;
-  align-items: center;
-  background: rgba(221, 226, 255, 0.205);
-}
-.menu .menu__container .nav .nav__li1 a {
-  display: block;
-}
-.menu .menu__container .nav .nav__li1 img {
-  margin-right: 4%;
-}
-
-/*
-* since 499px the menu must be vertical
-*/
-@media screen and (min-width: 499px) {
-  .menu {
-    position: absolute;
-    top: 0;
-    left: -275px;
-    width: 275px;
-    height: 100%;
-    padding-top: 2%;
-    transition-duration: 1s;
-  }
-  .menu .menu__container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 42px 0;
-  }
-  .menu .menu__container .btnCloseMenu {
-    display: block;
-    position: absolute;
-    top: 4%;
-    right: 8%;
-    width: 15px;
-  }
-  .menu .menu__container .logoTz {
-    display: block;
-    height: 120px;
-    width: 120px;
-    align-self: center;
-    margin-bottom: 14px;
-  }
-  .menu .menu__container .logoTz .logoTz__img {
-    width: 100%;
-    height: 100%;
-  }
-  .menu .menu__container .nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    height: 270px;
-    margin-bottom: 85px;
-  }
-  .menu .menu__container .nav li:hover {
-    background: rgba(221, 226, 255, 0.205);
-  }
-  .menu .menu__container .nav li {
-    width: inherit;
-    height: 59px;
-    justify-content: start;
-    align-items: center;
-    padding-left: 35px;
-  }
-  .menu .menu__container .nav li img {
-    margin-right: 6%;
-  }
-  .menu .menu__container .nav li .nav__li1 img {
-    margin-right: 6%;
-  }
-  .menu .menu__container .nav li a {
-    display: block;
-  }
-  .menu .menu__container .nav .nav__li1 {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    background: rgba(221, 226, 255, 0.205);
-  }
-  .menu .menu__container .letterLogo {
-    width: 163px;
-    height: 87px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .menu {
-    left: 0;
-  }
-  .menu .menu__container .btnCloseMenu {
-    display: none;
-  }
-}
 .blackboard__progressStatusBar {
   display: none;
+}
+
+.color {
+  color: #9f9376 !important;
+  font-weight: bolder;
 }
 
 @media screen and (min-width: 767px) {
@@ -397,7 +234,6 @@
     width: 96%;
     margin: 15px auto;
     text-align: center;
-    background-color: lightgreen;
   }
   .blackboard__progressStatusBar > div {
     width: 38%;
@@ -435,7 +271,6 @@
 }
 .blackboard__userInfo {
   display: flex;
-  background-color: lightcoral;
 }
 .blackboard__userInfo h1 {
   width: 80%;
@@ -446,48 +281,245 @@
   line-height: 2.6rem;
   color: #252733;
 }
-.blackboard__userInfo .propertyLinkContainer {
+.blackboard__userInfo .userInfo__propertyLink {
   display: none;
 }
 
 @media screen and (min-width: 499px) {
-  .blackboard__userInfo h1 {
-    text-align: center;
-  }
-}
-@media screen and (min-width: 1024px) {
   .blackboard__userInfo {
-    margin: 0 13px;
     display: flex;
     flex-direction: column;
+    margin: 13px;
+    margin-left: 65px;
+    padding-right: 20px;
   }
-
   .blackboard__userInfo h1 {
-    text-align: initial;
     width: 100%;
     margin-bottom: 12px;
   }
-
-  .propertyLinkContainer {
-    display: block;
+  .blackboard__userInfo .userInfo__propertyLink {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
     font-size: 1.4rem;
     font-weight: bold;
     color: #6c6d70;
   }
-
-  .propertyLinkContainer div {
-    width: 72px;
+  .blackboard__userInfo .userInfo__propertyLink div {
+    width: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 6px;
   }
+  .blackboard__userInfo .userInfo__propertyLink div img {
+    width: 100%;
+  }
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  min-width: 317px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(20, 19, 20, 0.5);
+}
+.modal-overlay .modal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  height: 40%;
+  padding: 3.5rem 2rem;
+  border-radius: 5px;
+  background: #FFFFFF;
+}
+.modal-overlay .modal-container input {
+  height: 60%;
+  width: 95%;
+  border: 1px solid #dfe0eb;
+  border-radius: 8px;
+  padding: 2%;
+}
+.modal-overlay .modal-container h3 {
+  font-size: 2.1rem;
+}
+.modal-overlay .modal-container div {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+.modal-overlay .modal-container div button {
+  width: 86px;
+  height: 40px;
+  border-style: none;
+  border-radius: 5px;
+}
+.modal-overlay .modal-container div :nth-child(1) {
+  background-color: white;
+  border: 0.5px solid #231f20;
+}
+.modal-overlay .modal-container div :nth-child(2) {
+  color: white;
+  background-color: #0e0f0f;
+}
 
-  .propertyLinkContainer div img {
-    width: 13.7px;
-    height: 15.44px;
+.menu {
+  position: fixed;
+  z-index: 100;
+  height: 109px;
+  width: 100%;
+  bottom: 0;
+  background-color: #231f20;
+}
+.menu .menu__container {
+  display: flex;
+  flex-direction: column-reverse;
+  height: inherit;
+}
+.menu .menu__container .menu__btnClose {
+  display: none;
+}
+.menu .menu__container .menu__logoTz {
+  display: none;
+}
+.menu .menu__container .menu__letterTz {
+  display: flex;
+  align-self: center;
+  position: relative;
+  overflow: hidden;
+  width: 137px;
+  height: 50%;
+}
+.menu .menu__container .menu__letterTz img {
+  position: absolute;
+  bottom: -20px;
+  width: 100%;
+  height: 150%;
+}
+.menu .menu__container .menu__nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 50%;
+}
+.menu .menu__container .menu__nav li:nth-child(1) {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  background: rgba(221, 226, 255, 0.205);
+}
+.menu .menu__container .menu__nav li:nth-child(1) a {
+  display: block;
+}
+.menu .menu__container .menu__nav li:nth-child(1) img {
+  margin-right: 4%;
+}
+.menu .menu__container .menu__nav li {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  font-family: "Mulish", sans-serif;
+  font-size: 1.6rem;
+  font-weight: lighter;
+  letter-spacing: 0.2px;
+  color: #DDE2FF;
+  padding-bottom: 3%;
+}
+.menu .menu__container .menu__nav li img {
+  width: 16px;
+}
+.menu .menu__container .menu__nav li a {
+  display: none;
+}
+
+/*
+* since 499px the menu must be vertical
+*/
+@media screen and (min-width: 499px) {
+  .menu {
+    position: absolute;
+    top: 0;
+    left: -275px;
+    width: 275px;
+    height: 100%;
+    padding-top: 2%;
+    transition-duration: 1s;
+  }
+  .menu .menu__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 42px 0;
+  }
+  .menu .menu__container .menu__btnClose {
+    display: block;
+    position: absolute;
+    top: 4%;
+    right: 8%;
+    width: 15px;
+  }
+  .menu .menu__container .menu__logoTz {
+    display: block;
+    height: 120px;
+    width: 120px;
+    align-self: center;
+    margin-bottom: 14px;
+  }
+  .menu .menu__container .menu__logoTz img {
+    width: 100%;
+    height: 100%;
+  }
+  .menu .menu__container .menu__nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 270px;
+    margin-bottom: 85px;
+  }
+  .menu .menu__container .menu__nav li:nth-child(1) {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: rgba(221, 226, 255, 0.205);
+  }
+  .menu .menu__container .menu__nav li:nth-child(2) {
+    display: none;
+  }
+  .menu .menu__container .menu__nav li:hover {
+    background: rgba(221, 226, 255, 0.205);
+  }
+  .menu .menu__container .menu__nav li {
+    width: inherit;
+    height: 59px;
+    justify-content: start;
+    align-items: center;
+    padding-left: 35px;
+  }
+  .menu .menu__container .menu__nav li img {
+    margin-right: 6%;
+  }
+  .menu .menu__container .menu__nav li .nav__li1 img {
+    margin-right: 6%;
+  }
+  .menu .menu__container .menu__nav li a {
+    display: block;
+  }
+  .menu .menu__container .menu__letterTz {
+    width: 163px;
+    height: 87px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .menu {
+    left: 0;
+  }
+  .menu .menu__container .menu__btnClose {
+    display: none;
   }
 }
 #btnOpenMenu {

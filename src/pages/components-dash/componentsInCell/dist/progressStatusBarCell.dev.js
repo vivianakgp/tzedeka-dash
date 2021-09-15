@@ -5,12 +5,12 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _default = function _default() {
+var _default = function _default(currentProgress) {
   var progressStatusBarCell = document.createElement('div');
   progressStatusBarCell.setAttribute('class', 'dash__progressStatusBarCell'); // progressStatusBarCell children
 
   var currentStatus = document.createElement('div');
-  currentStatus.innerText = 'sisisisisis'; // user.currentProgressDashViewStr
+  currentStatus.innerText = currentProgress; // user.currentProgressDashViewStr
   // nesting
 
   progressStatusBarCell.appendChild(currentStatus);

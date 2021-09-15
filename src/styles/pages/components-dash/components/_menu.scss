@@ -1,3 +1,5 @@
+@import './menu-modal/comments-modal';
+
 $menu-background:rgba(35, 31, 32, 1);
 $share-width: 100%;
 $share-heigth: 50%;
@@ -8,38 +10,48 @@ $share-heigth: 50%;
     height: 109px;
     width: 100%;
     bottom: 0;
-
-    // top: calc(100vh - 109px);
     background-color: $menu-background;
         .menu__container {
         display: flex;
         flex-direction: column-reverse;
         height: inherit;
-            .btnCloseMenu { // only in vertical menu
+            .menu__btnClose { // in vertical menu
                 display: none;
             }
-            .logoTz {      // only in vertical menu
+            .menu__logoTz {  // in vertical menu
                 display: none;
             }
-            .letterLogo {
+            .menu__letterTz {
                 display: flex;
                 align-self: center;
                 position: relative;
                 overflow: hidden;
                 width: 137px;
                 height: 50%;
-                    .letterLogo__img {
+                    img {
                         position:absolute;
                         bottom:-20px;
                         width: 100%;
                         height: 150%;
                     }
             }
-            .nav {
+            .menu__nav {
                 display: flex;
                 flex-direction: row;
                 width: $share-width;
                 height: 50%;
+                    li:nth-child(1) {
+                        width: 70%;
+                        display: flex;
+                        align-items: center;
+                        background: rgba(221, 226, 255, 0.205);
+                        a {
+                            display:block;
+                            }
+                        img {
+                            margin-right: 4%;
+                        }
+                    }
                     li {
                         display: flex;
                         justify-content: center;
@@ -57,31 +69,12 @@ $share-heigth: 50%;
                                 display: none; // only in vertical menu
                             }
                     }
-                    // .nav__li1 firs <li> item
-                    .nav__li1 {
-                        width: 70%;
-                        display: flex;
-                        align-items: center;
-                        background: rgba(221, 226, 255, 0.205);
-                        a {
-                            display:block;
-                        }
-                    }
-                    .nav__li1 img {
-                        margin-right: 4%;
-                    }
             }
     }
 }
-
-
-
-
-
 /*
 * since 499px the menu must be vertical
 */
-
 @media screen and(min-width:499px) {
     .menu {
         position: absolute;
@@ -96,7 +89,7 @@ $share-heigth: 50%;
                 flex-direction: column;
                 height: 100%;
                 padding: 42px 0;
-                    .btnCloseMenu {  // only in vertical menu
+                    .menu__btnClose {
                         display: block;
                         position: absolute;
                         top: 4%;
@@ -104,24 +97,34 @@ $share-heigth: 50%;
                         width: 15px;
                         //background-color: lavenderblush;
                     }
-                    .logoTz {   // only in vertical menu
+                    .menu__logoTz {
                         display: block;
                         height: 120px;
                         width: 120px;
                         align-self: center;
                         margin-bottom: 14px;
-                            .logoTz__img {
+                            img {
                                 width: 100%;
                                 height: 100%;
                             }
                     }
-                    .nav {
+                    .menu__nav {
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
                         width: 100%;
                         height: 270px;
                         margin-bottom: 85px;
+                            li:nth-child(1){
+                                width: 100%;
+                                display: flex;
+                                align-items: center;
+                                background: rgba(221, 226, 255, 0.205);
+                            }
+                            li:nth-child(2) {
+                                display: none;
+
+                            }
                             li:hover {
                                 background: rgba(221, 226, 255, 0.205);
                             }
@@ -138,17 +141,11 @@ $share-heigth: 50%;
                                         margin-right: 6%;
                                     }
                                     a {
-                                        display: block; // only in vertical menu
+                                        display: block;
                                     }
                             }
-                            .nav__li1 {
-                                width: 100%;
-                                display: flex;
-                                align-items: center;
-                                background: rgba(221, 226, 255, 0.205);
-                            }
                     }
-                    .letterLogo {
+                    .menu__letterTz {
                         width: 163px;
                         height: 87px;
                     }
@@ -159,10 +156,9 @@ $share-heigth: 50%;
     .menu {
         left: 0;
         .menu__container {
-            .btnCloseMenu {
+            .menu__btnClose {
                 display: none;
             }
         }
-
     }
 }

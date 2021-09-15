@@ -3,8 +3,8 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.model = void 0;
-var model = {
+exports["default"] = void 0;
+var _default = {
   // logInAuth: AUTENTIFICAR USUARIIO
   userAuth: function userAuth(userData) {
     // eslint-disable-next-line no-undef
@@ -16,4 +16,4 @@ var model = {
     return firebase.auth().onAuthStateChanged(user);
   }
 };
-exports.model = model;
+exports["default"] = _default;

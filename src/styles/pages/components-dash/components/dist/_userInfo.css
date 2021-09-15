@@ -1,6 +1,5 @@
 .blackboard__userInfo {
   display: flex;
-  background-color: lightcoral;
 }
 .blackboard__userInfo h1 {
   width: 80%;
@@ -11,47 +10,37 @@
   line-height: 2.6rem;
   color: #252733;
 }
-.blackboard__userInfo .propertyLinkContainer {
+.blackboard__userInfo .userInfo__propertyLink {
   display: none;
 }
 
 @media screen and (min-width: 499px) {
-  .blackboard__userInfo h1 {
-    text-align: center;
-  }
-}
-@media screen and (min-width: 1024px) {
   .blackboard__userInfo {
-    margin: 0 13px;
     display: flex;
     flex-direction: column;
+    margin: 13px;
+    margin-left: 65px;
+    padding-right: 20px;
   }
-
   .blackboard__userInfo h1 {
-    text-align: initial;
     width: 100%;
     margin-bottom: 12px;
   }
-
-  .propertyLinkContainer {
-    display: block;
+  .blackboard__userInfo .userInfo__propertyLink {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
     font-size: 1.4rem;
     font-weight: bold;
     color: #6c6d70;
   }
-
-  .propertyLinkContainer div {
-    width: 72px;
+  .blackboard__userInfo .userInfo__propertyLink div {
+    width: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 6px;
   }
-
-  .propertyLinkContainer div img {
-    width: 13.7px;
-    height: 15.44px;
+  .blackboard__userInfo .userInfo__propertyLink div img {
+    width: 100%;
   }
 }

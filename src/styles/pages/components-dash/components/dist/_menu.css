@@ -1,0 +1,161 @@
+.commentModal {
+  width: 100px;
+  height: 100px;
+  background-color: brown;
+}
+
+.menu {
+  position: fixed;
+  z-index: 100;
+  height: 109px;
+  width: 100%;
+  bottom: 0;
+  background-color: #231f20;
+}
+.menu .menu__container {
+  display: flex;
+  flex-direction: column-reverse;
+  height: inherit;
+}
+.menu .menu__container .menu__btnClose {
+  display: none;
+}
+.menu .menu__container .menu__logoTz {
+  display: none;
+}
+.menu .menu__container .menu__letterTz {
+  display: flex;
+  align-self: center;
+  position: relative;
+  overflow: hidden;
+  width: 137px;
+  height: 50%;
+}
+.menu .menu__container .menu__letterTz img {
+  position: absolute;
+  bottom: -20px;
+  width: 100%;
+  height: 150%;
+}
+.menu .menu__container .menu__nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 50%;
+}
+.menu .menu__container .menu__nav li:nth-child(1) {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  background: rgba(221, 226, 255, 0.205);
+}
+.menu .menu__container .menu__nav li:nth-child(1) a {
+  display: block;
+}
+.menu .menu__container .menu__nav li:nth-child(1) img {
+  margin-right: 4%;
+}
+.menu .menu__container .menu__nav li {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  font-family: "Mulish", sans-serif;
+  font-size: 1.6rem;
+  font-weight: lighter;
+  letter-spacing: 0.2px;
+  color: #DDE2FF;
+  padding-bottom: 3%;
+}
+.menu .menu__container .menu__nav li img {
+  width: 16px;
+}
+.menu .menu__container .menu__nav li a {
+  display: none;
+}
+
+/*
+* since 499px the menu must be vertical
+*/
+@media screen and (min-width: 499px) {
+  .menu {
+    position: absolute;
+    top: 0;
+    left: -275px;
+    width: 275px;
+    height: 100%;
+    padding-top: 2%;
+    transition-duration: 1s;
+  }
+  .menu .menu__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 42px 0;
+  }
+  .menu .menu__container .menu__btnClose {
+    display: block;
+    position: absolute;
+    top: 4%;
+    right: 8%;
+    width: 15px;
+  }
+  .menu .menu__container .menu__logoTz {
+    display: block;
+    height: 120px;
+    width: 120px;
+    align-self: center;
+    margin-bottom: 14px;
+  }
+  .menu .menu__container .menu__logoTz img {
+    width: 100%;
+    height: 100%;
+  }
+  .menu .menu__container .menu__nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 270px;
+    margin-bottom: 85px;
+  }
+  .menu .menu__container .menu__nav li:nth-child(1) {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: rgba(221, 226, 255, 0.205);
+  }
+  .menu .menu__container .menu__nav li:nth-child(2) {
+    display: none;
+  }
+  .menu .menu__container .menu__nav li:hover {
+    background: rgba(221, 226, 255, 0.205);
+  }
+  .menu .menu__container .menu__nav li {
+    width: inherit;
+    height: 59px;
+    justify-content: start;
+    align-items: center;
+    padding-left: 35px;
+  }
+  .menu .menu__container .menu__nav li img {
+    margin-right: 6%;
+  }
+  .menu .menu__container .menu__nav li .nav__li1 img {
+    margin-right: 6%;
+  }
+  .menu .menu__container .menu__nav li a {
+    display: block;
+  }
+  .menu .menu__container .menu__letterTz {
+    width: 163px;
+    height: 87px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .menu {
+    left: 0;
+  }
+  .menu .menu__container .menu__btnClose {
+    display: none;
+  }
+}

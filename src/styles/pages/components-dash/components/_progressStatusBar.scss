@@ -1,6 +1,10 @@
 .blackboard__progressStatusBar {
     display:none;
 }//blackboard__progressStatusBar is block to tablet
+.color {
+    color:rgba(159, 147, 118, 1) !important;
+    font-weight: bolder;
+}
 @media screen and (min-width:767px) {
     .blackboard__progressStatusBar {
         display:flex;
@@ -8,7 +12,6 @@
         width: 96%;
         margin: 15px auto;
         text-align: center;
-        background-color: lightgreen;
         > div {
             width:38%;
             position:relative;

@@ -1,4 +1,4 @@
-export const model = {
+export default {
   // logInAuth: AUTENTIFICAR USUARIIO
   userAuth(userData) {
     // eslint-disable-next-line no-undef
