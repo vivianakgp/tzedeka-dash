@@ -1,6 +1,6 @@
 import vista from '../vista/vista.js';
 import model from '../model/model.js';
-// import menuController from './menu-controller.js';
+import menuController from './menu-controller.js';
 
 // numberOfCurrentDashboardView, numero de vista para mostrar por defecto
 const numberOfCurrentDashboardView = vista.transformCurrentViewInDashToNumber();
@@ -25,15 +25,18 @@ export const controller = {
         break;
       case '#/dashboard':
         mainSection.appendChild(vista.mainViews.Dash());
-        controller.showCurrentProgressView();
-        controller.clickBurgerMenu();
-        controller.addEventClickBtnDashInDesktop();
-        controller.controllerBtnNextProgressViewInCell();
-        controller.controllerBtnPreviousProgressViewInCell();
-        // menuController.openCommentModal();
+        controller.initializer();
+        menuController.initializer();
         break;
       default:
     }
+  },
+  initializer() {
+    controller.showCurrentProgressView();
+    controller.clickBurgerMenu();
+    controller.addEventClickBtnDashInDesktop();
+    controller.controllerBtnNextProgressViewInCell();
+    controller.controllerBtnPreviousProgressViewInCell();
   },
   // --  logInAuth: INICIA SESION
   logInAuth() {

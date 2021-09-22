@@ -1,21 +1,23 @@
+
 .modal-overlay {
     position: fixed;
     top:0;
-    z-index: 100;
     display:grid;
     place-items: center;
-    min-width: 317px;
+    z-index: 200;
+    min-width: 290px;
     width: 100vw;
     height: 100vh;
     background-color: rgba(20, 19, 20, 0.5);
+    visibility: hidden;
     .modal-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
         width: 90%;
-        height: 40%;
-        padding: 3.5rem 2rem;
+        height: 50%;
+        padding: 2rem;
         border-radius: 5px;
         background: #FFFFFF;
         input {
@@ -26,16 +28,16 @@
             padding: 2%;
             }
             h3 {
-                font-size: 2.1rem;
+                font-size: 2rem;
             }
             div {
-                width: 60%;
+                width: 100%;
                 display: flex;
-                justify-content: space-between;
+                justify-content: center;
                 button {
                     width: 86px;
                     height: 40px;
-                    border-style: none;
+                    margin: 2%;
                     border-radius: 5px;
                 }
                 :nth-child(1) {
@@ -45,10 +47,8 @@
                 :nth-child(2) {
                     color:white;
                     background-color: rgb(14, 15, 15);
-
                 }
                 }
     }
-
 
 }

@@ -7,7 +7,8 @@ exports["default"] = void 0;
 
 var _default = function _default() {
   var modal = document.createElement('div');
-  modal.setAttribute('class', 'modal-overlay'); // modal child
+  modal.setAttribute('class', 'modal-overlay');
+  modal.setAttribute('id', 'modal'); // modal child
 
   var subModal = document.createElement('div');
   subModal.setAttribute('class', 'modal-container'); // subModal childre
@@ -21,6 +22,8 @@ var _default = function _default() {
 
   var sendBtn = document.createElement('button');
   var closeBtn = document.createElement('button');
+  sendBtn.setAttribute('id', 'send');
+  closeBtn.setAttribute('id', 'closeModal');
   sendBtn.innerHTML = 'Enviar';
   closeBtn.innerHTML = 'Cancelar'; // nesting
 

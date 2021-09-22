@@ -15,8 +15,6 @@ var _progressStatusBar = _interopRequireDefault(require("./components-dash/compo
 
 var _userInfo = _interopRequireDefault(require("./components-dash/components/userInfo.js"));
 
-var _commentsModal = _interopRequireDefault(require("./components-dash/components/menu-modals/comments-modal.js"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 // Preparación, En Promoción, Tramite y Avalúo, Escritura
@@ -58,8 +56,7 @@ var dashboard = function dashboard() {
   dash.appendChild(container); // button open menu and menu
 
   container.appendChild(btnOpenMenu);
-  container.appendChild((0, _menu["default"])());
-  container.appendChild((0, _commentsModal["default"])()); //  main div
+  container.appendChild((0, _menu["default"])()); //  main div
 
   container.appendChild((0, _userInfo["default"])(propLink, userName));
   container.appendChild((0, _progressStatusBarCell["default"])(currentProgressStr));

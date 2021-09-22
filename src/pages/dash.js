@@ -4,8 +4,6 @@ import btnsChangeViewsToCell from './components-dash/componentsInCell/btnsChange
 import progressStatusBar from './components-dash/components/progressStatusBar.js';
 import userInfo from './components-dash/components/userInfo.js';
 
-import commentModal from './components-dash/components/menu-modals/comments-modal.js';
-
 // Preparación, En Promoción, Tramite y Avalúo, Escritura
 export const user = {
   currentProgressStr: 'Tramite y Avalúo',
@@ -40,7 +38,6 @@ export const dashboard = () => {
   // button open menu and menu
   container.appendChild(btnOpenMenu);
   container.appendChild(Menu());
-  container.appendChild(commentModal());
   //  main div
   container.appendChild(userInfo(propLink, userName));
   container.appendChild(progressStatusBarCell(currentProgressStr));

@@ -9,9 +9,10 @@ var _vista = _interopRequireDefault(require("../vista/vista.js"));
 
 var _model = _interopRequireDefault(require("../model/model.js"));
 
+var _menuController = _interopRequireDefault(require("./menu-controller.js"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-// import menuController from './menu-controller.js';
 // numberOfCurrentDashboardView, numero de vista para mostrar por defecto
 var numberOfCurrentDashboardView = _vista["default"].transformCurrentViewInDashToNumber(); // dashboardViews obj to array
 
@@ -39,16 +40,21 @@ var controller = {
 
       case '#/dashboard':
         mainSection.appendChild(_vista["default"].mainViews.Dash());
-        controller.showCurrentProgressView();
-        controller.clickBurgerMenu();
-        controller.addEventClickBtnDashInDesktop();
-        controller.controllerBtnNextProgressViewInCell();
-        controller.controllerBtnPreviousProgressViewInCell(); // menuController.openCommentModal();
+        controller.initializer();
+
+        _menuController["default"].initializer();
 
         break;
 
       default:
     }
+  },
+  initializer: function initializer() {
+    controller.showCurrentProgressView();
+    controller.clickBurgerMenu();
+    controller.addEventClickBtnDashInDesktop();
+    controller.controllerBtnNextProgressViewInCell();
+    controller.controllerBtnPreviousProgressViewInCell();
   },
   // --  logInAuth: INICIA SESION
   logInAuth: function logInAuth() {

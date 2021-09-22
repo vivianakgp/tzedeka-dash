@@ -10,13 +10,27 @@ var _vista = _interopRequireDefault(require("../vista/vista.js"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var _default = {
-  openCommentModal: function openCommentModal() {
-    // navLi3.setAttribute('id', 'navCommentsBtn');
+  initializer: function initializer() {
+    this.addCommentModal();
+    this.addEvent();
+  },
+  addCommentModal: function addCommentModal() {
     var dashboard = document.getElementById('dashboard');
+    dashboard.appendChild(_vista["default"].modals.commentsModal());
+    this.removeCommentModal();
+  },
+  addEvent: function addEvent() {
     var modalCommentsBtn = document.getElementById('navCommentsBtn');
+    var modal = document.getElementById('modal');
     modalCommentsBtn.addEventListener('click', function () {
-      console.log('clickmodal');
-      dashboard.appendChild(_vista["default"].modals.commentsModal());
+      modal.classList.add('show');
+    });
+  },
+  removeCommentModal: function removeCommentModal() {
+    var closeModal = document.getElementById('closeModal');
+    var modal = document.getElementById('modal');
+    closeModal.addEventListener('click', function () {
+      modal.classList.remove('show');
     });
   }
 };
