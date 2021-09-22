@@ -1,4 +1,4 @@
-export default () => {
+export default (currentProgress) => {
   const progressStatusBar = document.createElement('div');
   progressStatusBar.setAttribute('class', 'blackboard__progressStatusBar');
   /*
@@ -21,14 +21,32 @@ export default () => {
   block2Title.innerHTML = 'En Promoción';
   block3Title.innerHTML = 'Tramite y Avalúo';
   block4Title.innerHTML = 'Escritura';
+  // eslint-disable-next-line default-case
+  switch (currentProgress) {
+    case 'Preparación':
+      block1Title.classList.add('color');
+      break;
+    case 'En Promoción':
+      block2Title.classList.add('color');
+      break;
+    case 'Tramite y Avalúo':
+      block3Title.classList.add('color');
+      break;
+    case 'Escritura':
+      block4Title.classList.add('color');
+      break;
+  }
+  // buttons data-progress used in controller to open respective view
   block1Btn.setAttribute('data-progress', '1');
   block2Btn.setAttribute('data-progress', '2');
   block3Btn.setAttribute('data-progress', '3');
   block4Btn.setAttribute('data-progress', '4');
+  // buttons classes used in controller to add event click
   block1Btn.setAttribute('class', 'btnProgressStatusBar');
   block2Btn.setAttribute('class', 'btnProgressStatusBar');
   block3Btn.setAttribute('class', 'btnProgressStatusBar');
   block4Btn.setAttribute('class', 'btnProgressStatusBar');
+
   // nesting
   progressStatusBar.appendChild(block1);
   progressStatusBar.appendChild(block2);

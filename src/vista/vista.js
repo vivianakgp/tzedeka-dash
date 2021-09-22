@@ -6,8 +6,9 @@ import preparacionView from '../pages/components-dash/views-dash/preparacion.js'
 import promoView from '../pages/components-dash/views-dash/promocion.js';
 import tramiteView from '../pages/components-dash/views-dash/tramite.js';
 import escrituraView from '../pages/components-dash/views-dash/escritura.js';
+import commentsModal from '../pages/components-dash/components/menu-modals/comments-modal.js';
 
-const vista = {
+export default {
   mainViews: {
     Login,
     Dash: dashboard,
@@ -17,6 +18,9 @@ const vista = {
     promocion: promoView(),
     tramite: tramiteView(),
     escritura: escrituraView(),
+  },
+  modals: {
+    commentsModal,
   },
   // -- showAuthenticationError: MOSTRAR ERROR DE LOGIN
   showAuthenticationError: (messageErr, form) => {
@@ -29,7 +33,7 @@ const vista = {
   // -- transformCurrentViewInDashToNumber: TRANSFORMA LA VISTA RECIENTE EN NUMERO
   transformCurrentViewInDashToNumber() {
     // Preparación, En Promoción, Tramite y Avalúo, Escritura
-    const currentProgressStr = user.currentProgressDashViewStr;
+    const currentProgressStr = user.currentProgressStr;
     switch (currentProgressStr) {
       case 'Preparación':
         return 0;
@@ -45,4 +49,3 @@ const vista = {
   },
 
 };
-export { vista };

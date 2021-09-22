@@ -1,24 +1,24 @@
-export default () => {
+export default (proLink, name) => {
   const userInfo = document.createElement('div');
   userInfo.setAttribute('class', 'blackboard__userInfo');
- /*
+  /*
   * userInfo children *
   - welcome
   - propertyLink only in desktop
   */
   const welcome = document.createElement('h1');
   const propertyLink = document.createElement('div');
-  propertyLink.setAttribute('class', 'propertyLinkContainer');
+  propertyLink.setAttribute('class', 'userInfo__propertyLink');
   // welcome child
   const span = document.createElement('span');
-  welcome.innerText = 'Bienvenido';
-  // span.innerText = user.name; solo en desktop
+  welcome.innerText = `Bienvenido ${name}`; //  in desktop user.name;
+
   // propertyLink children
   const link = document.createElement('p');
   const networkIcons = document.createElement('div');
-  // link.innerHTML = `Link de mi Propiedad: ${linkPropertyPublication}`;
+  link.innerHTML = `Link de mi Propiedad:${proLink}`;
+
   // propertyLink / networkIcons children
-  // link.innerHTML = `Link de mi Propiedad: ${linkPropertyPublication}`;
   const iconWhats = document.createElement('img');
   const iconFace = document.createElement('img');
   const iconShare = document.createElement('img');
@@ -38,5 +38,4 @@ export default () => {
   networkIcons.appendChild(iconFace);
   networkIcons.appendChild(iconShare);
   return userInfo;
-
-}
+};

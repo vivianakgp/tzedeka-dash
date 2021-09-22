@@ -5,18 +5,22 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.controller = void 0;
 
-var _vista = require("../vista/vista.js");
+var _vista = _interopRequireDefault(require("../vista/vista.js"));
 
-var _model = require("../model/model.js");
+var _model = _interopRequireDefault(require("../model/model.js"));
+
+var _menuController = _interopRequireDefault(require("./menu-controller.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 // numberOfCurrentDashboardView, numero de vista para mostrar por defecto
-var numberOfCurrentDashboardView = _vista.vista.transformCurrentViewInDashToNumber(); // dashboardViews obj to array
+var numberOfCurrentDashboardView = _vista["default"].transformCurrentViewInDashToNumber(); // dashboardViews obj to array
 
 
-var dashboardViews = _vista.vista.dashboardViews;
+var dashboardViews = _vista["default"].dashboardViews;
 var arrayProgressViews = Object.values(dashboardViews);
 
-var counter = _vista.vista.transformCurrentViewInDashToNumber();
+var counter = _vista["default"].transformCurrentViewInDashToNumber();
 
 var controller = {
   // --  templateChange: DETECTA EL HASH Y CAMBIA LAS PRINCIPALES VISTAS
@@ -26,25 +30,31 @@ var controller = {
 
     switch (hash) {
       case '':
-        mainSection.appendChild(_vista.vista.mainViews.Login());
+        mainSection.appendChild(_vista["default"].mainViews.Login());
         controller.logInAuth();
         break;
 
       case '#/register':
-        mainSection.appendChild(_vista.vista.mainViews.Registry());
+        mainSection.appendChild(_vista["default"].mainViews.Registry());
         break;
 
       case '#/dashboard':
-        mainSection.appendChild(_vista.vista.mainViews.Dash());
-        controller.showCurrentProgressView();
-        controller.clickBurgerMenu();
-        controller.addEventClickBtnDashInDesktop();
-        controller.controllerBtnNextProgressViewInCell();
-        controller.controllerBtnPreviousProgressViewInCell();
+        mainSection.appendChild(_vista["default"].mainViews.Dash());
+        controller.initializer();
+
+        _menuController["default"].initializer();
+
         break;
 
       default:
     }
+  },
+  initializer: function initializer() {
+    controller.showCurrentProgressView();
+    controller.clickBurgerMenu();
+    controller.addEventClickBtnDashInDesktop();
+    controller.controllerBtnNextProgressViewInCell();
+    controller.controllerBtnPreviousProgressViewInCell();
   },
   // --  logInAuth: INICIA SESION
   logInAuth: function logInAuth() {
@@ -60,7 +70,7 @@ var controller = {
           password: formLogin.password.value
         };
 
-        _model.model.userAuth(userData).then(function () {
+        _model["default"].userAuth(userData).then(function () {
           window.location.hash = '#/dashboard';
           var hash = window.location.hash;
           window.addEventListener('hashchange', function () {
@@ -70,18 +80,18 @@ var controller = {
         })["catch"](function (error) {
           var errorAuth = error.message;
 
-          _vista.vista.showAuthenticationError(errorAuth, formLogin);
+          _vista["default"].showAuthenticationError(errorAuth, formLogin);
         });
       } else if (formLogin.email.value === '' || formLogin.password.value === '') {
         var messageErr = '¡Correo o contraseña vacia!';
 
-        _vista.vista.showAuthenticationError(messageErr, formLogin);
+        _vista["default"].showAuthenticationError(messageErr, formLogin);
       }
     });
   },
   // -- getCurrentUser: DETECTA EL ID USER
   getCurrentUser: function getCurrentUser() {
-    _model.model.getCurrentUser(function (user) {
+    _model["default"].getCurrentUser(function (user) {
       if (user) {
         console.log('El usuario ha iniciado la sesión.'.concat(user));
       } else {
@@ -96,19 +106,19 @@ var controller = {
 
     switch (numberOfCurrentDashboardView) {
       case 0:
-        blackboard.appendChild(_vista.vista.dashboardViews.preparacion);
+        blackboard.appendChild(_vista["default"].dashboardViews.preparacion);
         break;
 
       case 1:
-        blackboard.appendChild(_vista.vista.dashboardViews.promocion);
+        blackboard.appendChild(_vista["default"].dashboardViews.promocion);
         break;
 
       case 2:
-        blackboard.appendChild(_vista.vista.dashboardViews.tramite);
+        blackboard.appendChild(_vista["default"].dashboardViews.tramite);
         break;
 
       case 3:
-        blackboard.appendChild(_vista.vista.dashboardViews.escritura);
+        blackboard.appendChild(_vista["default"].dashboardViews.escritura);
         break;
 
       default: // show pag err
@@ -144,19 +154,19 @@ var controller = {
 
     switch (progress) {
       case '1':
-        blackboard.appendChild(_vista.vista.dashboardViews.preparacion);
+        blackboard.appendChild(_vista["default"].dashboardViews.preparacion);
         break;
 
       case '2':
-        blackboard.appendChild(_vista.vista.dashboardViews.promocion);
+        blackboard.appendChild(_vista["default"].dashboardViews.promocion);
         break;
 
       case '3':
-        blackboard.appendChild(_vista.vista.dashboardViews.tramite);
+        blackboard.appendChild(_vista["default"].dashboardViews.tramite);
         break;
 
       case '4':
-        blackboard.appendChild(_vista.vista.dashboardViews.escritura);
+        blackboard.appendChild(_vista["default"].dashboardViews.escritura);
         break;
     }
   },
