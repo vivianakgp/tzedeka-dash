@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _default = function _default(proLink, name) {
+var _default = function _default(name, propLink) {
   var userInfo = document.createElement('div');
   userInfo.setAttribute('class', 'blackboard__userInfo');
   /*
@@ -22,9 +22,11 @@ var _default = function _default(proLink, name) {
   welcome.innerText = "Bienvenido ".concat(name); //  in desktop user.name;
   // propertyLink children
 
-  var link = document.createElement('p');
-  var networkIcons = document.createElement('div');
-  link.innerHTML = "Link de mi Propiedad:".concat(proLink); // propertyLink / networkIcons children
+  var link = document.createElement('a');
+  var networkIcons = document.createElement('div'); // link.innerHTML = 'https://www.inmuebles24.com/inmuebles.html';
+
+  link.innerHTML = "Link de mi Propiedad:  ".concat(propLink); // link.setAttribute('href', 'https://www.inmuebles24.com/inmuebles.html');
+  // propertyLink / networkIcons children
 
   var iconWhats = document.createElement('img');
   var iconFace = document.createElement('img');

@@ -15,13 +15,19 @@ var _progressStatusBar = _interopRequireDefault(require("./components-dash/compo
 
 var _userInfo = _interopRequireDefault(require("./components-dash/components/userInfo.js"));
 
+var _commentsModal = _interopRequireDefault(require("./components-dash/components/menu-modals/comments-modal.js"));
+
+var _modalShareLink = _interopRequireDefault(require("./components-dash/components/menu-modals/modalShareLink.js"));
+
+var _modalRefer = _interopRequireDefault(require("./components-dash/components/menu-modals/modalRefer.js"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 // Preparación, En Promoción, Tramite y Avalúo, Escritura
 var user = {
   currentProgressStr: 'Tramite y Avalúo',
   userName: 'Juan',
-  propLink: 'http://localhost:5000/#/dashboard/'
+  propLink: 'https://www.inmuebles24.com/inmuebles.html'
 };
 exports.user = user;
 var userName = user.userName,
@@ -56,9 +62,12 @@ var dashboard = function dashboard() {
   dash.appendChild(container); // button open menu and menu
 
   container.appendChild(btnOpenMenu);
-  container.appendChild((0, _menu["default"])()); //  main div
+  container.appendChild((0, _menu["default"])());
+  container.appendChild((0, _commentsModal["default"])());
+  container.appendChild((0, _modalShareLink["default"])(propLink));
+  container.appendChild((0, _modalRefer["default"])()); //  main div
 
-  container.appendChild((0, _userInfo["default"])(propLink, userName));
+  container.appendChild((0, _userInfo["default"])(userName, propLink));
   container.appendChild((0, _progressStatusBarCell["default"])(currentProgressStr));
   container.appendChild((0, _progressStatusBar["default"])(currentProgressStr));
   container.appendChild(blackboard);

@@ -1,4 +1,4 @@
-export default (proLink, name) => {
+export default (name, propLink) => {
   const userInfo = document.createElement('div');
   userInfo.setAttribute('class', 'blackboard__userInfo');
   /*
@@ -12,11 +12,12 @@ export default (proLink, name) => {
   // welcome child
   const span = document.createElement('span');
   welcome.innerText = `Bienvenido ${name}`; //  in desktop user.name;
-
   // propertyLink children
-  const link = document.createElement('p');
+  const link = document.createElement('a');
   const networkIcons = document.createElement('div');
-  link.innerHTML = `Link de mi Propiedad:${proLink}`;
+  // link.innerHTML = 'https://www.inmuebles24.com/inmuebles.html';
+  link.innerHTML = `Link de mi Propiedad:  ${propLink}`;
+  // link.setAttribute('href', 'https://www.inmuebles24.com/inmuebles.html');
 
   // propertyLink / networkIcons children
   const iconWhats = document.createElement('img');

@@ -16,16 +16,17 @@ html {
 body {
     background-color: black;
 }
-.is__active {
+.openMenu {
     left: 0;
     transition-duration:  1s;
 }
 .hideBtn {
     opacity: 30%;
 }
-.show {
+.showModal {
     visibility: visible;
 }
+
 
 
 

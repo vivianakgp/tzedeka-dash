@@ -1,8 +1,12 @@
-@import './menu-modal/comments-modal';
+@import './menu-modal/modals';
 
-$menu-background:rgba(35, 31, 32, 1);
-$share-width: 100%;
-$share-heigth: 50%;
+.text-style {
+    font-family: 'Mulish', sans-serif;
+    font-size: 1.6rem;
+    font-weight: lighter;
+    letter-spacing: 0.2px;
+    color: #DDE2FF;
+}
 
 .menu {
     position: fixed;
@@ -10,11 +14,12 @@ $share-heigth: 50%;
     height: 109px;
     width: 100%;
     bottom: 0;
-    background-color: $menu-background;
+    background-color: rgba(35, 31, 32, 1);
         .menu__container {
         display: flex;
         flex-direction: column-reverse;
-        height: inherit;
+        height: 100%;
+        width: 100%;
             .menu__btnClose { // in vertical menu
                 display: none;
             }
@@ -38,36 +43,31 @@ $share-heigth: 50%;
             .menu__nav {
                 display: flex;
                 flex-direction: row;
-                width: $share-width;
                 height: 50%;
-                    li:nth-child(1) {
-                        width: 70%;
-                        display: flex;
-                        align-items: center;
-                        background: rgba(221, 226, 255, 0.205);
-                        a {
-                            display:block;
-                            }
-                        img {
-                            margin-right: 4%;
-                        }
-                    }
                     li {
+                        @extend .text-style;
                         display: flex;
                         justify-content: center;
-                        width: 30%;
-                        font-family: 'Mulish', sans-serif;
-                        font-size: 1.6rem;
-                        font-weight: lighter;
-                        letter-spacing: 0.2px;
-                        color: #DDE2FF;
+                        width: 16.7%;
                         padding-bottom: 3%;
                             img {
                                 width: 16px;
                             }
                             a {
-                                display: none; // only in vertical menu
+                                display: none;
                             }
+                    }
+                    .li1__miPropiedad {
+                        width: 33%;
+                        font-size: 1.3rem;// cambiar en menu vertical
+                        align-items: center;
+                        background-color: rgba(221, 226, 255, 0.205);
+                        a{
+                            display: block;
+                        }
+                        img {
+                            margin-right: 4%;
+                        }
                     }
             }
     }
@@ -77,9 +77,8 @@ $share-heigth: 50%;
 */
 @media screen and(min-width:499px) {
     .menu {
-        position: absolute;
         top: 0;
-        left: -275px;
+        left: -275px; // to show and hide menu
         width: 275px;
         height: 100%;
         padding-top: 2%;
@@ -95,7 +94,6 @@ $share-heigth: 50%;
                         top: 4%;
                         right: 8%;
                         width: 15px;
-                        //background-color: lavenderblush;
                     }
                     .menu__logoTz {
                         display: block;
@@ -120,10 +118,6 @@ $share-heigth: 50%;
                                 display: flex;
                                 align-items: center;
                                 background: rgba(221, 226, 255, 0.205);
-                            }
-                            li:nth-child(2) {
-                                display: none;
-
                             }
                             li:hover {
                                 background: rgba(221, 226, 255, 0.205);
@@ -155,10 +149,8 @@ $share-heigth: 50%;
 @media screen and(min-width:1024px) {
     .menu {
         left: 0;
-        .menu__container {
-            .menu__btnClose {
-                display: none;
-            }
-        }
+    }
+    .menu__btnClose{
+        visibility: hidden;
     }
 }

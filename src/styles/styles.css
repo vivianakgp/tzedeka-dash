@@ -279,13 +279,14 @@
   font-size: 2.4rem;
   font-weight: bold;
   line-height: 2.6rem;
+  text-align: center;
   color: #252733;
 }
 .blackboard__userInfo .userInfo__propertyLink {
   display: none;
 }
 
-@media screen and (min-width: 499px) {
+@media screen and (min-width: 767px) {
   .blackboard__userInfo {
     display: flex;
     flex-direction: column;
@@ -295,27 +296,51 @@
   }
   .blackboard__userInfo h1 {
     width: 100%;
-    margin-bottom: 12px;
+    text-align: left;
+    padding-left: 15px;
   }
   .blackboard__userInfo .userInfo__propertyLink {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-top: 20px;
     font-size: 1.4rem;
     font-weight: bold;
     color: #6c6d70;
   }
+  .blackboard__userInfo .userInfo__propertyLink a {
+    color: #86abce;
+    margin-bottom: 15px;
+    text-decoration: none;
+  }
   .blackboard__userInfo .userInfo__propertyLink div {
-    width: 60px;
+    width: 110px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .blackboard__userInfo .userInfo__propertyLink div img {
-    width: 100%;
+    width: 23%;
   }
 }
-.modal-overlay {
+.letter-style, .modalRefer-container > input, .modalRefer-container > div, .commentsModal .commentsModal-container input {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.buttons-style, .modalRefer-container > :nth-child(7) button, .commentsModal .commentsModal-container div button {
+  width: 86px;
+  height: 40px;
+  margin: 2%;
+  border-radius: 5px;
+}
+
+.modal-overlay, .commentsModal {
   position: fixed;
   top: 0;
   display: grid;
@@ -324,48 +349,112 @@
   min-width: 290px;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(20, 19, 20, 0.5);
+  background-color: rgba(8, 0, 8, 0.8);
   visibility: hidden;
 }
-.modal-overlay .modal-container {
+
+.modal-container, .modalRefer-container, .modalShareLink-container, .commentsModal .commentsModal-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   width: 90%;
-  height: 50%;
+  min-width: 250px;
+  max-width: 500px;
   padding: 2rem;
   border-radius: 5px;
   background: #FFFFFF;
 }
-.modal-overlay .modal-container input {
+
+.commentsModal .commentsModal-container {
+  height: 50%;
+}
+.commentsModal .commentsModal-container input {
   height: 60%;
   width: 95%;
   border: 1px solid #dfe0eb;
   border-radius: 8px;
   padding: 2%;
 }
-.modal-overlay .modal-container h3 {
+.commentsModal .commentsModal-container h3 {
   font-size: 2rem;
 }
-.modal-overlay .modal-container div {
+.commentsModal .commentsModal-container div {
   width: 100%;
   display: flex;
   justify-content: center;
 }
-.modal-overlay .modal-container div button {
-  width: 86px;
-  height: 40px;
-  margin: 2%;
-  border-radius: 5px;
-}
-.modal-overlay .modal-container div :nth-child(1) {
+.commentsModal .commentsModal-container div :nth-child(1) {
   background-color: white;
   border: 0.5px solid #231f20;
 }
-.modal-overlay .modal-container div :nth-child(2) {
+.commentsModal .commentsModal-container div :nth-child(2) {
   color: white;
   background-color: #0e0f0f;
+}
+
+.modalShareLink-container {
+  height: 15%;
+}
+.modalShareLink-container > :nth-child(1) {
+  align-self: flex-end;
+}
+.modalShareLink-container > :nth-child(3) {
+  color: #0066ff;
+}
+.modalShareLink-container :nth-child(4) {
+  display: flex;
+  align-items: end;
+  height: 30%;
+}
+
+.modalRefer-container {
+  height: 400px;
+}
+.modalRefer-container h3 {
+  font-size: 2rem;
+}
+.modalRefer-container > input, .modalRefer-container > div {
+  width: 85%;
+  height: 43px;
+  border-radius: 8px;
+  border: 1px solid #DFE0EB;
+  padding-left: 10px;
+}
+.modalRefer-container > :nth-child(5) {
+  height: auto;
+  padding: 10px;
+}
+.modalRefer-container > :nth-child(5) p {
+  margin-bottom: 5px;
+}
+.modalRefer-container > :nth-child(7) {
+  border-style: hidden;
+  display: flex;
+  justify-content: center;
+}
+.modalRefer-container > :nth-child(7) :nth-child(1) {
+  background-color: white;
+  border: 0.5px solid #231f20;
+}
+.modalRefer-container > :nth-child(7) :nth-child(2) {
+  color: white;
+  background-color: #0e0f0f;
+}
+
+@media screen and (min-width: 1024px) {
+  .modal-overlay, .commentsModal {
+    left: 0;
+    height: 100%;
+    place-items: center;
+  }
+}
+.text-style, .menu .menu__container .menu__nav li {
+  font-family: "Mulish", sans-serif;
+  font-size: 1.6rem;
+  font-weight: lighter;
+  letter-spacing: 0.2px;
+  color: #DDE2FF;
 }
 
 .menu {
@@ -379,7 +468,8 @@
 .menu .menu__container {
   display: flex;
   flex-direction: column-reverse;
-  height: inherit;
+  height: 100%;
+  width: 100%;
 }
 .menu .menu__container .menu__btnClose {
   display: none;
@@ -404,30 +494,12 @@
 .menu .menu__container .menu__nav {
   display: flex;
   flex-direction: row;
-  width: 100%;
   height: 50%;
-}
-.menu .menu__container .menu__nav li:nth-child(1) {
-  width: 70%;
-  display: flex;
-  align-items: center;
-  background: rgba(221, 226, 255, 0.205);
-}
-.menu .menu__container .menu__nav li:nth-child(1) a {
-  display: block;
-}
-.menu .menu__container .menu__nav li:nth-child(1) img {
-  margin-right: 4%;
 }
 .menu .menu__container .menu__nav li {
   display: flex;
   justify-content: center;
-  width: 30%;
-  font-family: "Mulish", sans-serif;
-  font-size: 1.6rem;
-  font-weight: lighter;
-  letter-spacing: 0.2px;
-  color: #DDE2FF;
+  width: 16.7%;
   padding-bottom: 3%;
 }
 .menu .menu__container .menu__nav li img {
@@ -436,13 +508,24 @@
 .menu .menu__container .menu__nav li a {
   display: none;
 }
+.menu .menu__container .menu__nav .li1__miPropiedad {
+  width: 33%;
+  font-size: 1.3rem;
+  align-items: center;
+  background-color: rgba(221, 226, 255, 0.205);
+}
+.menu .menu__container .menu__nav .li1__miPropiedad a {
+  display: block;
+}
+.menu .menu__container .menu__nav .li1__miPropiedad img {
+  margin-right: 4%;
+}
 
 /*
 * since 499px the menu must be vertical
 */
 @media screen and (min-width: 499px) {
   .menu {
-    position: absolute;
     top: 0;
     left: -275px;
     width: 275px;
@@ -488,9 +571,6 @@
     align-items: center;
     background: rgba(221, 226, 255, 0.205);
   }
-  .menu .menu__container .menu__nav li:nth-child(2) {
-    display: none;
-  }
   .menu .menu__container .menu__nav li:hover {
     background: rgba(221, 226, 255, 0.205);
   }
@@ -519,8 +599,9 @@
   .menu {
     left: 0;
   }
-  .menu .menu__container .menu__btnClose {
-    display: none;
+
+  .menu__btnClose {
+    visibility: hidden;
   }
 }
 #btnOpenMenu {
@@ -565,8 +646,8 @@
   }
 }
 @media screen and (min-width: 1024px) {
-  .btnOpenMenu {
-    display: none;
+  #btnOpenMenu {
+    visibility: hidden;
   }
 
   .dash__container {
@@ -594,7 +675,7 @@ body {
   background-color: black;
 }
 
-.is__active {
+.openMenu {
   left: 0;
   transition-duration: 1s;
 }
@@ -603,7 +684,7 @@ body {
   opacity: 30%;
 }
 
-.show {
+.showModal {
   visibility: visible;
 }
 

@@ -3,12 +3,15 @@ import progressStatusBarCell from './components-dash/componentsInCell/progressSt
 import btnsChangeViewsToCell from './components-dash/componentsInCell/btnsChangeViewsToCell.js';
 import progressStatusBar from './components-dash/components/progressStatusBar.js';
 import userInfo from './components-dash/components/userInfo.js';
+import modalComments from './components-dash/components/menu-modals/comments-modal.js';
+import modalShareLink from './components-dash/components/menu-modals/modalShareLink.js';
+import modalRefer from './components-dash/components/menu-modals/modalRefer.js';
 
 // Preparación, En Promoción, Tramite y Avalúo, Escritura
 export const user = {
   currentProgressStr: 'Tramite y Avalúo',
   userName: 'Juan',
-  propLink: 'http://localhost:5000/#/dashboard/',
+  propLink: 'https://www.inmuebles24.com/inmuebles.html',
 };
 const { userName, currentProgressStr, propLink } = user;
 export const dashboard = () => {
@@ -38,8 +41,12 @@ export const dashboard = () => {
   // button open menu and menu
   container.appendChild(btnOpenMenu);
   container.appendChild(Menu());
+  container.appendChild(modalComments());
+  container.appendChild(modalShareLink(propLink));
+  container.appendChild(modalRefer());
+
   //  main div
-  container.appendChild(userInfo(propLink, userName));
+  container.appendChild(userInfo(userName, propLink));
   container.appendChild(progressStatusBarCell(currentProgressStr));
   container.appendChild(progressStatusBar(currentProgressStr));
   container.appendChild(blackboard);

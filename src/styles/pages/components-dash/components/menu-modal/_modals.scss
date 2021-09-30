@@ -1,0 +1,149 @@
+.letter-style {
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    color: rgba(0, 0, 0, 0.5);
+}
+.buttons-style {
+    width: 86px;
+    height: 40px;
+    margin: 2%;
+    border-radius: 5px;
+
+}
+.modal-overlay{
+    position: fixed;
+    top:0;
+    display:grid;
+    place-items: center;
+    z-index: 200;
+    min-width: 290px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(8, 0, 8, 0.8);
+    visibility: hidden;
+
+}
+.modal-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        min-width: 250px;
+        max-width: 500px;
+        padding: 2rem;
+        border-radius: 5px;
+        background: #FFFFFF;
+        // height: se define en cada modal;
+}
+.commentsModal {
+    @extend .modal-overlay;
+    .commentsModal-container {
+        @extend .modal-container;
+        height: 50%;
+        input {
+            height: 60%;
+            width: 95%;
+            border: 1px solid rgba(223, 224, 235, 1);
+            border-radius: 8px;
+            padding: 2%;
+            @extend .letter-style;
+
+            }
+            h3 {
+                font-size: 2rem;
+            }
+            div {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                button {
+                    @extend .buttons-style;
+                }
+                :nth-child(1) {
+                    background-color: white;
+                    border: .5px solid rgba(35, 31, 32, 1);
+                }
+                :nth-child(2) {
+                    color:white;
+                    background-color: rgb(14, 15, 15);
+                }
+                }
+    }
+
+}
+.modalShareLink-container{
+    @extend .modal-container;
+    height: 15%;
+    >:nth-child(1){
+        align-self: flex-end;
+    }
+    >:nth-child(2){
+
+    }
+    >:nth-child(3){
+        color: rgb(0, 102, 255);
+    }
+    :nth-child(4){
+        display: flex;
+        align-items: end;
+        height: 30%;
+    }
+
+}
+.modalRefer-container {
+    @extend .modal-container;
+    height: 400px;
+    h3 {
+        font-size: 2rem;
+    }
+    >input, >div {
+        width: 85%;
+        height: 43px;
+        border-radius: 8px;
+        border: 1px solid #DFE0EB;
+        padding-left: 10px;
+        @extend .letter-style;
+
+    }
+    >:nth-child(5){
+        height: auto;
+        padding: 10px;
+        p{
+            margin-bottom: 5px;
+        }
+
+    }
+    >:nth-child(7) {
+        border-style: hidden;
+        display: flex;
+        justify-content: center;
+        button {
+            @extend .buttons-style ;
+        }
+        :nth-child(1) {
+            background-color: white;
+            border: .5px solid rgba(35, 31, 32, 1);
+        }
+        :nth-child(2) {
+            color:white;
+            background-color: rgb(14, 15, 15);
+        }
+
+    }
+
+}
+@media screen and (min-width:1024px) {
+    .modal-overlay {
+        // position: absolute;
+        left: 0;
+        height: 100%;
+        place-items: center;
+    }
+
+}

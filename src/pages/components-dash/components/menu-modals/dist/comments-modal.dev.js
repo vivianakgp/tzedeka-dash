@@ -7,11 +7,11 @@ exports["default"] = void 0;
 
 var _default = function _default() {
   var modal = document.createElement('div');
-  modal.setAttribute('class', 'modal-overlay');
-  modal.setAttribute('id', 'modal'); // modal child
+  modal.setAttribute('class', 'commentsModal');
+  modal.setAttribute('id', 'modalComments'); // modal child
 
   var subModal = document.createElement('div');
-  subModal.setAttribute('class', 'modal-container'); // subModal childre
+  subModal.setAttribute('class', 'commentsModal-container'); // subModal childre
 
   var title = document.createElement('h3');
   var text = document.createElement('input');

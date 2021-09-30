@@ -5,32 +5,64 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _vista = _interopRequireDefault(require("../vista/vista.js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
+/* eslint-disable no-unused-expressions */
+// import vista from '../vista/vista.js';
 var _default = {
   initializer: function initializer() {
-    this.addCommentModal();
     this.addEvent();
-  },
-  addCommentModal: function addCommentModal() {
-    var dashboard = document.getElementById('dashboard');
-    dashboard.appendChild(_vista["default"].modals.commentsModal());
     this.removeCommentModal();
   },
+  btnNavIsActive: function btnNavIsActive(button) {
+    var miPropertyBtn = document.getElementById('miPropertyBtn');
+    miPropertyBtn.classList.remove('li1__miPropiedad');
+    button.classList.add('li1__miPropiedad');
+  },
+  openCommentModal: function openCommentModal(btn) {
+    var modalComments = document.getElementById('modalComments');
+    modalComments.classList.add('showModal');
+    this.btnNavIsActive(btn);
+  },
+  openShareLinkModal: function openShareLinkModal(btn) {
+    var modalShareLink = document.getElementById('modalShareLink');
+    modalShareLink.classList.add('showModal');
+    this.btnNavIsActive(btn);
+  },
+  openModalRefer: function openModalRefer(btn) {
+    var modalRefer = document.getElementById('modalRefer');
+    modalRefer.classList.add('showModal');
+    this.btnNavIsActive(btn);
+  },
   addEvent: function addEvent() {
+    var _this = this;
+
     var modalCommentsBtn = document.getElementById('navCommentsBtn');
-    var modal = document.getElementById('modal');
+    var modalShareLinkBtn = document.getElementById('navShareLinkBtn');
+    var modalReferBtn = document.getElementById('navReferBtn');
     modalCommentsBtn.addEventListener('click', function () {
-      modal.classList.add('show');
+      _this.openCommentModal(modalCommentsBtn);
+    });
+    modalShareLinkBtn.addEventListener('click', function () {
+      _this.openShareLinkModal(modalShareLinkBtn);
+    });
+    modalReferBtn.addEventListener('click', function () {
+      _this.openModalRefer(modalReferBtn);
     });
   },
   removeCommentModal: function removeCommentModal() {
     var closeModal = document.getElementById('closeModal');
-    var modal = document.getElementById('modal');
+    var closeShareLinkModal = document.getElementById('closeShareLinkModal');
+    var closeModalRefer = document.getElementById('closeModalRefer');
+    var modalComments = document.getElementById('modalComments');
+    var modalShareLink = document.getElementById('modalShareLink');
+    var modalRefer = document.getElementById('modalRefer');
     closeModal.addEventListener('click', function () {
-      modal.classList.remove('show');
+      return modalComments.classList.remove('showModal');
+    });
+    closeShareLinkModal.addEventListener('click', function () {
+      return modalShareLink.classList.remove('showModal');
+    });
+    closeModalRefer.addEventListener('click', function () {
+      return modalRefer.classList.remove('showModal');
     });
   }
 };
