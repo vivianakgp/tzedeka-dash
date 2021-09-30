@@ -1,10 +1,10 @@
 export default () => {
   const modal = document.createElement('div');
-  modal.setAttribute('class', 'modal-overlay');
-  modal.setAttribute('id', 'modal');
+  modal.setAttribute('class', 'commentsModal');
+  modal.setAttribute('id', 'modalComments');
   // modal child
   const subModal = document.createElement('div');
-  subModal.setAttribute('class', 'modal-container');
+  subModal.setAttribute('class', 'commentsModal-container');
   // subModal childre
   const title = document.createElement('h3');
   const text = document.createElement('input');

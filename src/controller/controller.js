@@ -7,7 +7,6 @@ const numberOfCurrentDashboardView = vista.transformCurrentViewInDashToNumber();
 // dashboardViews obj to array
 const dashboardViews = vista.dashboardViews;
 const arrayProgressViews = Object.values(dashboardViews);
-
 let counter = vista.transformCurrentViewInDashToNumber();
 
 export const controller = {
@@ -100,9 +99,9 @@ export const controller = {
   },
   clickBurgerMenu() {
     const burgerButton = document.getElementById('btnOpenMenu');
-    console.log(burgerButton);
+    const menu = document.getElementById('menu');
     burgerButton.addEventListener('click', () => {
-      alert('burger btn');
+      menu.classList.add('openMenu');
     });
   },
   /**

@@ -1,0 +1,126 @@
+.letter-style, .modalRefer-container > input, .modalRefer-container > div, .commentsModal .commentsModal-container input {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.buttons-style, .modalRefer-container > :nth-child(7) button, .commentsModal .commentsModal-container div button {
+  width: 86px;
+  height: 40px;
+  margin: 2%;
+  border-radius: 5px;
+}
+
+.modal-overlay, .commentsModal {
+  position: fixed;
+  top: 0;
+  display: grid;
+  place-items: center;
+  z-index: 200;
+  min-width: 290px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(8, 0, 8, 0.8);
+  visibility: hidden;
+}
+
+.modal-container, .modalRefer-container, .modalShareLink-container, .commentsModal .commentsModal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  min-width: 250px;
+  max-width: 500px;
+  padding: 2rem;
+  border-radius: 5px;
+  background: #FFFFFF;
+}
+
+.commentsModal .commentsModal-container {
+  height: 50%;
+}
+.commentsModal .commentsModal-container input {
+  height: 60%;
+  width: 95%;
+  border: 1px solid #dfe0eb;
+  border-radius: 8px;
+  padding: 2%;
+}
+.commentsModal .commentsModal-container h3 {
+  font-size: 2rem;
+}
+.commentsModal .commentsModal-container div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.commentsModal .commentsModal-container div :nth-child(1) {
+  background-color: white;
+  border: 0.5px solid #231f20;
+}
+.commentsModal .commentsModal-container div :nth-child(2) {
+  color: white;
+  background-color: #0e0f0f;
+}
+
+.modalShareLink-container {
+  height: 15%;
+}
+.modalShareLink-container > :nth-child(1) {
+  align-self: flex-end;
+}
+.modalShareLink-container > :nth-child(3) {
+  color: #0066ff;
+}
+.modalShareLink-container :nth-child(4) {
+  display: flex;
+  align-items: end;
+  height: 30%;
+}
+
+.modalRefer-container {
+  height: 400px;
+}
+.modalRefer-container h3 {
+  font-size: 2rem;
+}
+.modalRefer-container > input, .modalRefer-container > div {
+  width: 85%;
+  height: 43px;
+  border-radius: 8px;
+  border: 1px solid #DFE0EB;
+  padding-left: 10px;
+}
+.modalRefer-container > :nth-child(5) {
+  height: auto;
+  padding: 10px;
+}
+.modalRefer-container > :nth-child(5) p {
+  margin-bottom: 5px;
+}
+.modalRefer-container > :nth-child(7) {
+  border-style: hidden;
+  display: flex;
+  justify-content: center;
+}
+.modalRefer-container > :nth-child(7) :nth-child(1) {
+  background-color: white;
+  border: 0.5px solid #231f20;
+}
+.modalRefer-container > :nth-child(7) :nth-child(2) {
+  color: white;
+  background-color: #0e0f0f;
+}
+
+@media screen and (min-width: 1024px) {
+  .modal-overlay, .commentsModal {
+    left: 0;
+    height: 100%;
+    place-items: center;
+  }
+}

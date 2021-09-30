@@ -50,11 +50,10 @@
         width: 93%;
         margin: 0 auto;
     }
-
 }
 @media screen and (min-width:1024px) {
-    .btnOpenMenu {
-        display: none;
+    #btnOpenMenu {
+        visibility: hidden;
     }
     .dash__container {
         padding-left: 275px;

@@ -127,9 +127,9 @@ var controller = {
   },
   clickBurgerMenu: function clickBurgerMenu() {
     var burgerButton = document.getElementById('btnOpenMenu');
-    console.log(burgerButton);
+    var menu = document.getElementById('menu');
     burgerButton.addEventListener('click', function () {
-      alert('burger btn');
+      menu.classList.add('openMenu');
     });
   },
 

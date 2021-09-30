@@ -8,14 +8,15 @@
         font-size: 2.4rem;
         font-weight: bold;
         line-height: 2.6rem;
+        text-align: center;
         color: #252733;
     }
     .userInfo__propertyLink {
-        display:none;
+        display: none;
     // propertyLinkContainer is block to desktop
     }
 }
-@media screen and (min-width:499px) { // vertical menu show property link
+@media screen and (min-width:767px) { // vertical menu show property link
     .blackboard__userInfo {
         display: flex;
         flex-direction: column;
@@ -25,22 +26,29 @@
 
         h1 {
             width: 100%;
-            margin-bottom: 12px;
+            text-align: left;
+            padding-left: 15px;
         }
         .userInfo__propertyLink {
             display: flex;
             flex-direction: column;
             align-items: flex-end;
+            margin-top: 20px;
             font-size: 1.4rem;
             font-weight: bold;
             color: rgba(108, 109, 112, 1);
+            a {
+                color: rgb(134, 171, 206);
+                margin-bottom: 15px;
+                text-decoration: none;
+            }
             div {
-                width: 60px;
+                width: 110px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 img{
-                    width: 100%;
+                    width: 23%;
                     }
                 }
         }

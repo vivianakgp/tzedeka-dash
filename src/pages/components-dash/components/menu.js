@@ -1,6 +1,8 @@
 export default () => {
   const menu = document.createElement('div');
   menu.setAttribute('class', 'menu');
+  menu.setAttribute('id', 'menu');
+
   /* main container */
   const container = document.createElement('div');
   container.setAttribute('class', 'menu__container');
@@ -21,52 +23,57 @@ export default () => {
   logoTzedeka.setAttribute('class', 'menu__logoTz');
   letterTzedeka.setAttribute('class', 'menu__letterTz');
   nav.setAttribute('class', 'menu__nav');
-
-  /* main divisors children */
-  const letterTzImg = document.createElement('img');
-  const logoTzImg = document.createElement('img');
-  const navLi1 = document.createElement('li');
-  const navLi2 = document.createElement('li');
-  const navLi3 = document.createElement('li');
-  const navLi4 = document.createElement('li');
-  const navLi5 = document.createElement('li'); // in vertical menu is none
-
+  /*
+    main divisors children
+  */
+  const letterTzImg = document.createElement('img');/* letterTzedeka child */
+  const logoTzImg = document.createElement('img'); /* logoTzedeka child only in vertical menu  */
+  /**  nav children */
+  const miProperty = document.createElement('li');
+  const shareLink = document.createElement('li'); // in vertical menu is none
+  const referTo = document.createElement('li');
+  const comment = document.createElement('li');
+  const logOut = document.createElement('li');
   logoTzImg.setAttribute('src', '../assets/logos/LogoTz.png');
   letterTzImg.setAttribute('src', '../assets/logos/Letters no background.png');
-  // navLi1.setAttribute('class', 'nav__li1');
-  // navLi2.setAttribute('class', 'nav__li');
-  navLi3.setAttribute('id', 'navCommentsBtn');
-  // navLi4.setAttribute('class', 'nav__li');
+  miProperty.setAttribute('class', 'li1__miPropiedad');
+  miProperty.setAttribute('id', 'miPropertyBtn');
+  referTo.setAttribute('id', 'navReferBtn');
+  comment.setAttribute('id', 'navCommentsBtn');
+  shareLink.setAttribute('id', 'navShareLinkBtn');
+  // logOut id
 
-  /*  nav li children */
+  /** nav li children */
   const defaultIcon = document.createElement('img');
-  const referIcon = document.createElement('img');
-  const commentIcon = document.createElement('img');
-  const logoutIcon = document.createElement('img');
-  const shareIcon = document.createElement('img');
-
   const defaultAnchor = document.createElement('a');
+
+  const shareLinkIcon = document.createElement('img');
+  const shareLinkAnchor = document.createElement('a');
+
+  const referIcon = document.createElement('img');
   const referAnchor = document.createElement('a');
+
+  const commentIcon = document.createElement('img');
   const commentAnchor = document.createElement('a');
+
+  const logoutIcon = document.createElement('img');
   const logoutAnchor = document.createElement('a');
 
   defaultAnchor.innerHTML = 'Mi Propiedad';
-  defaultIcon.setAttribute('src', '../assets/menu-icons/property.svg');
-  // defaultIcon.setAttribute('class', 'nav_icon');
+  shareLinkAnchor.innerHTML = 'Link de mi propiedad';
   referAnchor.innerHTML = 'Referir a alguien';
-  referIcon.setAttribute('src', '../assets/menu-icons/refer.svg');
-  // referIcon.setAttribute('class', 'nav_icon');
   commentAnchor.innerHTML = '¿Qué podemos mejorar?';
-  commentIcon.setAttribute('src', '../assets/menu-icons/comments.svg');
-  // commentIcon.setAttribute('class', 'nav_icon');
   logoutAnchor.innerHTML = 'Cerrar sesión';
+
+  defaultIcon.setAttribute('src', '../assets/menu-icons/property.svg');
+  shareLinkIcon.setAttribute('src', '../assets/menu-icons/house.svg');
+  referIcon.setAttribute('src', '../assets/menu-icons/refer.svg');
+  commentIcon.setAttribute('src', '../assets/menu-icons/comments.svg');
   logoutIcon.setAttribute('src', '../assets/menu-icons/logout.svg');
-  // logoutIcon.setAttribute('class', 'nav_icon');
-  shareIcon.setAttribute('src', '../assets/menu-icons/house.svg');
 
   /* Events */
   btnCloseMenu.addEventListener('click', () => {
-    menu.classList.remove('is__active');
+    menu.classList.remove('openMenu');
   });// class inside styles.scss
   /*
     * Nesting
@@ -82,20 +89,21 @@ export default () => {
   // main divisors children
   letterTzedeka.appendChild(letterTzImg);
   logoTzedeka.appendChild(logoTzImg);
-  nav.appendChild(navLi1);
-  nav.appendChild(navLi5);
-  nav.appendChild(navLi2);
-  nav.appendChild(navLi3);
-  nav.appendChild(navLi4);
+  nav.appendChild(miProperty);
+  nav.appendChild(shareLink);
+  nav.appendChild(referTo);
+  nav.appendChild(comment);
+  nav.appendChild(logOut);
   //  nav li children
-  navLi1.appendChild(defaultIcon);
-  navLi5.appendChild(shareIcon);
-  navLi2.appendChild(referIcon);
-  navLi3.appendChild(commentIcon);
-  navLi4.appendChild(logoutIcon);
-  navLi1.appendChild(defaultAnchor);
-  navLi2.appendChild(referAnchor);
-  navLi3.appendChild(commentAnchor);
-  navLi4.appendChild(logoutAnchor);
+  miProperty.appendChild(defaultIcon);
+  miProperty.appendChild(defaultAnchor);
+  shareLink.appendChild(shareLinkIcon);
+  shareLink.appendChild(shareLinkAnchor);
+  referTo.appendChild(referIcon);
+  referTo.appendChild(referAnchor);
+  comment.appendChild(commentIcon);
+  comment.appendChild(commentAnchor);
+  logOut.appendChild(logoutIcon);
+  logOut.appendChild(logoutAnchor);
   return menu;
 };

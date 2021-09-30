@@ -8,13 +8,14 @@
   font-size: 2.4rem;
   font-weight: bold;
   line-height: 2.6rem;
+  text-align: center;
   color: #252733;
 }
 .blackboard__userInfo .userInfo__propertyLink {
   display: none;
 }
 
-@media screen and (min-width: 499px) {
+@media screen and (min-width: 767px) {
   .blackboard__userInfo {
     display: flex;
     flex-direction: column;
@@ -24,23 +25,30 @@
   }
   .blackboard__userInfo h1 {
     width: 100%;
-    margin-bottom: 12px;
+    text-align: left;
+    padding-left: 15px;
   }
   .blackboard__userInfo .userInfo__propertyLink {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-top: 20px;
     font-size: 1.4rem;
     font-weight: bold;
     color: #6c6d70;
   }
+  .blackboard__userInfo .userInfo__propertyLink a {
+    color: #86abce;
+    margin-bottom: 15px;
+    text-decoration: none;
+  }
   .blackboard__userInfo .userInfo__propertyLink div {
-    width: 60px;
+    width: 110px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .blackboard__userInfo .userInfo__propertyLink div img {
-    width: 100%;
+    width: 23%;
   }
 }
