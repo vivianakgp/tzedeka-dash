@@ -69,13 +69,17 @@
 }
 
 .modalShareLink-container {
-  height: 15%;
+  height: 24%;
+}
+.modalShareLink-container h3 {
+  font-size: 2rem;
 }
 .modalShareLink-container > :nth-child(1) {
   align-self: flex-end;
 }
 .modalShareLink-container > :nth-child(3) {
   color: #0066ff;
+  font-size: 16px;
 }
 .modalShareLink-container :nth-child(4) {
   display: flex;

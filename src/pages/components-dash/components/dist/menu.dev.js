@@ -52,7 +52,7 @@ var _default = function _default() {
   var logOut = document.createElement('li');
   logoTzImg.setAttribute('src', '../assets/logos/LogoTz.png');
   letterTzImg.setAttribute('src', '../assets/logos/Letters no background.png');
-  miProperty.setAttribute('class', 'li1__miPropiedad');
+  miProperty.setAttribute('class', 'li1__miPropiedad isDefaultActive');
   miProperty.setAttribute('id', 'miPropertyBtn');
   referTo.setAttribute('id', 'navReferBtn');
   comment.setAttribute('id', 'navCommentsBtn');

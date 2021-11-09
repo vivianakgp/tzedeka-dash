@@ -16,7 +16,7 @@
     "eslint": "^7.16.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
-    "serve": "^12.0.0"
+    "serve": "^13.0.2"
   },
   "dependencies": {
     "@babel/cli": "^7.12.10",

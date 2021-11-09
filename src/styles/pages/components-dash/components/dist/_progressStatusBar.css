@@ -2,9 +2,17 @@
   display: none;
 }
 
-.color {
+.color-brown {
   color: #9f9376 !important;
   font-weight: bolder;
+}
+
+.background-pink {
+  background-color: #f3ceca;
+}
+
+.defaultBackground {
+  background-color: #d5e4e4;
 }
 
 @media screen and (min-width: 767px) {
@@ -25,11 +33,10 @@
     font-size: 1.9rem;
     display: block;
   }
-  .blackboard__progressStatusBar > div > div {
+  .blackboard__progressStatusBar > div .btnProgressStatusBar {
     height: 25px;
     border-radius: 8px;
     border: 1px solid #d0d0d3;
-    background-color: #d5e4e4;
   }
   .blackboard__progressStatusBar div:nth-child(4) {
     width: 15%;

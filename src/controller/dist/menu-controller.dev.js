@@ -9,13 +9,18 @@ exports["default"] = void 0;
 // import vista from '../vista/vista.js';
 var _default = {
   initializer: function initializer() {
-    this.addEvent();
-    this.removeCommentModal();
+    this.addEventOpenModal();
+    this.addEventCloseModal();
   },
   btnNavIsActive: function btnNavIsActive(button) {
     var miPropertyBtn = document.getElementById('miPropertyBtn');
-    miPropertyBtn.classList.remove('li1__miPropiedad');
-    button.classList.add('li1__miPropiedad');
+    miPropertyBtn.classList.remove('isDefaultActive');
+    button.classList.add('btnNavActive');
+  },
+  btnNavIsDisabled: function btnNavIsDisabled(button) {
+    var miPropertyBtn = document.getElementById('miPropertyBtn');
+    button.classList.remove('btnNavActive');
+    miPropertyBtn.classList.add('isDefaultActive');
   },
   openCommentModal: function openCommentModal(btn) {
     var modalComments = document.getElementById('modalComments');
@@ -32,7 +37,25 @@ var _default = {
     modalRefer.classList.add('showModal');
     this.btnNavIsActive(btn);
   },
-  addEvent: function addEvent() {
+  closeCommentModal: function closeCommentModal() {
+    var modalComments = document.getElementById('modalComments');
+    var modalCommentsBtn = document.getElementById('navCommentsBtn');
+    modalComments.classList.remove('showModal');
+    this.btnNavIsDisabled(modalCommentsBtn);
+  },
+  closeShareLinkModal: function closeShareLinkModal() {
+    var modalShareLink = document.getElementById('modalShareLink');
+    var modalShareLinkBtn = document.getElementById('navShareLinkBtn');
+    modalShareLink.classList.remove('showModal');
+    this.btnNavIsDisabled(modalShareLinkBtn);
+  },
+  closeModalRefer: function closeModalRefer() {
+    var modalReferBtn = document.getElementById('navReferBtn');
+    var modalRefer = document.getElementById('modalRefer');
+    modalRefer.classList.remove('showModal');
+    this.btnNavIsDisabled(modalReferBtn);
+  },
+  addEventOpenModal: function addEventOpenModal() {
     var _this = this;
 
     var modalCommentsBtn = document.getElementById('navCommentsBtn');
@@ -48,21 +71,20 @@ var _default = {
       _this.openModalRefer(modalReferBtn);
     });
   },
-  removeCommentModal: function removeCommentModal() {
-    var closeModal = document.getElementById('closeModal');
+  addEventCloseModal: function addEventCloseModal() {
+    var _this2 = this;
+
+    var closeCommentModal = document.getElementById('closeCommentModal');
     var closeShareLinkModal = document.getElementById('closeShareLinkModal');
     var closeModalRefer = document.getElementById('closeModalRefer');
-    var modalComments = document.getElementById('modalComments');
-    var modalShareLink = document.getElementById('modalShareLink');
-    var modalRefer = document.getElementById('modalRefer');
-    closeModal.addEventListener('click', function () {
-      return modalComments.classList.remove('showModal');
+    closeCommentModal.addEventListener('click', function () {
+      _this2.closeCommentModal();
     });
     closeShareLinkModal.addEventListener('click', function () {
-      return modalShareLink.classList.remove('showModal');
+      _this2.closeShareLinkModal();
     });
     closeModalRefer.addEventListener('click', function () {
-      return modalRefer.classList.remove('showModal');
+      _this2.closeModalRefer();
     });
   }
 };

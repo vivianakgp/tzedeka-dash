@@ -16,7 +16,7 @@ export default () => {
   const sendBtn = document.createElement('button');
   const closeBtn = document.createElement('button');
   sendBtn.setAttribute('id', 'send');
-  closeBtn.setAttribute('id', 'closeModal');
+  closeBtn.setAttribute('id', 'closeCommentModal');
   sendBtn.innerHTML = 'Enviar';
   closeBtn.innerHTML = 'Cancelar';
   // nesting

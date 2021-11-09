@@ -21,31 +21,39 @@ export default (currentProgress) => {
   block2Title.innerHTML = 'En Promoción';
   block3Title.innerHTML = 'Tramite y Avalúo';
   block4Title.innerHTML = 'Escritura';
-  // eslint-disable-next-line default-case
-  switch (currentProgress) {
-    case 'Preparación':
-      block1Title.classList.add('color');
-      break;
-    case 'En Promoción':
-      block2Title.classList.add('color');
-      break;
-    case 'Tramite y Avalúo':
-      block3Title.classList.add('color');
-      break;
-    case 'Escritura':
-      block4Title.classList.add('color');
-      break;
-  }
+  // buttons classes used in controller to add event click
+  block1Btn.setAttribute('class', 'btnProgressStatusBar defaultBackground ');
+  block2Btn.setAttribute('class', 'btnProgressStatusBar defaultBackground ');
+  block3Btn.setAttribute('class', 'btnProgressStatusBar defaultBackground ');
+  block4Btn.setAttribute('class', 'btnProgressStatusBar defaultBackground ');
   // buttons data-progress used in controller to open respective view
   block1Btn.setAttribute('data-progress', '1');
   block2Btn.setAttribute('data-progress', '2');
   block3Btn.setAttribute('data-progress', '3');
   block4Btn.setAttribute('data-progress', '4');
-  // buttons classes used in controller to add event click
-  block1Btn.setAttribute('class', 'btnProgressStatusBar');
-  block2Btn.setAttribute('class', 'btnProgressStatusBar');
-  block3Btn.setAttribute('class', 'btnProgressStatusBar');
-  block4Btn.setAttribute('class', 'btnProgressStatusBar');
+  // eslint-disable-next-line default-case
+  switch (currentProgress) {
+    case 'Preparación':
+      block1Title.classList.add('color-brown');
+      block1Btn.classList.remove('defaultBackground');
+      block1Btn.classList.add('background-pink');
+      break;
+    case 'En Promoción':
+      block2Title.classList.add('color-brown');
+      block2Btn.classList.remove('defaultBackground');
+      block2Btn.classList.add('background-pink');
+      break;
+    case 'Tramite y Avalúo':
+      block3Title.classList.add('color-brown');
+      block3Btn.classList.remove('defaultBackground');
+      block3Btn.classList.add('background-pink');
+      break;
+    case 'Escritura':
+      block4Title.classList.add('color-brown');
+      block4Btn.classList.remove('defaultBackground');
+      block4Btn.classList.add('background-pink');
+      break;
+  }
 
   // nesting
   progressStatusBar.appendChild(block1);
