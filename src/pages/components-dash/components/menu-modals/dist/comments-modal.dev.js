@@ -23,7 +23,7 @@ var _default = function _default() {
   var sendBtn = document.createElement('button');
   var closeBtn = document.createElement('button');
   sendBtn.setAttribute('id', 'send');
-  closeBtn.setAttribute('id', 'closeModal');
+  closeBtn.setAttribute('id', 'closeCommentModal');
   sendBtn.innerHTML = 'Enviar';
   closeBtn.innerHTML = 'Cancelar'; // nesting
 

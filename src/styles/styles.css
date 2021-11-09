@@ -45,7 +45,7 @@
 .login .login__formContainer .login__form div {
   color: #dfb66a;
   margin-top: 20px;
-  font-size: 1.2vw;
+  font-size: 16px;
 }
 .login .login__formContainer .login__form button {
   width: 55%;
@@ -222,9 +222,17 @@
   display: none;
 }
 
-.color {
+.color-brown {
   color: #9f9376 !important;
   font-weight: bolder;
+}
+
+.background-pink {
+  background-color: #f3ceca;
+}
+
+.defaultBackground {
+  background-color: #d5e4e4;
 }
 
 @media screen and (min-width: 767px) {
@@ -245,11 +253,10 @@
     font-size: 1.9rem;
     display: block;
   }
-  .blackboard__progressStatusBar > div > div {
+  .blackboard__progressStatusBar > div .btnProgressStatusBar {
     height: 25px;
     border-radius: 8px;
     border: 1px solid #d0d0d3;
-    background-color: #d5e4e4;
   }
   .blackboard__progressStatusBar div:nth-child(4) {
     width: 15%;
@@ -394,13 +401,17 @@
 }
 
 .modalShareLink-container {
-  height: 15%;
+  height: 24%;
+}
+.modalShareLink-container h3 {
+  font-size: 2rem;
 }
 .modalShareLink-container > :nth-child(1) {
   align-self: flex-end;
 }
 .modalShareLink-container > :nth-child(3) {
   color: #0066ff;
+  font-size: 16px;
 }
 .modalShareLink-container :nth-child(4) {
   display: flex;
@@ -455,6 +466,14 @@
   font-weight: lighter;
   letter-spacing: 0.2px;
   color: #DDE2FF;
+}
+
+.btnNavActive {
+  background-color: rgba(221, 226, 255, 0.233);
+}
+
+.isDefaultActive {
+  background-color: rgba(221, 226, 255, 0.233);
 }
 
 .menu {
@@ -512,7 +531,6 @@
   width: 33%;
   font-size: 1.3rem;
   align-items: center;
-  background-color: rgba(221, 226, 255, 0.205);
 }
 .menu .menu__container .menu__nav .li1__miPropiedad a {
   display: block;
@@ -565,14 +583,12 @@
     height: 270px;
     margin-bottom: 85px;
   }
-  .menu .menu__container .menu__nav li:nth-child(1) {
+  .menu .menu__container .menu__nav .li1__miPropiedad {
     width: 100%;
-    display: flex;
-    align-items: center;
-    background: rgba(221, 226, 255, 0.205);
+    font-size: 1.6rem;
   }
-  .menu .menu__container .menu__nav li:hover {
-    background: rgba(221, 226, 255, 0.205);
+  .menu .menu__container .menu__nav .li1__miPropiedad img {
+    margin-right: 6%;
   }
   .menu .menu__container .menu__nav li {
     width: inherit;
@@ -582,9 +598,6 @@
     padding-left: 35px;
   }
   .menu .menu__container .menu__nav li img {
-    margin-right: 6%;
-  }
-  .menu .menu__container .menu__nav li .nav__li1 img {
     margin-right: 6%;
   }
   .menu .menu__container .menu__nav li a {

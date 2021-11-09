@@ -25,7 +25,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 // Preparación, En Promoción, Tramite y Avalúo, Escritura
 var user = {
-  currentProgressStr: 'Tramite y Avalúo',
+  currentProgressStr: 'Preparación',
   userName: 'Juan',
   propLink: 'https://www.inmuebles24.com/inmuebles.html'
 };

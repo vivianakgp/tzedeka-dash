@@ -1,3 +1,4 @@
+$modal-tittle: 2rem;
 .letter-style {
     font-family: Mulish;
     font-style: normal;
@@ -55,7 +56,7 @@
 
             }
             h3 {
-                font-size: 2rem;
+                font-size: $modal-tittle;
             }
             div {
                 width: 100%;
@@ -79,20 +80,22 @@
 }
 .modalShareLink-container{
     @extend .modal-container;
-    height: 15%;
+    height: 24%;
+    h3 {
+        font-size: $modal-tittle;
+    }
     >:nth-child(1){
         align-self: flex-end;
     }
-    >:nth-child(2){
-
-    }
     >:nth-child(3){
         color: rgb(0, 102, 255);
+        font-size: 16px;
     }
     :nth-child(4){
         display: flex;
         align-items: end;
         height: 30%;
+
     }
 
 }
@@ -100,7 +103,7 @@
     @extend .modal-container;
     height: 400px;
     h3 {
-        font-size: 2rem;
+        font-size: $modal-tittle;
     }
     >input, >div {
         width: 85%;
@@ -117,7 +120,6 @@
         p{
             margin-bottom: 5px;
         }
-
     }
     >:nth-child(7) {
         border-style: hidden;
@@ -134,13 +136,11 @@
             color:white;
             background-color: rgb(14, 15, 15);
         }
-
     }
 
 }
 @media screen and (min-width:1024px) {
     .modal-overlay {
-        // position: absolute;
         left: 0;
         height: 100%;
         place-items: center;
