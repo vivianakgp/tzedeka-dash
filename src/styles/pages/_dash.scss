@@ -1,11 +1,11 @@
 
-@import'./components-dash/blackBoardViews';
-@import './components-dash/componentsInCell/progressStatusBarCell';
-@import './components-dash/componentsInCell/btnsChangeViewsToCell';
-@import './components-dash/components/progressStatusBar';
-@import './components-dash/components/userInfo';
+@use'./components-dash/blackBoardViews';
+@use './components-dash/componentsInCell/progressStatusBarCell';
+@use './components-dash/componentsInCell/btnsChangeViewsToCell';
+@use './components-dash/components/progressStatusBar';
+@use './components-dash/components/userInfo';
 
-@import './components-dash/components/menu';
+@use './components-dash/components/menu';
 
 // *Hidden elements from mobile first* //
     // #btnOpenMenu only in vertical menu
@@ -43,7 +43,6 @@
     .dash__container {
         padding-bottom: 70px;
     }
-
 }
 @media screen and (min-width:767px) {
     .blackboard {

@@ -15,12 +15,12 @@ export default (propLink) => {
   title.innerHTML = 'Link de mi propiedad:';
   propertyLink.innerHTML = propLink;
   // social media children
-  const iconWhats = document.createElement('img');
-  const iconFace = document.createElement('img');
-  const iconShare = document.createElement('img');
-  iconWhats.setAttribute('src', '../assets/social-icons/icon_whatsApp.svg');
-  iconFace.setAttribute('src', '../assets/social-icons/icon_facebook.svg');
-  iconShare.setAttribute('src', '../assets/social-icons/icon_copy.svg');
+  const iconWhats = document.createElement('i');
+  const iconFace = document.createElement('i');
+  const iconShare = document.createElement('i');
+  iconWhats.setAttribute('class', 'fab fa-facebook-messenger');
+  iconFace.setAttribute('class', 'fab fa-facebook');
+  iconShare.setAttribute('class', 'fas fa-share-square');
   // nesting
   modal.appendChild(subModal);
   subModal.appendChild(closeModalBtn);

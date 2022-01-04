@@ -10,7 +10,7 @@ import modalRefer from './components-dash/components/menu-modals/modalRefer.js';
 // Preparación, En Promoción, Tramite y Avalúo, Escritura
 export const user = {
   currentProgressStr: 'Preparación',
-  userName: 'Juan',
+  userName: '',
   propLink: 'https://www.inmuebles24.com/inmuebles.html',
 };
 const { userName, currentProgressStr, propLink } = user;

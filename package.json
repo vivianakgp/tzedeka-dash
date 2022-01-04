@@ -10,7 +10,7 @@
     "sass-watch": "sass --watch src/styles/styles.scss src/styles/styles.css",
     "build": "babel src -d lib"
   },
-  "author": "",
+  "author": "Viviana Gómez",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^7.16.0",

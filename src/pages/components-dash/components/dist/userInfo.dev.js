@@ -19,7 +19,7 @@ var _default = function _default(name, propLink) {
   propertyLink.setAttribute('class', 'userInfo__propertyLink'); // welcome child
 
   var span = document.createElement('span');
-  welcome.innerText = "Bienvenido ".concat(name); //  in desktop user.name;
+  welcome.innerText = 'Bienvenido'; // `Bienvenido ${name}` in desktop user.name;
   // propertyLink children
 
   var link = document.createElement('a');
@@ -28,12 +28,12 @@ var _default = function _default(name, propLink) {
   link.innerHTML = "Link de mi Propiedad:  ".concat(propLink); // link.setAttribute('href', 'https://www.inmuebles24.com/inmuebles.html');
   // propertyLink / networkIcons children
 
-  var iconWhats = document.createElement('img');
-  var iconFace = document.createElement('img');
-  var iconShare = document.createElement('img');
-  iconWhats.setAttribute('src', '../assets/social-icons/icon_whatsApp.svg');
-  iconFace.setAttribute('src', '../assets/social-icons/icon_facebook.svg');
-  iconShare.setAttribute('src', '../assets/social-icons/icon_copy.svg'); // nesting
+  var iconWhats = document.createElement('i');
+  var iconFace = document.createElement('i');
+  var iconShare = document.createElement('i');
+  iconWhats.setAttribute('class', 'fab fa-facebook-messenger');
+  iconFace.setAttribute('class', 'fab fa-facebook');
+  iconShare.setAttribute('class', 'fas fa-share-square'); // nesting
   // userInfo children
 
   userInfo.appendChild(welcome);

@@ -1,5 +1,7 @@
-@import './pages/login.scss';
-@import './pages/dash.scss';
+// @import './pages/login.scss';
+// @import './pages/dash.scss';
+@use './pages/login';
+@use './pages/dash';
 
 // * font to html all document: font-family: 'Lato', sans-serif;
 // * font to headlines and menu: font-family: 'Mulish', sans-serif;

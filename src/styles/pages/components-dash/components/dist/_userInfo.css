@@ -48,7 +48,9 @@
     justify-content: space-between;
     align-items: center;
   }
-  .blackboard__userInfo .userInfo__propertyLink div img {
+  .blackboard__userInfo .userInfo__propertyLink div i {
     width: 23%;
+    font-size: 20px;
+    cursor: pointer;
   }
 }

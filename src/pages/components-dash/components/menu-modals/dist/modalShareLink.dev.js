@@ -22,12 +22,12 @@ var _default = function _default(propLink) {
   title.innerHTML = 'Link de mi propiedad:';
   propertyLink.innerHTML = propLink; // social media children
 
-  var iconWhats = document.createElement('img');
-  var iconFace = document.createElement('img');
-  var iconShare = document.createElement('img');
-  iconWhats.setAttribute('src', '../assets/social-icons/icon_whatsApp.svg');
-  iconFace.setAttribute('src', '../assets/social-icons/icon_facebook.svg');
-  iconShare.setAttribute('src', '../assets/social-icons/icon_copy.svg'); // nesting
+  var iconWhats = document.createElement('i');
+  var iconFace = document.createElement('i');
+  var iconShare = document.createElement('i');
+  iconWhats.setAttribute('class', 'fab fa-facebook-messenger');
+  iconFace.setAttribute('class', 'fab fa-facebook');
+  iconShare.setAttribute('class', 'fas fa-share-square'); // nesting
 
   modal.appendChild(subModal);
   subModal.appendChild(closeModalBtn);

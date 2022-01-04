@@ -11,7 +11,7 @@ export default (name, propLink) => {
   propertyLink.setAttribute('class', 'userInfo__propertyLink');
   // welcome child
   const span = document.createElement('span');
-  welcome.innerText = `Bienvenido ${name}`; //  in desktop user.name;
+  welcome.innerText = 'Bienvenido'; // `Bienvenido ${name}` in desktop user.name;
   // propertyLink children
   const link = document.createElement('a');
   const networkIcons = document.createElement('div');
@@ -20,12 +20,12 @@ export default (name, propLink) => {
   // link.setAttribute('href', 'https://www.inmuebles24.com/inmuebles.html');
 
   // propertyLink / networkIcons children
-  const iconWhats = document.createElement('img');
-  const iconFace = document.createElement('img');
-  const iconShare = document.createElement('img');
-  iconWhats.setAttribute('src', '../assets/social-icons/icon_whatsApp.svg');
-  iconFace.setAttribute('src', '../assets/social-icons/icon_facebook.svg');
-  iconShare.setAttribute('src', '../assets/social-icons/icon_copy.svg');
+  const iconWhats = document.createElement('i');
+  const iconFace = document.createElement('i');
+  const iconShare = document.createElement('i');
+  iconWhats.setAttribute('class', 'fab fa-facebook-messenger');
+  iconFace.setAttribute('class', 'fab fa-facebook');
+  iconShare.setAttribute('class', 'fas fa-share-square');
   // nesting
   // userInfo children
   userInfo.appendChild(welcome);

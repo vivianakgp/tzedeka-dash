@@ -7,4 +7,5 @@ const initial = () => {
     controller.changeMainView(hash);
   });
 };
-window.addEventListener('load', initial);
+window.addEventListener('DOMContentLoaded', initial);
+// window.addEventListener('load', initial)
