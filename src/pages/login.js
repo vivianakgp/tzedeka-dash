@@ -42,11 +42,12 @@ export default () => {
   btn.setAttribute('value', 'Ingresar');
   btn.setAttribute('id', 'btn__ingresar');
   btn.innerHTML = 'Ingresar';
-  paragraph.innerHTML = '¿No has trabajado con nosotros?';
+  paragraph.innerHTML = 'Try with: test@gmail.com  password:test1234';
+/*   paragraph.innerHTML = '¿No has trabajado con nosotros?';
   anchor.innerHTML = 'Empieza hoy';
-  anchor.setAttribute('href', '#/');
+  anchor.setAttribute('href', '#/'); */
   /**
-   * nesting
+   * nesting 
    */
   // main elements
   login.appendChild(formContainer);
