@@ -42,7 +42,7 @@ export default () => {
   btn.setAttribute('value', 'Ingresar');
   btn.setAttribute('id', 'btn__ingresar');
   btn.innerHTML = 'Ingresar';
-  paragraph.innerHTML = 'Try with: test@gmail.com  password:test1234';
+  paragraph.innerHTML = 'Try with: test@gmail.com  password:test1234*';
 /*   paragraph.innerHTML = '¿No has trabajado con nosotros?';
   anchor.innerHTML = 'Empieza hoy';
   anchor.setAttribute('href', '#/'); */
